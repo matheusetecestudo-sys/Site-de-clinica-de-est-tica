@@ -783,18 +783,18 @@ export default function App() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Clínica 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Clínica 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Clínica 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop" alt="Tecnologia de Ponta" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1527275393276-681efed3c11b?q=80&w=800&auto=format&fit=crop" alt="Clínica Nano" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop" alt="Clínica Inteligente" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
               </div>
             </div>
