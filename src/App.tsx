@@ -50,7 +50,6 @@ const CLIENT_CONFIG = {
   about: "Com mais de duas décadas dedicadas à arte da estética médica, a Dra. Beatriz Cavalcanti trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente. Nossa clínica é um oásis de luxo, tecnologia e resultados de alta performance.",
 };
 
-// === SERVIÇOS ===
 const SERVICES = [
   {
     id: 1,
@@ -64,7 +63,7 @@ const SERVICES = [
     title: "Preenchimento Labial",
     description: "Escultura labial para volume, contorno e hidratação profunda personalizada.",
     badge: "Destaque",
-    image: "/images/procedimento.png"
+    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -78,7 +77,7 @@ const SERVICES = [
     title: "Harmonização Facial",
     description: "Análise estética global para equilibrar e realçar seus traços mais belos.",
     badge: "Elite",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 5,
@@ -92,7 +91,7 @@ const SERVICES = [
     title: "Ultraformer III",
     description: "Lifting facial e corporal sem cortes através de ultrassom focado de alta intensidade.",
     badge: "Lifting",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 7,
@@ -120,7 +119,7 @@ const SERVICES = [
     title: "Lipo de Papada",
     description: "Redução da gordura submentoniana através de enzimas especializadas e seguras.",
     badge: "Contorno",
-    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 11,
@@ -197,14 +196,14 @@ const SERVICES = [
 // === RESULTADOS ===
 const RESULTS = [
   {
-    before: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=600&auto=format&fit=crop",
-    after: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop",
+    before: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop",
+    after: "/images/harmonizacao.png",
     title: "Harmonização Facial"
   },
   {
-    before: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600&auto=format&fit=crop",
-    after: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=600&auto=format&fit=crop",
-    title: "Bioestimuladores"
+    before: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop",
+    after: "/images/procedimento.png",
+    title: "Protocolo Renovare"
   }
 ];
 
@@ -417,11 +416,11 @@ export default function App() {
             <p className="text-lg text-clinic-text/70 mb-10 font-sans leading-relaxed max-w-lg">
               Protocolos exclusivos desenvolvidos pela {CLIENT_CONFIG.professional}, unindo 20 anos de experiência e as tecnologias mais avançadas do mundo.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={whatsappUrl} className="btn-primary px-10 py-5 rounded-full flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-6 mt-12 items-center sm:items-stretch">
+              <a href={whatsappUrl} className="btn-primary flex-1 min-w-[280px] rounded-full gap-3 shadow-xl">
                 <WhatsAppIcon size={20} /> Agendar Avaliação <ArrowRight size={18} />
               </a>
-              <a href="#serviços" className="bg-white/80 backdrop-blur-sm border border-clinic-border px-10 py-5 rounded-full text-xs uppercase tracking-widest font-sans font-bold flex items-center justify-center hover:bg-white transition-colors">
+              <a href="#serviços" className="bg-white/80 backdrop-blur-sm border border-clinic-border px-10 py-5 rounded-full text-xs uppercase tracking-widest font-sans font-bold flex items-center justify-center hover:bg-white transition-all flex-1 min-w-[280px]">
                 Ver Procedimentos
               </a>
             </div>
@@ -488,6 +487,42 @@ export default function App() {
               Falar com Especialista <WhatsAppIcon size={18} />
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-white border-y border-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="flex items-center gap-4 group">
+              <ShieldCheck size={32} className="text-primary group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-serif text-lg font-bold">Certificação</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Especialista Ativa</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 group">
+              <Award size={32} className="text-primary group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-serif text-lg font-bold">Excelência</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Prêmio Quality 2024</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 group">
+              <Stars size={32} className="text-primary group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-serif text-lg font-bold">Membro Premium</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Sociedade de Estética</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 group">
+              <Sparkles size={32} className="text-primary group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-serif text-lg font-bold">Tecnologia</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Equipamentos de Ponta</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -646,14 +681,14 @@ export default function App() {
               { q: "Qual a idade ideal para começar?", a: "Não existe uma idade fixa. A prevenção é a melhor estratégia, e muitos pacientes iniciam protocolos preventivos a partir dos 25-30 anos para manter a qualidade da pele." },
               { q: "Como é feita a avaliação inicial?", a: "Realizamos uma análise facial completa e personalizada, discutindo seus objetivos e expectativas para criar um plano de tratamento exclusivo e natural." }
             ].map((item, i) => (
-              <details key={i} className="group bg-white rounded-xl border border-clinic-border overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-md">
-                <summary className="flex justify-between items-center p-6 cursor-pointer list-none">
-                  <span className="font-serif text-lg text-clinic-text group-hover:text-primary transition-colors">{item.q}</span>
+              <details key={i} className="faq-item group">
+                <summary>
+                  <span>{item.q}</span>
                   <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                     <ChevronRight size={18} className="text-primary transition-transform duration-300 group-open:rotate-90" />
                   </div>
                 </summary>
-                <div className="px-6 pb-6 text-clinic-text/70 text-sm leading-relaxed border-t border-primary/5 pt-4">
+                <div className="faq-content">
                   {item.a}
                 </div>
               </details>
