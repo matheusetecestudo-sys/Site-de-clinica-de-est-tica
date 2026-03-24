@@ -374,7 +374,7 @@ export default function App() {
                 className="mb-12"
               >
                 <div className="relative group">
-                  <div className="w-48 h-48 border border-primary/10 rounded-full flex items-center justify-center bg-clinic-bg/50 backdrop-blur-sm shadow-inner overflow-hidden">
+                  <div className="w-32 h-32 border border-primary/10 rounded-full flex items-center justify-center bg-clinic-bg/50 backdrop-blur-sm shadow-inner overflow-hidden">
                     <motion.div 
                       animate={{ 
                         rotate: [0, 360],
@@ -382,7 +382,7 @@ export default function App() {
                       transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       className="absolute inset-0 border-t-2 border-primary/20 rounded-full"
                     />
-                    <span className="font-serif text-8xl text-primary font-light tracking-tighter drop-shadow-sm">D</span>
+                    <span className="font-serif text-6xl text-primary font-light tracking-tighter drop-shadow-sm">D</span>
                   </div>
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.5, 0.2] }}
@@ -398,7 +398,7 @@ export default function App() {
                 transition={{ delay: 0.5, duration: 1 }}
                 className="text-center"
               >
-                <h2 className="font-serif text-6xl text-clinic-text tracking-[0.3em] font-light mb-4">DUNO</h2>
+                <h2 className="font-serif text-5xl text-clinic-text tracking-[0.3em] font-light mb-4">DUNO</h2>
                 <div className="flex items-center justify-center gap-4">
                   <div className="h-[1px] w-8 bg-primary/30" />
                   <p className="text-primary text-[10px] uppercase tracking-[0.6em] font-sans font-bold">Estética Avançada</p>
@@ -465,23 +465,22 @@ export default function App() {
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center w-full">
           {/* Logo */}
-          <a href="#início" className="flex items-center gap-5 group shrink-0 relative">
+          <a href="#início" className="flex items-center gap-3 group shrink-0 relative">
             <div className="relative">
-              <div className="w-14 h-14 border border-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 overflow-hidden">
+              <div className="w-10 h-10 border border-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 overflow-hidden">
                 <motion.div 
                    whileHover={{ rotate: 180 }}
                    className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-10 transition-opacity"
                 />
-                <span className="font-serif text-4xl text-primary group-hover:text-white font-light tracking-tighter transition-colors">D</span>
+                <span className="font-serif text-2xl text-primary group-hover:text-white font-light tracking-tighter transition-colors">D</span>
               </div>
-              {/* Animated Ring */}
               <div className="absolute -inset-1 border border-primary/5 rounded-full group-hover:border-primary/20 transition-all duration-500 group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-4xl font-light tracking-[0.2em] text-clinic-text group-hover:text-primary transition-colors">
+              <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.15em] text-clinic-text group-hover:text-primary transition-colors">
                 DUNO
               </span>
-              <span className="text-[8px] uppercase tracking-[0.4em] text-primary font-bold -mt-1 ml-1 opacity-60 group-hover:opacity-100 transition-all">
+              <span className="text-[7px] uppercase tracking-[0.3em] text-primary font-bold -mt-1 ml-1 opacity-60 group-hover:opacity-100 transition-all">
                 Estética Médica
               </span>
             </div>
@@ -723,7 +722,7 @@ export default function App() {
                 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.5 }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-clinic-border premium-card-hover hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(212,175,119,0.15)]"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-clinic-border premium-card-hover hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(212,175,119,0.15)] flex flex-col h-full"
               >
                 {/* Shine Effect Overlay */}
                 <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
@@ -741,11 +740,11 @@ export default function App() {
                     {service.badge}
                   </div>
                 </div>
-                <div className="p-8">
+                <div className="p-8 flex-1 flex flex-col">
                   <h3 className="text-2xl font-serif text-clinic-text group-hover:text-primary transition-colors mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-clinic-text/60 mb-6 leading-relaxed">{service.description}</p>
+                  <p className="text-sm text-clinic-text/60 mb-6 leading-relaxed flex-1">{service.description}</p>
                   <div className="mt-auto pt-6 border-t border-primary/5">
                     <a href={whatsappUrl} className="btn-primary w-full h-11 text-[10px] rounded-xl flex items-center gap-2 group/link tracking-[0.2em]">
                       Agendar Agora <ChevronRight size={14} className="transition-transform group-hover/link:translate-x-1" />
