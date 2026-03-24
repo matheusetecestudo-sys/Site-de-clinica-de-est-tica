@@ -467,30 +467,30 @@ export default function App() {
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center w-full">
           {/* Logo */}
-          <a href="#início" className="flex items-center gap-3 group shrink-0 relative">
+          <a href="#início" className="flex items-center gap-3 group shrink-0 relative py-2">
             <div className="relative">
-              <div className="w-10 h-10 border border-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 overflow-hidden">
+              <div className="w-9 h-9 border border-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 overflow-hidden">
                 <motion.div 
                    whileHover={{ rotate: 180 }}
                    className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-10 transition-opacity"
                 />
-                <span className="font-serif text-2xl text-primary group-hover:text-white font-light tracking-tighter transition-colors">D</span>
+                <span className="font-serif text-xl text-primary group-hover:text-white font-light tracking-tighter transition-colors">D</span>
               </div>
               <div className="absolute -inset-1 border border-primary/5 rounded-full group-hover:border-primary/20 transition-all duration-500 group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.15em] text-clinic-text group-hover:text-primary transition-colors">
+              <span className="font-serif text-xl md:text-2xl font-light tracking-[0.1em] text-clinic-text group-hover:text-primary transition-colors leading-none">
                 DUNO
               </span>
-              <span className="text-[7px] uppercase tracking-[0.3em] text-primary font-bold -mt-1 ml-1 opacity-60 group-hover:opacity-100 transition-all">
+              <span className="text-[6px] uppercase tracking-[0.2em] text-primary font-bold mt-1 ml-0.5 opacity-60 group-hover:opacity-100 transition-all">
                 Estética Médica
               </span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10 xl:gap-20 ml-auto">
-            <div className="flex items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+            <div className="flex items-center gap-6 xl:gap-10">
               {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
                 <a 
                   key={item} 
