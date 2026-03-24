@@ -240,6 +240,61 @@ const TESTIMONIALS = [
 ];
 
 // === COMPONENTES AUXILIARES ===
+const CookieBanner = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      const timer = setTimeout(() => setIsVisible(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const accept = () => {
+    localStorage.setItem('cookie-consent', 'true');
+    setIsVisible(false);
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          className="fixed bottom-6 left-6 right-6 md:left-auto md:right-12 md:max-w-md z-[100] glass-card p-6 rounded-2xl shadow-2xl border border-primary/20 backdrop-blur-2xl"
+        >
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3 text-primary">
+              <ShieldCheck size={24} />
+              <span className="font-serif text-lg font-bold">Privacidade & Cookies</span>
+            </div>
+            <p className="text-xs text-clinic-text/70 leading-relaxed font-sans">
+              Utilizamos cookies para melhorar sua experiência e oferecer conteúdos personalizados de acordo com a nossa Política de Privacidade. Ao continuar, você concorda com estas condições.
+            </p>
+            <div className="flex gap-4">
+              <button onClick={accept} className="flex-1 bg-primary text-white text-[10px] uppercase tracking-widest font-bold py-3 rounded-xl hover:bg-secondary transition-all">
+                Aceitar e Continuar
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const MobileStickyCTA = ({ whatsappUrl }: { whatsappUrl: string }) => {
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-[85] p-4 bg-white/95 backdrop-blur-xl border-t border-primary/10 shadow-[0_-10px_30px_rgba(219,39,119,0.1)]">
+      <a href={whatsappUrl} className="btn-primary w-full rounded-2xl gap-3 text-xs font-bold tracking-[0.2em] h-14">
+        <WhatsAppIcon size={18} /> AGENDAR MINHA AVALIAÇÃO
+      </a>
+    </div>
+  );
+};
+
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -438,6 +493,28 @@ export default function App() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-20 bg-white relative z-10 -mt-10 mx-6 md:mx-12 rounded-3xl shadow-2xl border border-primary/5">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+          <div className="flex flex-col gap-2">
+            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">22+</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Anos de Experiência</span>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">15k+</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Atendimentos</span>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">100%</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Segurança Médica</span>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">Elite</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Padrão Internacional</span>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="sobre" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -597,6 +674,49 @@ export default function App() {
         </div>
       </section>
 
+      {/* Ambience Gallery Section */}
+      <section className="section-padding bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <div>
+              <span className="section-subtitle">Oásis de Bem-estar</span>
+              <h2 className="section-title">Um Ambiente Planejado para sua Experiência</h2>
+              <p className="text-lg text-clinic-text/60 max-w-lg leading-relaxed mb-8">
+                Nossa clínica no Itaim Bibi combina o que há de mais moderno em design de interiores com tecnologias de ponta, criando um espaço de total conforto, privacidade e exclusividade.
+              </p>
+              <div className="flex items-center gap-6">
+                <div className="flex -space-x-4">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="w-12 h-12 rounded-full border-2 border-white overflow-hidden shadow-md">
+                      <img src={`https://i.pravatar.cc/100?u=${i}`} alt="Paciente" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+                <span className="text-sm font-sans font-medium text-clinic-text/80">Aprovada por pacientes de elite</span>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
+                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Clínica 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Clínica 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                  <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Clínica 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
+                  <img src="https://images.unsplash.com/photo-1590233648558-f3dcd9641470?q=80&w=800&auto=format&fit=crop" alt="Clínica 4" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Results / Before & After Slider Placeholder */}
       <section id="resultados" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
@@ -675,12 +795,59 @@ export default function App() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="section-padding bg-clinic-bg">
+      {/* Enhanced Location Section with Map */}
+      <section id="localização" className="section-padding bg-clinic-bg">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="section-subtitle">Onde Estamos</span>
+            <h2 className="section-title">Duno Itaim Bibi</h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-12 items-stretch">
+            <div className="lg:col-span-1 flex flex-col gap-8">
+              <div className="glass-card p-10 rounded-2xl border-primary/10 shadow-xl group premium-card-hover h-full flex flex-col justify-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <MapPin size={28} />
+                </div>
+                <h4 className="text-2xl font-serif mb-4">Endereço</h4>
+                <p className="text-clinic-text/60 leading-relaxed mb-6 font-sans">
+                  {CLIENT_CONFIG.address}<br />
+                  {CLIENT_CONFIG.city}<br />
+                  CEP: 04534-000
+                </p>
+                <a 
+                  href="https://maps.app.goo.gl/YourActualLink" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2"
+                >
+                  Abrir no Google Maps <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-2 rounded-2xl overflow-hidden shadow-2xl border border-primary/10 h-[450px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.3308828552393!2d-46.67498772412806!3d-23.592474962295692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57530444379b%3A0x6b5e024220fa9449!2sRua%20Joaquim%20Floriano%2C%2072%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004534-000!5e0!3m2!1spt-BR!2sbr!4v1711310000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'grayscale(0.2) contrast(1.1) opacity(0.9)' }} 
+                allowFullScreen={true}
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização Duno Estética"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Header Refinement */}
+      <section id="faq" className="section-padding bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-subtitle">Dúvidas Frequentes</span>
-            <h2 className="section-title">Perguntas Comuns</h2>
+            <h2 className="section-title">Esclareça suas Perguntas</h2>
           </div>
 
           <div className="space-y-4">
@@ -819,6 +986,9 @@ export default function App() {
           <p>Desenvolvido com excelência para clínicas de elite.</p>
         </div>
       </footer>
+
+      <CookieBanner />
+      <MobileStickyCTA whatsappUrl={whatsappUrl} />
     </div>
   );
 }
