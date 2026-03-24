@@ -243,17 +243,19 @@ const TESTIMONIALS = [
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="mb-4 border border-primary/10 rounded-2xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+    <div className={`mb-4 border rounded-3xl overflow-hidden transition-all duration-500 ${isOpen ? 'bg-primary/5 border-primary/20 shadow-lg translate-y-[-4px]' : 'bg-white border-primary/5 shadow-sm hover:border-primary/20'}`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+        className="w-full flex justify-between items-center p-8 text-left focus:outline-none"
       >
-        <span className="font-serif text-lg text-clinic-text hover:text-primary transition-colors">{question}</span>
+        <span className={`font-serif text-xl transition-colors duration-300 ${isOpen ? 'text-primary' : 'text-clinic-text'}`}>{question}</span>
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          className="text-primary"
+          animate={{ rotate: isOpen ? 180 : 0, scale: isOpen ? 1.2 : 1 }}
+          className={isOpen ? 'text-primary' : 'text-primary/40'}
         >
-          <ArrowUp size={20} className={isOpen ? 'rotate-0' : 'rotate-180'} />
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-primary/10' : 'bg-transparent'}`}>
+            <ArrowUp size={20} className={isOpen ? 'rotate-0' : 'rotate-180'} />
+          </div>
         </motion.div>
       </button>
       <AnimatePresence>
@@ -264,7 +266,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 text-clinic-text/70 text-sm leading-relaxed border-t border-primary/5 pt-4">
+            <div className="px-8 pb-8 text-clinic-text/60 text-base leading-relaxed border-t border-primary/5 pt-6">
               {answer}
             </div>
           </motion.div>
@@ -792,7 +794,7 @@ export default function App() {
                   <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Clínica 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1590233648558-f3dcd9641470?q=80&w=800&auto=format&fit=crop" alt="Clínica 4" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1527275393276-681efed3c11b?q=80&w=800&auto=format&fit=crop" alt="Clínica Nano" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
               </div>
             </div>
@@ -958,63 +960,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Location / Map Section */}
-      <section id="localização" className="section-padding bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="section-subtitle">Onde Estamos</span>
-              <h2 className="section-title">Localização Privilegiada</h2>
-              <p className="text-clinic-text/70 mb-10 leading-relaxed">
-                Situada no coração do Itaim Bibi, nossa clínica oferece segurança, discrição e facilidade de acesso para proporcionar a melhor experiência desde a sua chegada.
-              </p>
-              
-              <div className="space-y-6 mb-10">
-                <div className="flex gap-4 p-6 bg-clinic-bg rounded-xl border border-clinic-border">
-                  <MapPin size={24} className="text-primary shrink-0" />
-                  <div>
-                    <h4 className="font-serif text-lg font-bold mb-1">Endereço</h4>
-                    <p className="text-sm text-clinic-text/60">{CLIENT_CONFIG.address}, {CLIENT_CONFIG.city}</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-6 bg-clinic-bg rounded-xl border border-clinic-border">
-                  <Clock size={24} className="text-primary shrink-0" />
-                  <div>
-                    <h4 className="font-serif text-lg font-bold mb-1">Horários</h4>
-                    <p className="text-sm text-clinic-text/60">Segunda a Sexta: 09h às 19h<br />Sábado: 09h às 13h</p>
-                  </div>
-                </div>
-              </div>
 
-              <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CLIENT_CONFIG.address)}`} target="_blank" rel="noopener noreferrer" className="btn-primary px-10 py-5 rounded-full inline-flex items-center gap-3">
-                Como Chegar <ArrowRight size={18} />
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
-            >
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.3314619726895!2d-46.685361!3d-23.592477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57426e255555%3A0x6a6d6d6d6d6d6d6d!2sAv.%20Brigadeiro%20Faria%20Lima%2C%201485%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-accent text-white pt-20 pb-10">
