@@ -351,43 +351,80 @@ export default function App() {
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white">
-      {/* Loading Screen */}
-      <AnimatePresence>
+      {/* Cinematic Loading Screen */}
+      <AnimatePresence mode="wait">
         {isLoading && (
           <motion.div
+            key="preloader"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center"
+            exit={{ 
+              y: '-100%',
+              transition: { duration: 1, ease: [0.76, 0, 0.24, 1] }
+            }}
+            className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center overflow-hidden"
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center gap-6"
-            >
-              <div className="relative">
-                <div className="w-40 h-40 flex items-center justify-center bg-primary/5 rounded-full">
-                  <span className="font-serif text-6xl text-primary tracking-tighter">D</span>
+            {/* Background Grain/Texture effect overlay */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+            
+            <div className="relative flex flex-col items-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className="mb-12"
+              >
+                <div className="relative group">
+                  <div className="w-48 h-48 border border-primary/10 rounded-full flex items-center justify-center bg-clinic-bg/50 backdrop-blur-sm shadow-inner overflow-hidden">
+                    <motion.div 
+                      animate={{ 
+                        rotate: [0, 360],
+                      }}
+                      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 border-t-2 border-primary/20 rounded-full"
+                    />
+                    <span className="font-serif text-8xl text-primary font-light tracking-tighter drop-shadow-sm">D</span>
+                  </div>
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.5, 0.2] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="absolute -inset-8 bg-primary/5 rounded-full blur-3xl"
+                  />
                 </div>
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                  className="absolute -inset-4 border border-primary/20 rounded-full"
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="text-center"
+              >
+                <h2 className="font-serif text-6xl text-clinic-text tracking-[0.3em] font-light mb-4">DUNO</h2>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="h-[1px] w-8 bg-primary/30" />
+                  <p className="text-primary text-[10px] uppercase tracking-[0.6em] font-sans font-bold">Estética Avançada</p>
+                  <div className="h-[1px] w-8 bg-primary/30" />
+                </div>
+              </motion.div>
+
+              {/* Progress Container */}
+              <div className="mt-16 w-64 h-[2px] bg-primary/5 relative overflow-hidden rounded-full">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 2.5, ease: "easeInOut" }}
+                  onAnimationComplete={() => setTimeout(() => setIsLoading(false), 500)}
+                  className="absolute inset-y-0 left-0 bg-primary shadow-[0_0_10px_rgba(219,39,119,0.5)]"
                 />
               </div>
-              <div className="text-center">
-                <h2 className="font-serif text-4xl text-clinic-text tracking-widest uppercase">DUNO</h2>
-                <p className="text-primary text-[10px] uppercase tracking-[0.4em] mt-2">Estética Avançada</p>
-              </div>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mt-8 font-serif text-xl text-primary tracking-widest uppercase italic"
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              className="absolute bottom-12 left-1/2 -translate-x-1/2 text-[9px] uppercase tracking-[0.5em] text-clinic-text font-sans font-medium"
             >
-              Realçando sua melhor versão...
-            </motion.p>
+              Elevando o conceito de beleza
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -428,13 +465,26 @@ export default function App() {
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center w-full">
           {/* Logo */}
-          <a href="#início" className="flex items-center gap-4 group shrink-0">
-            <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-all duration-300">
-              <span className="font-serif text-3xl text-primary font-bold">D</span>
+          <a href="#início" className="flex items-center gap-5 group shrink-0 relative">
+            <div className="relative">
+              <div className="w-14 h-14 border border-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 overflow-hidden">
+                <motion.div 
+                   whileHover={{ rotate: 180 }}
+                   className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-10 transition-opacity"
+                />
+                <span className="font-serif text-4xl text-primary group-hover:text-white font-light tracking-tighter transition-colors">D</span>
+              </div>
+              {/* Animated Ring */}
+              <div className="absolute -inset-1 border border-primary/5 rounded-full group-hover:border-primary/20 transition-all duration-500 group-hover:scale-110" />
             </div>
-            <span className="font-serif text-4xl font-bold tracking-tighter text-clinic-text group-hover:text-primary transition-colors">
-              DUNO
-            </span>
+            <div className="flex flex-col">
+              <span className="font-serif text-4xl font-light tracking-[0.2em] text-clinic-text group-hover:text-primary transition-colors">
+                DUNO
+              </span>
+              <span className="text-[8px] uppercase tracking-[0.4em] text-primary font-bold -mt-1 ml-1 opacity-60 group-hover:opacity-100 transition-all">
+                Estética Médica
+              </span>
+            </div>
           </a>
 
           {/* Desktop Nav */}
