@@ -38,6 +38,12 @@ import {
   Quote
 } from 'lucide-react';
 
+const WhatsAppIcon = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.558 0 11.893-5.335 11.896-11.892a11.824 11.824 0 00-3.481-8.412z" />
+  </svg>
+);
+
 // === CONFIGURAÇÕES DO CLIENTE (EDITÁVEL) ===
 const CLIENT_CONFIG = {
   name: "Duno",
@@ -64,14 +70,14 @@ const SERVICES = [
     title: "Preenchimento Labial",
     description: "Escultura labial para volume, contorno e hidratação profunda personalizada.",
     badge: "Destaque",
-    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 3,
     title: "Bioestimuladores",
     description: "Estímulo de colágeno para firmeza, elasticidade e rejuvenescimento da pele.",
     badge: "Premium",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 4,
@@ -85,112 +91,112 @@ const SERVICES = [
     title: "Laser Lavieen",
     description: "O famoso 'BB Laser' para textura de porcelana e brilho instantâneo.",
     badge: "Tecnologia",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 6,
     title: "Ultraformer III",
     description: "Lifting facial e corporal sem cortes através de ultrassom focado de alta intensidade.",
     badge: "Lifting",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 7,
     title: "Rinomodelação",
     description: "Correção estética do nariz com ácido hialurônico, sem necessidade de cirurgia plástica.",
     badge: "Perfil",
-    image: "https://images.unsplash.com/photo-1512290923403-091f1395943b?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 8,
     title: "Fios de Sustentação",
     description: "Efeito lifting imediato e bioestimulação com fios de PDO totalmente absorvíveis.",
     badge: "Master",
-    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 9,
     title: "Skinbooster",
     description: "Hidratação injetável profunda que devolve o viço, a maciez e a elasticidade à pele.",
     badge: "Glow",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 10,
     title: "Lipo de Papada",
     description: "Redução da gordura submentoniana através de enzimas especializadas e seguras.",
     badge: "Contorno",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 11,
     title: "Microagulhamento",
     description: "Indução de colágeno com drug delivery para tratar cicatrizes de acne e textura.",
     badge: "Renovação",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 12,
     title: "Tratamento de Melasma",
     description: "Protocolos clareadores avançados para controle de manchas e tom de pele uniforme.",
     badge: "Clareamento",
-    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 13,
     title: "Preenchimento de Olheiras",
     description: "Suavização do sulco lacrimal para um olhar descansado, jovem e revitalizado.",
     badge: "Olhar",
-    image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 14,
     title: "Peeling Químico",
     description: "Renovação celular controlada para tratar acne, manchas e sinais de envelhecimento.",
     badge: "Pele Nova",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 15,
     title: "Limpeza de Pele Fotônica",
     description: "Extração profunda aliada à fototerapia para desinflamação e assepsia da pele.",
     badge: "Saúde",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 16,
     title: "Protocolo Duno Glow",
     description: "Combinação exclusiva de ativos para luminosidade máxima e hidratação intensa.",
     badge: "Exclusivo",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 17,
     title: "Drenagem Linfática Duno",
     description: "Protocolo exclusivo para redução de inchaço e detox corporal com resultados imediatos.",
     badge: "Bem-estar",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 18,
     title: "Criolipólise de Contorno",
     description: "Tecnologia de resfriamento controlado para eliminação definitiva de gordura localizada.",
     badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   },
   {
     id: 19,
     title: "Radiofrequência Corporal",
     description: "Tratamento avançado para flacidez e melhora significativa da qualidade da pele.",
     badge: "Firmeza",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 20,
     title: "Peeling de Diamante",
     description: "Esfoliação física profunda para renovação imediata da textura e brilho cutâneo.",
     badge: "Renovação",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
+    image: "/images/harmonizacao.png"
   }
 ];
 
@@ -234,19 +240,6 @@ const TESTIMONIALS = [
 ];
 
 // === COMPONENTES AUXILIARES ===
-const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor"
-    className={className}
-  >
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.396.015 12.03a11.811 11.811 0 001.592 5.918L0 24l6.135-1.61a11.771 11.771 0 005.911 1.592h.004c6.632 0 12.032-5.396 12.035-12.03a11.805 11.805 0 00-3.534-8.512z"/>
-  </svg>
-);
-
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -344,34 +337,37 @@ export default function App() {
 
       {/* Navigation */}
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          {/* Logo Text Version */}
-          <a href="#início" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-              <span className="font-serif text-2xl text-primary font-bold">D</span>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center w-full">
+          {/* Logo */}
+          <a href="#início" className="flex items-center gap-4 group shrink-0">
+            <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-all duration-300">
+              <span className="font-serif text-3xl text-primary font-bold">D</span>
             </div>
-            <span className="font-serif text-3xl font-bold tracking-tighter text-clinic-text group-hover:text-primary transition-colors">
+            <span className="font-serif text-4xl font-bold tracking-tighter text-clinic-text group-hover:text-primary transition-colors">
               DUNO
             </span>
           </a>
 
-          <div className="hidden lg:flex items-center gap-14">
-            {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`} 
-                className="text-[11px] uppercase tracking-[0.25em] font-sans font-bold text-clinic-text/80 hover:text-primary transition-all duration-300"
-              >
-                {item}
-              </a>
-            ))}
-            <a href={whatsappUrl} className="btn-primary px-8 py-3 text-xs rounded-full flex items-center gap-2">
-              <WhatsAppIcon size={14} /> Agendar Agora
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center lg:gap-8 xl:gap-14">
+            <div className="flex items-center xl:gap-10 lg:gap-6">
+              {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase() === 'localização' ? 'localização' : item.toLowerCase()}`} 
+                  className="text-[11px] uppercase tracking-[0.2em] font-sans font-bold text-clinic-text/80 hover:text-primary transition-all duration-300 whitespace-nowrap"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+            <a href={whatsappUrl} className="btn-primary h-12 px-8 text-xs rounded-full flex items-center gap-3 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-0.5 whitespace-nowrap">
+              <WhatsAppIcon size={16} /> Agendar Agora
             </a>
           </div>
 
-          <button className="lg:hidden text-clinic-text" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <button className="lg:hidden text-clinic-text p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
       </nav>
@@ -413,7 +409,7 @@ export default function App() {
             className="w-full h-full object-cover brightness-[0.85]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
@@ -431,10 +427,10 @@ export default function App() {
               Protocolos exclusivos desenvolvidos pela {CLIENT_CONFIG.professional}, unindo 20 anos de experiência e as tecnologias mais avançadas do mundo.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mt-12 items-center sm:items-stretch">
-              <a href={whatsappUrl} className="btn-primary flex-1 min-w-[280px] rounded-full gap-3 shadow-xl">
+              <a href={whatsappUrl} className="btn-primary flex-1 min-w-[280px] rounded-full gap-3 shadow-2xl h-16 text-sm">
                 <WhatsAppIcon size={20} /> Agendar Avaliação <ArrowRight size={18} />
               </a>
-              <a href="#serviços" className="bg-white/80 backdrop-blur-sm border border-clinic-border px-10 py-5 rounded-full text-xs uppercase tracking-widest font-sans font-bold flex items-center justify-center hover:bg-white transition-all flex-1 min-w-[280px]">
+              <a href="#serviços" className="bg-white/90 backdrop-blur-sm border border-clinic-border px-10 h-16 rounded-full text-xs uppercase tracking-widest font-sans font-bold flex items-center justify-center hover:bg-white transition-all flex-1 min-w-[280px] shadow-lg">
                 Ver Procedimentos
               </a>
             </div>
