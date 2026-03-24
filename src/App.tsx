@@ -40,14 +40,14 @@ import {
 
 // === CONFIGURAÇÕES DO CLIENTE (EDITÁVEL) ===
 const CLIENT_CONFIG = {
-  name: "Dra. Aura Estética",
+  name: "Aura Estética",
   professional: "Dra. Beatriz Cavalcanti",
   specialty: "Especialista em Harmonização Facial & Bioestimuladores",
   experience: "20+ anos de experiência clínica",
-  whatsapp: "5511999999999",
+  whatsapp: "5511992876219",
   city: "São Paulo, SP",
   address: "Av. Brigadeiro Faria Lima, 1485 - Itaim Bibi",
-  about: "Com mais de duas décadas dedicadas à arte da estética médica, a Dra. Beatriz Cavalcanti combina ciência avançada e um olhar artístico para realçar a beleza natural de cada paciente. Nossa clínica é um refúgio de tranquilidade e tecnologia de ponta.",
+  about: "Com mais de duas décadas dedicadas à arte da estética médica, a Dra. Beatriz Cavalcanti trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente. Nossa clínica é um oásis de luxo, tecnologia e resultados de alta performance.",
 };
 
 // === SERVIÇOS ===
@@ -57,14 +57,14 @@ const SERVICES = [
     title: "Toxina Botulínica",
     description: "Suavização de rugas e linhas de expressão com resultados naturais e sofisticados.",
     badge: "Essencial",
-    image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 2,
     title: "Preenchimento Labial",
     description: "Escultura labial para volume, contorno e hidratação profunda personalizada.",
     badge: "Destaque",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop"
+    image: "/images/procedimento.png"
   },
   {
     id: 3,
@@ -250,20 +250,57 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   const { scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   const whatsappUrl = `https://wa.me/${CLIENT_CONFIG.whatsapp}?text=${encodeURIComponent("Olá! Gostaria de agendar uma avaliação.")}`;
 
   return (
     <div className="min-h-screen selection:bg-primary selection:text-white">
+      {/* Loading Screen */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <img src="/images/logo.png" alt="Logo Loading" className="w-32 h-32 object-contain" />
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-4 border-2 border-primary/20 border-t-primary rounded-full"
+              />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-8 font-serif text-xl text-primary tracking-widest uppercase italic"
+            >
+              Realçando sua melhor versão...
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
@@ -281,18 +318,32 @@ export default function App() {
         <WhatsAppIcon size={32} className="transition-transform group-hover:rotate-12" />
       </a>
 
+      {/* Back to Top */}
+      <AnimatePresence>
+        {isScrolled && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-28 right-8 z-[90] bg-white text-primary p-4 rounded-full shadow-lg border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
+            aria-label="Voltar ao topo"
+          >
+            <ArrowUp size={24} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       {/* Navigation */}
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-              <Sparkles size={20} />
-            </div>
+            <img src="/images/logo.png" alt="Logo Aura" className="w-12 h-12 object-contain" />
             <span className="font-serif text-2xl tracking-tighter text-clinic-text">{CLIENT_CONFIG.name}</span>
           </div>
 
           <div className="hidden lg:flex items-center gap-14">
-            {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'FAQ'].map((item) => (
+            {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
@@ -322,10 +373,10 @@ export default function App() {
             className="fixed inset-0 z-[70] bg-white pt-32 px-8 lg:hidden"
           >
             <div className="flex flex-col gap-10 text-center">
-              {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'FAQ'].map((item) => (
+              {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
                 <a 
                   key={item} 
-                  href={`#${item.toLowerCase()}`} 
+                  href={`#${item.toLowerCase() === 'localização' ? 'localização' : item.toLowerCase()}`} 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-2xl font-serif text-clinic-text tracking-tight hover:text-primary transition-colors"
                 >
@@ -344,12 +395,12 @@ export default function App() {
       <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1920&auto=format&fit=crop" 
+            src="/images/hero.png" 
             alt="Aura Estética Premium" 
-            className="w-full h-full object-cover brightness-[0.8]"
+            className="w-full h-full object-cover brightness-[0.85]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-clinic-bg/90 via-clinic-bg/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
@@ -389,7 +440,7 @@ export default function App() {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop" 
+                src="/images/doutora.png" 
                 alt={CLIENT_CONFIG.professional} 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -448,15 +499,24 @@ export default function App() {
             <h2 className="section-title">Nossos Protocolos</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.1 } }
+            }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {SERVICES.map((service, i) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ duration: 0.5 }}
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-clinic-border premium-card-hover hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(212,175,119,0.15)]"
               >
                 {/* Shine Effect Overlay */}
@@ -488,7 +548,7 @@ export default function App() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -602,12 +662,70 @@ export default function App() {
         </div>
       </section>
 
+      {/* Location / Map Section */}
+      <section id="localização" className="section-padding bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="section-subtitle">Onde Estamos</span>
+              <h2 className="section-title">Localização Privilegiada</h2>
+              <p className="text-clinic-text/70 mb-10 leading-relaxed">
+                Situada no coração do Itaim Bibi, nossa clínica oferece segurança, discrição e facilidade de acesso para proporcionar a melhor experiência desde a sua chegada.
+              </p>
+              
+              <div className="space-y-6 mb-10">
+                <div className="flex gap-4 p-6 bg-clinic-bg rounded-xl border border-clinic-border">
+                  <MapPin size={24} className="text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-serif text-lg font-bold mb-1">Endereço</h4>
+                    <p className="text-sm text-clinic-text/60">{CLIENT_CONFIG.address}, {CLIENT_CONFIG.city}</p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4 p-6 bg-clinic-bg rounded-xl border border-clinic-border">
+                  <Clock size={24} className="text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-serif text-lg font-bold mb-1">Horários</h4>
+                    <p className="text-sm text-clinic-text/60">Segunda a Sexta: 09h às 19h<br />Sábado: 09h às 13h</p>
+                  </div>
+                </div>
+              </div>
+
+              <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CLIENT_CONFIG.address)}`} target="_blank" rel="noopener noreferrer" className="btn-primary px-10 py-5 rounded-full inline-flex items-center gap-3">
+                Como Chegar <ArrowRight size={18} />
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+            >
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.3314619726895!2d-46.685361!3d-23.592477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57426e255555%3A0x6a6d6d6d6d6d6d6d!2sAv.%20Brigadeiro%20Faria%20Lima%2C%201485%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-accent text-white pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-serif text-2xl">A</div>
+              <img src="/images/logo.png" alt="Logo Aura Footer" className="w-16 h-16 object-contain" />
               <span className="font-serif text-3xl tracking-tighter">{CLIENT_CONFIG.name}</span>
             </div>
             <p className="text-white/40 max-w-md mb-8 leading-relaxed">
@@ -639,7 +757,7 @@ export default function App() {
               </li>
               <li className="flex gap-4">
                 <Phone size={20} className="text-primary shrink-0" />
-                <span>(11) 99999-9999</span>
+                <span>(11) 99287-6219</span>
               </li>
               <li className="flex gap-4">
                 <Clock size={20} className="text-primary shrink-0" />

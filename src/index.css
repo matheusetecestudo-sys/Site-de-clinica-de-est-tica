@@ -19,15 +19,33 @@
 
 :root {
   /* === PERSONALIZAÇÃO RÁPIDA DO CLIENTE === */
-  --primary-color: #D4AF77;     /* Dourado Luxo */
-  --secondary-color: #0F766E;   /* Verde-água Médico */
+  --primary-color: #DB2777;     /* Rosa Premium */
+  --secondary-color: #F472B6;   /* Rosa Médio */
   --accent-color: #1F2937;      /* Cinza Premium */
-  --bg-light: #F8F5F0;          /* Off-white */
+  --bg-light: #FDF2F8;          /* Rosa Claríssimo / Off-white Rosado */
   --text-dark: #1F2937;         /* Texto Escuro */
   
   /* Configurações de Negócio */
-  --whatsapp-number: "5511999999999";
+  --whatsapp-number: "5511992876219";
   --whatsapp-message: "Olá! Gostaria de agendar uma avaliação.";
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
 
 @layer base {
