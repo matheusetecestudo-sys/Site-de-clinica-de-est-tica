@@ -40,14 +40,15 @@ import {
 
 // === CONFIGURAÇÕES DO CLIENTE (EDITÁVEL) ===
 const CLIENT_CONFIG = {
-  name: "Aura Estética",
+  name: "Duno",
   professional: "Dra. Beatriz Cavalcanti",
   specialty: "Especialista em Harmonização Facial & Bioestimuladores",
   experience: "20+ anos de experiência clínica",
   whatsapp: "5511992876219",
   city: "São Paulo, SP",
-  address: "Av. Brigadeiro Faria Lima, 1485 - Itaim Bibi",
-  about: "Com mais de duas décadas dedicadas à arte da estética médica, a Dra. Beatriz Cavalcanti trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente. Nossa clínica é um oásis de luxo, tecnologia e resultados de alta performance.",
+  address: "Rua Joaquim Floriano, 72 - Itaim Bibi, São Paulo",
+  email: "contato@dunoestetica.com.br",
+  about: "Com mais de duas décadas dedicadas à arte da estética médica, a Duno Estética trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente. Nossa clínica é um oásis de luxo, tecnologia e resultados de alta performance.",
 };
 
 const SERVICES = [
@@ -158,14 +159,14 @@ const SERVICES = [
   },
   {
     id: 16,
-    title: "Protocolo Aura Glow",
+    title: "Protocolo Duno Glow",
     description: "Combinação exclusiva de ativos para luminosidade máxima e hidratação intensa.",
     badge: "Exclusivo",
     image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 17,
-    title: "Drenagem Linfática Aura",
+    title: "Drenagem Linfática Duno",
     description: "Protocolo exclusivo para redução de inchaço e detox corporal com resultados imediatos.",
     badge: "Bem-estar",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
@@ -226,8 +227,8 @@ const TESTIMONIALS = [
   {
     id: 3,
     name: "Carla Mendes",
-    text: "O protocolo Aura Glow mudou minha pele. Sinto meu rosto muito mais iluminado e hidratado. A clínica é linda e muito acolhedora.",
-    role: "Paciente de Protocolo Aura Glow",
+    text: "O protocolo Duno Glow mudou minha pele. Sinto meu rosto muito mais iluminado e hidratado. A clínica é linda e muito acolhedora.",
+    role: "Paciente de Protocolo Duno Glow",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
   }
 ];
@@ -280,14 +281,22 @@ export default function App() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative"
+              className="flex flex-col items-center gap-6"
             >
-              <img src="/images/logo.png" alt="Logo Loading" className="w-32 h-32 object-contain" />
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-4 border-2 border-primary/20 border-t-primary rounded-full"
-              />
+              <div className="relative">
+                <div className="w-40 h-40 flex items-center justify-center bg-primary/5 rounded-full">
+                  <span className="font-serif text-6xl text-primary tracking-tighter">D</span>
+                </div>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="absolute -inset-4 border border-primary/20 rounded-full"
+                />
+              </div>
+              <div className="text-center">
+                <h2 className="font-serif text-4xl text-clinic-text tracking-widest uppercase">DUNO</h2>
+                <p className="text-primary text-[10px] uppercase tracking-[0.4em] mt-2">Estética Avançada</p>
+              </div>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -336,10 +345,15 @@ export default function App() {
       {/* Navigation */}
       <nav className={`fixed w-full z-[80] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 shadow-[0_4px_20px_rgba(212,175,119,0.1)] border-b border-primary/20' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="Logo Aura" className="w-12 h-12 object-contain" />
-            <span className="font-serif text-2xl tracking-tighter text-clinic-text">{CLIENT_CONFIG.name}</span>
-          </div>
+          {/* Logo Text Version */}
+          <a href="#início" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+              <span className="font-serif text-2xl text-primary font-bold">D</span>
+            </div>
+            <span className="font-serif text-3xl font-bold tracking-tighter text-clinic-text group-hover:text-primary transition-colors">
+              DUNO
+            </span>
+          </a>
 
           <div className="hidden lg:flex items-center gap-14">
             {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
@@ -592,7 +606,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-subtitle">Transformações Reais</span>
-            <h2 className="section-title">Resultados Aura</h2>
+            <h2 className="section-title">Resultados Duno</h2>
             <p className="text-clinic-text/60 max-w-2xl mx-auto">Respeitando a ética médica, apresentamos resultados que priorizam a naturalidade e a saúde da pele.</p>
           </div>
 
@@ -760,11 +774,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-3 mb-8">
-              <img src="/images/logo.png" alt="Logo Aura Footer" className="w-16 h-16 object-contain" />
-              <span className="font-serif text-3xl tracking-tighter">{CLIENT_CONFIG.name}</span>
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary border border-primary/20">
+                <span className="font-serif text-2xl font-bold">D</span>
+              </div>
+              <span className="font-serif text-3xl tracking-tighter uppercase">{CLIENT_CONFIG.name}</span>
             </div>
             <p className="text-white/40 max-w-md mb-8 leading-relaxed">
-              Elevando o padrão da estética médica com ética, naturalidade e tecnologia. Mais de duas décadas transformando vidas através da beleza consciente.
+              Elevando o padrão da estética médica com ética, naturalidade e tecnologia. Mais de duas décadas transformando vidas através da beleza consciente na Duno Estética.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all"><Instagram size={18} /></a>
