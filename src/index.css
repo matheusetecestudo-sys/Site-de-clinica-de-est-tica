@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  /* Custom colors mapped to CSS variables for easy white-labeling */
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+  --color-clinic-bg: var(--bg-light);
+  --color-clinic-text: var(--text-dark);
+  --color-clinic-border: rgba(0, 0, 0, 0.1);
+  --color-whatsapp: #25D366;
+
+  --shadow-premium-inner: inset 0 0 40px rgba(212, 175, 119, 0.08);
+}
+
+:root {
+  /* === PERSONALIZAÇÃO RÁPIDA DO CLIENTE === */
+  --primary-color: #D4AF77;     /* Dourado Luxo */
+  --secondary-color: #0F766E;   /* Verde-água Médico */
+  --accent-color: #1F2937;      /* Cinza Premium */
+  --bg-light: #F8F5F0;          /* Off-white */
+  --text-dark: #1F2937;         /* Texto Escuro */
+  
+  /* Configurações de Negócio */
+  --whatsapp-number: "5511999999999";
+  --whatsapp-message: "Olá! Gostaria de agendar uma avaliação.";
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-clinic-bg text-clinic-text font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-sans tracking-widest uppercase transition-all duration-300 hover:bg-secondary hover:shadow-lg active:scale-95 disabled:opacity-50;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-serif mb-6 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-sm uppercase tracking-[0.3em] text-primary mb-4 block font-sans font-semibold;
+  }
+
+  .premium-card-hover {
+    @apply transition-all duration-500 ease-out relative;
+  }
+
+  .premium-card-hover::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 rounded-2xl pointer-events-none;
+    box-shadow: inset 0 0 20px rgba(212, 175, 119, 0.1);
+  }
+
+  .premium-card-hover:hover::after {
+    @apply opacity-100;
+  }
+
+  .premium-card-hover:hover {
+    @apply shadow-2xl;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), var(--shadow-premium-inner);
+  }
+}
+
+/* Animação de Pulso para o WhatsApp */
+@keyframes pulse-whatsapp {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s infinite;
+}
