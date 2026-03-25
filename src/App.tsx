@@ -56,7 +56,6 @@ const CLIENT_CONFIG = {
   email: "contato@dunoestetica.com.br",
   about: "Com mais de duas décadas dedicadas à arte da estética médica, a Duno Estética trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente. Nossa clínica é um oásis de luxo, tecnologia e resultados de alta performance.",
 };
-
 const SERVICES = [
   {
     id: 1,
@@ -82,9 +81,9 @@ const SERVICES = [
   {
     id: 4,
     title: "Harmonização de Glúteos Tech",
-    description: "Projeção e contorno corporal através de preenchedores de alta coesão e performance.",
+    description: "Projeção e melhora do contorno corporal através de preenchedores de alta coesão.",
     badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 5,
@@ -112,7 +111,7 @@ const SERVICES = [
     title: "Fios Nano-Lifting",
     description: "Bioestimulação imediata com fios absorvíveis de última geração para sustentação tecidual.",
     badge: "Master",
-    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1616391114022-7f7229090224?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 9,
@@ -152,23 +151,23 @@ const SERVICES = [
   {
     id: 14,
     title: "Peeling Nano-Encapsulado",
-    description: "Renovação celular controlada com ativos nano-encapsulados para máxima segurança e controle.",
+    description: "Renovação celular controlada com ativos nano-encapsulados para máxima segurança.",
     badge: "Pele Nova",
-    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 15,
     title: "Limpeza de Pele Inteligente",
     description: "Extração técnica aliada à tecnologia sônica para desinflamação e assepsia profunda.",
     badge: "Saúde",
-    image: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 16,
     title: "Duno Glow Nano-Boost",
     description: "Combinação exclusiva de nano-ativos para luminosidade e hidratação molecular imediata.",
     badge: "Exclusivo",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 17,
@@ -182,7 +181,7 @@ const SERVICES = [
     title: "Criolipólise Tech-Shape",
     description: "Tecnologia de resfriamento inteligente para eliminação estratégica de gordura focalizada.",
     badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1053bb44?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 19,
@@ -196,7 +195,7 @@ const SERVICES = [
     title: "Microdermoabrasão Nano",
     description: "Esfoliação física de alta precisão para renovação imediata da textura e brilho bio-celular.",
     badge: "Renovação",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
