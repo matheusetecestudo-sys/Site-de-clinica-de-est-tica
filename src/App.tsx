@@ -515,25 +515,38 @@ export default function App() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[70] bg-white pt-32 px-8 lg:hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[70] bg-white/95 backdrop-blur-2xl pt-32 px-8 lg:hidden flex flex-col items-center justify-center gap-12"
           >
-            <div className="flex flex-col gap-10 text-center">
-              {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item) => (
-                <a 
+            <div className="flex flex-col gap-10 text-center w-full max-w-xs mx-auto">
+              {['Início', 'Sobre', 'Serviços', 'Resultados', 'Depoimentos', 'Localização', 'FAQ'].map((item, i) => (
+                <motion.a 
                   key={item} 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i }}
                   href={`#${item.toLowerCase() === 'localização' ? 'localização' : item.toLowerCase()}`} 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-serif text-clinic-text tracking-tight hover:text-primary transition-colors"
+                  className="text-3xl font-serif text-clinic-text tracking-tight hover:text-primary transition-all duration-300 transform hover:scale-105 active:scale-95"
                 >
                   {item}
-                </a>
+                </motion.a>
               ))}
-              <a href={whatsappUrl} className="btn-primary py-4 rounded-full flex items-center justify-center gap-2">
-                <WhatsAppIcon size={18} /> Agendar Agora
-              </a>
+              <motion.a 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 }}
+                href={whatsappUrl} 
+                className="btn-primary py-6 text-sm rounded-full flex items-center justify-center gap-3 shadow-2xl hover:shadow-primary/20"
+              >
+                <WhatsAppIcon size={20} /> Agendar Agora
+              </motion.a>
+            </div>
+            <div className="mt-8 text-[8px] uppercase tracking-[0.3em] font-bold text-clinic-text/30">
+              Duno Estética Médica • Itaim Bibi
             </div>
           </motion.div>
         )}
@@ -560,7 +573,16 @@ export default function App() {
           >
             <span className="section-subtitle">Excelência em Estética Médica</span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] text-clinic-text">
-              Realçando sua <span className="italic text-primary">Beleza Natural</span> com Ciência.
+              Realçando sua <br />
+              <span className="relative inline-block italic text-primary overflow-hidden group">
+                Beleza Natural 
+                <motion.div 
+                   animate={{ left: ['-100%', '200%'] }}
+                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                   className="absolute top-0 w-20 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-30deg] pointer-events-none"
+                />
+              </span>
+              <br className="hidden md:block" /> com Ciência.
             </h1>
             <p className="text-lg text-clinic-text/70 mb-10 font-sans leading-relaxed max-w-lg">
               Protocolos exclusivos desenvolvidos pela {CLIENT_CONFIG.professional}, unindo 20 anos de experiência e as tecnologias mais avançadas do mundo.
