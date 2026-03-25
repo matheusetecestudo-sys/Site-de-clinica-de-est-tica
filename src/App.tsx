@@ -767,6 +767,8 @@ export default function App() {
                 style={{ perspective: 1000 }}
               >
                 <img 
+                  loading="lazy"
+                  decoding="async"
                   src={service.image} 
                   alt={service.title} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -836,18 +838,18 @@ export default function App() {
             >
               <div className="space-y-4">
                 <motion.div whileHover={{ scale: 1.05 }} className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </motion.div>
               </div>
               <div className="space-y-4 pt-8">
                 <motion.div whileHover={{ scale: 1.05 }} className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop" alt="Tecnologia de Ponta" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop" alt="Tecnologia de Ponta" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
-                  <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop" alt="Clínica Inteligente" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop" alt="Clínica Inteligente" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </motion.div>
               </div>
             </motion.div>
@@ -888,12 +890,12 @@ export default function App() {
               >
                 <div className="grid grid-cols-2 gap-1">
                   <div className="relative">
-                    <img src={result.before} alt="Antes" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={result.before} alt="Antes" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                     <span className="absolute bottom-4 left-4 bg-black/50 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest backdrop-blur-sm">Antes</span>
                   </div>
                   <div className="relative">
-                    <img src={result.after} alt="Depois" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    <span className="absolute bottom-4 right-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Depois</span>
+                    <img loading="lazy" decoding="async" src={result.after} alt="Depois" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <span className="absolute bottom-4 right-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-md">Depois</span>
                   </div>
                 </div>
               </div>
