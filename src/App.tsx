@@ -734,44 +734,52 @@ export default function App() {
             variants={{
               visible: { transition: { staggerChildren: 0.1 } }
             }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {SERVICES.map((service, i) => (
               <motion.div
                 key={service.id}
                 variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
+                  hidden: { opacity: 0, scale: 0.95 },
+                  visible: { opacity: 1, scale: 1 }
                 }}
-                whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.5 }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-clinic-border premium-card-hover hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(212,175,119,0.15)] flex flex-col h-full"
+                className={`group relative rounded-[2rem] overflow-hidden shadow-lg h-[400px] cursor-pointer ${
+                  i % 5 === 0 ? "lg:col-span-2" : "col-span-1"
+                }`}
               >
-                {/* Shine Effect Overlay */}
-                <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
-                  <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] transition-all duration-1000 group-hover:left-[150%]" />
-                </div>
-
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                    {service.badge}
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Overlay Degradê Sombrio e Elegante (Dark Navy Fade) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080d19] via-[#080d19]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                  <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
+                    <span className="inline-block bg-[#2563eb] text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 shadow-md">
+                      {service.badge}
+                    </span>
+                    <h3 className="text-3xl md:text-4xl font-serif text-white mb-2 leading-tight drop-shadow-lg">
+                      {service.title}
+                    </h3>
                   </div>
-                </div>
-                <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-serif text-clinic-text group-hover:text-primary transition-colors mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-clinic-text/60 mb-6 leading-relaxed flex-1">{service.description}</p>
-                  <div className="mt-auto pt-6 border-t border-primary/5">
-                    <a href={whatsappUrl} className="btn-primary w-full h-11 text-[10px] rounded-xl flex items-center gap-2 group/link tracking-[0.2em]">
-                      Agendar Agora <ChevronRight size={14} className="transition-transform group-hover/link:translate-x-1" />
-                    </a>
+                  
+                  {/* Descrição e Link escondidos que surgem no hover */}
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+                    <div className="overflow-hidden">
+                      <div className="pt-2">
+                        <p className="text-sm text-white/80 mb-5 leading-relaxed font-sans font-light max-w-sm">
+                          {service.description}
+                        </p>
+                        <a href={whatsappUrl} className="inline-flex items-center gap-2 text-[10px] text-[#60a5fa] hover:text-white transition-colors uppercase font-bold tracking-[0.2em]">
+                          Agendar Consulta <ArrowRight size={14} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
