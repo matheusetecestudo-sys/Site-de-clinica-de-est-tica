@@ -722,10 +722,29 @@ export default function App() {
       {/* Services Section with Rewards */}
       <section id="serviços" className="section-padding bg-clinic-bg">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="section-subtitle">Tratamentos Exclusivos</span>
-            <h2 className="section-title">Nossos Protocolos</h2>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20 flex flex-col items-center"
+          >
+            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold bg-primary/5 mb-6 shadow-sm backdrop-blur-sm">
+              <Sparkles size={14} className="text-primary" /> Tratamentos Exclusivos <Sparkles size={14} className="text-primary" />
+            </span>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-[1.1] text-clinic-text max-w-3xl text-balance">
+              Nossos <span className="italic text-primary relative inline-block">
+                Protocolos
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                </svg>
+              </span>
+            </h2>
+            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mt-10" />
+            <p className="mt-8 text-clinic-text/60 max-w-2xl text-sm leading-relaxed font-sans font-medium">
+              A união perfeita entre ciência, tecnologia nanotecnológica e arte em estética avançada, proporcionando resultados incomparáveis e naturais.
+            </p>
+          </motion.div>
 
           <motion.div 
             initial="hidden"
