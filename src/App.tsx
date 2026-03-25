@@ -896,11 +896,6 @@ export default function App() {
                     <span className="absolute bottom-4 right-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Depois</span>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                  <a href={whatsappUrl} className="bg-white text-primary px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl flex items-center gap-2">
-                    <WhatsAppIcon size={14} /> Quero este resultado
-                  </a>
-                </div>
               </div>
             ))}
           </div>
