@@ -554,16 +554,14 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-pink-50 via-white to-slate-100">
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-pink-100 via-rose-50 to-slate-200">
           <img 
-            src="https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=1920&auto=format&fit=crop&crop=center"
-            alt="Duno Estética — Medicina Estética de Alta Performance" 
-            className="w-full h-full object-cover object-top brightness-[0.70] contrast-[1.1] scale-105"
-            referrerPolicy="no-referrer"
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=90&auto=format&fit=crop"
+            alt="Duno Estética — Ambiente Premium de Medicina Estética" 
+            className="w-full h-full object-cover object-center brightness-[0.60] contrast-[1.1] scale-105"
           />
-          {/* Gradiente: branco à esquerda para texto legível + profundidade */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
