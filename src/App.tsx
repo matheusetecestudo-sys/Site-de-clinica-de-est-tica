@@ -69,7 +69,7 @@ const SERVICES = [
     title: "Preenchimento Facial Molecular",
     description: "Restauração de volume e contorno com polímeros de alta biocompatibilidade e pureza.",
     badge: "Molecular",
-    image: "https://images.unsplash.com/photo-1512290923403-0ad3396e6d56?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -104,7 +104,7 @@ const SERVICES = [
     title: "Rinomodelação Nano-Struct",
     description: "Refinamento do perfil nasal com preenchedores de alta estabilidade e precisão técnica.",
     badge: "Perfil",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1511116231362-e64fcb95dc6c?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 8,
@@ -755,31 +755,25 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
                 
-                {/* Overlay Degradê Sombrio e Elegante (Dark Navy Fade) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080d19] via-[#080d19]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Overlay Neutro Escuro (Garante Máximo Contraste com Branco) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-black/20 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                  <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
-                    <span className="inline-block bg-[#2563eb] text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 shadow-md">
-                      {service.badge}
-                    </span>
-                    <h3 className="text-3xl md:text-4xl font-serif text-white mb-2 leading-tight drop-shadow-lg">
+                  <span className="self-start bg-primary text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg mb-5">
+                    {service.badge}
+                  </span>
+                  
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-serif text-white mb-3 drop-shadow-xl leading-tight">
                       {service.title}
                     </h3>
-                  </div>
-                  
-                  {/* Descrição e Link escondidos que surgem no hover */}
-                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
-                    <div className="overflow-hidden">
-                      <div className="pt-2">
-                        <p className="text-sm text-white/80 mb-5 leading-relaxed font-sans font-light max-w-sm">
-                          {service.description}
-                        </p>
-                        <a href={whatsappUrl} className="inline-flex items-center gap-2 text-[10px] text-[#60a5fa] hover:text-white transition-colors uppercase font-bold tracking-[0.2em]">
-                          Agendar Consulta <ArrowRight size={14} />
-                        </a>
-                      </div>
-                    </div>
+                    
+                    <p className="text-sm text-white/95 mb-6 leading-relaxed font-sans font-light max-w-sm drop-shadow-md">
+                      {service.description}
+                    </p>
+                    <a href={whatsappUrl} className="inline-flex items-center gap-2 text-[10px] text-white hover:text-primary transition-colors uppercase font-bold tracking-[0.2em] border-b border-primary/30 pb-1">
+                      Agendar Consulta <ArrowRight size={14} />
+                    </a>
                   </div>
                 </div>
               </motion.div>
