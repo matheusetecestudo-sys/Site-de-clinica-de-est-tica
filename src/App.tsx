@@ -60,141 +60,141 @@ const CLIENT_CONFIG = {
 const SERVICES = [
   {
     id: 1,
-    title: "Toxina Botulínica",
-    description: "Suavização de rugas e linhas de expressão com resultados naturais e sofisticados.",
-    badge: "Essencial",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    title: "Toxina Botulínica Nano-Precision",
+    description: "Protocolo de precisão molecular para suavizar linhas preservando a naturalidade facial.",
+    badge: "Nanotech",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 2,
-    title: "Preenchimento Labial",
-    description: "Escultura labial para volume, contorno e hidratação profunda personalizada.",
-    badge: "Destaque",
-    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
+    title: "Preenchimento Facial Molecular",
+    description: "Restauração de volume e contorno com polímeros de alta biocompatibilidade e pureza.",
+    badge: "Molecular",
+    image: "https://images.unsplash.com/photo-1512290923403-0ad3396e6d56?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
-    title: "Bioestimuladores",
-    description: "Estímulo de colágeno para firmeza, elasticidade e rejuvenescimento da pele.",
-    badge: "Premium",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
+    title: "Bioestimuladores Scult Nano",
+    description: "Tratamento de flacidez profunda com tecnologia que reprograma a síntese de colágeno.",
+    badge: "Firmeza",
+    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 4,
-    title: "Harmonização Facial",
-    description: "Análise estética global para equilibrar e realçar seus traços mais belos.",
-    badge: "Elite",
+    title: "Harmonização de Glúteos Tech",
+    description: "Projeção e contorno corporal através de preenchedores de alta coesão e performance.",
+    badge: "Corpo",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 5,
-    title: "Laser Lavieen",
-    description: "O famoso 'BB Laser' para textura de porcelana e brilho instantâneo.",
+    title: "Ultraformer III Dual-Plane",
+    description: "Ultrassom micro e macrofocado para lifting facial e corporal em múltiplas camadas.",
     badge: "Tecnologia",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 6,
-    title: "Ultraformer III",
-    description: "Lifting facial e corporal sem cortes através de ultrassom focado de alta intensidade.",
-    badge: "Lifting",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"
+    title: "Lavieen Nano-Thulium",
+    description: "Laser de thulium fracionado para renovação da superfície cutânea com brilho instantâneo.",
+    badge: "BB Laser",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1053bb44?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 7,
-    title: "Rinomodelação",
-    description: "Correção estética do nariz com ácido hialurônico, sem necessidade de cirurgia plástica.",
+    title: "Rinomodelação Nano-Struct",
+    description: "Refinamento do perfil nasal com preenchedores de alta estabilidade e precisão técnica.",
     badge: "Perfil",
     image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 8,
-    title: "Fios de Sustentação",
-    description: "Efeito lifting imediato e bioestimulação com fios de PDO totalmente absorvíveis.",
+    title: "Fios Nano-Lifting",
+    description: "Bioestimulação imediata com fios absorvíveis de última geração para sustentação tecidual.",
     badge: "Master",
     image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 9,
-    title: "Skinbooster",
-    description: "Hidratação injetável profunda que devolve o viço, a maciez e a elasticidade à pele.",
+    title: "Hydra-Nano Booster",
+    description: "Injeção de ativos hidrofílicos em escala nanométrica para restauração do equilíbrio hídrico.",
     badge: "Glow",
     image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 10,
-    title: "Lipo de Papada",
-    description: "Redução da gordura submentoniana através de enzimas especializadas e seguras.",
+    title: "Lipo de Papada Enzimática",
+    description: "Dissolução seletiva de tecido adiposo submentoniano com ativos lipolíticos de alta pureza.",
     badge: "Contorno",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1583417651239-93049b4c065f?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 11,
-    title: "Microagulhamento",
-    description: "Indução de colágeno com drug delivery para tratar cicatrizes de acne e textura.",
+    title: "Indução de Colágeno Fotônica",
+    description: "Microagulhamento de alta precisão associado a terapia de luz para regeneração acelerada.",
     badge: "Renovação",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 12,
-    title: "Tratamento de Melasma",
-    description: "Protocolos clareadores avançados para controle de manchas e tom de pele uniforme.",
+    title: "Protocolo Melasma Bio-Control",
+    description: "Gerenciamento avançado de hiperpigmentação com bloqueadores enzimáticos nanométricos.",
     badge: "Clareamento",
     image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 13,
-    title: "Preenchimento de Olheiras",
-    description: "Suavização do sulco lacrimal para um olhar descansado, jovem e revitalizado.",
+    title: "Revitalização de Olheiras Tech",
+    description: "Correção de sulcos e pigmentação orbital com ativos regeneradores de alta permeação.",
     badge: "Olhar",
     image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 14,
-    title: "Peeling Químico",
-    description: "Renovação celular controlada para tratar acne, manchas e sinais de envelhecimento.",
+    title: "Peeling Nano-Encapsulado",
+    description: "Renovação celular controlada com ativos nano-encapsulados para máxima segurança e controle.",
     badge: "Pele Nova",
     image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 15,
-    title: "Limpeza de Pele Fotônica",
-    description: "Extração profunda aliada à fototerapia para desinflamação e assepsia da pele.",
+    title: "Limpeza de Pele Inteligente",
+    description: "Extração técnica aliada à tecnologia sônica para desinflamação e assepsia profunda.",
     badge: "Saúde",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 16,
-    title: "Protocolo Duno Glow",
-    description: "Combinação exclusiva de ativos para luminosidade máxima e hidratação intensa.",
+    title: "Duno Glow Nano-Boost",
+    description: "Combinação exclusiva de nano-ativos para luminosidade e hidratação molecular imediata.",
     badge: "Exclusivo",
     image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 17,
-    title: "Drenagem Linfática Duno",
-    description: "Protocolo exclusivo para redução de inchaço e detox corporal com resultados imediatos.",
+    title: "Body Tech Sculpture",
+    description: "Protocolo de contorno corporal que une drenagem técnica e ativos liporredutores celulares.",
     badge: "Bem-estar",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 18,
-    title: "Criolipólise de Contorno",
-    description: "Tecnologia de resfriamento controlado para eliminação definitiva de gordura localizada.",
+    title: "Criolipólise Tech-Shape",
+    description: "Tecnologia de resfriamento inteligente para eliminação estratégica de gordura focalizada.",
     badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1053bb44?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 19,
-    title: "Radiofrequência Corporal",
-    description: "Tratamento avançado para flacidez e melhora significativa da qualidade da pele.",
+    title: "Remodelamento Nano-Body",
+    description: "Tratamento para flacidez com tecnologia que reconstrói as redes de colágeno e elastina.",
     badge: "Firmeza",
     image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 20,
-    title: "Peeling de Diamante",
-    description: "Esfoliação física profunda para renovação imediata da textura e brilho cutâneo.",
+    title: "Microdermoabrasão Nano",
+    description: "Esfoliação física de alta precisão para renovação imediata da textura e brilho bio-celular.",
     badge: "Renovação",
     image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop"
   }
@@ -204,13 +204,13 @@ const SERVICES = [
 const RESULTS = [
   {
     before: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop",
-    after: "/images/harmonizacao.png",
-    title: "Harmonização Facial"
+    after: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    title: "Harmonização de Alta Precisão"
   },
   {
-    before: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop",
-    after: "/images/procedimento.png",
-    title: "Protocolo Renovare"
+    before: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop",
+    after: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    title: "Protocolo Regenera Nano"
   }
 ];
 
@@ -219,23 +219,23 @@ const TESTIMONIALS = [
   {
     id: 1,
     name: "Mariana Silva",
-    text: "A Dra. Beatriz é incrível! O resultado da minha harmonização ficou super natural, exatamente como eu queria. Recomendo de olhos fechados.",
-    role: "Paciente de Harmonização",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+    text: "A tecnologia Nano da Duno é revolucionária. Fiz a harmonização e o resultado de lifting imediato foi surpreendente.",
+    role: "Paciente Premium",
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&auto=format&fit=crop"
   },
   {
     id: 2,
     name: "Ricardo Oliveira",
-    text: "Excelente atendimento e tecnologia de ponta. Fiz o Ultraformer III e os resultados foram surpreendentes. Equipe muito atenciosa.",
-    role: "Paciente de Ultraformer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+    text: "Equipamentos de ponta e uma equipe que realmente entende de ciência estética. O melhor do Itaim Bibi.",
+    role: "Paciente Tech-Shape",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
   },
   {
     id: 3,
     name: "Carla Mendes",
-    text: "O protocolo Duno Glow mudou minha pele. Sinto meu rosto muito mais iluminado e hidratado. A clínica é linda e muito acolhedora.",
-    role: "Paciente de Protocolo Duno Glow",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+    text: "O protocolo Nano-Boost mudou minha percepção sobre skincare profissional. Pele iluminada e regenerada.",
+    role: "Paciente Duno Glow",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
   }
 ];
 
@@ -544,12 +544,12 @@ export default function App() {
       <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero.png" 
-            alt="Aura Estética Premium" 
-            className="w-full h-full object-cover brightness-[0.85]"
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop" 
+            alt="Duno Estética Nanotecnologia" 
+            className="w-full h-full object-cover brightness-[0.7] contrast-[1.1]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent md:via-white/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent md:via-white/60" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
