@@ -591,9 +591,6 @@ export default function App() {
               <a href={whatsappUrl} className="btn-primary flex-1 min-w-[280px] rounded-full gap-3 shadow-2xl h-16 text-sm">
                 <WhatsAppIcon size={20} /> Agendar Avaliação <ArrowRight size={18} />
               </a>
-              <a href="#serviços" className="bg-white/90 backdrop-blur-sm border border-clinic-border px-10 h-16 rounded-full text-xs uppercase tracking-widest font-sans font-bold flex items-center justify-center hover:bg-white transition-all flex-1 min-w-[280px] shadow-lg">
-                Ver Procedimentos
-              </a>
             </div>
           </motion.div>
         </div>
@@ -1093,7 +1090,6 @@ export default function App() {
       </footer>
 
       <CookieBanner />
-      <MobileStickyCTA whatsappUrl={whatsappUrl} />
     </div>
   );
 }
