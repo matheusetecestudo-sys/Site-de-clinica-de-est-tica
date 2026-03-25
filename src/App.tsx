@@ -556,12 +556,15 @@ export default function App() {
       <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop" 
-            alt="Duno Estética Nanotecnologia Avançada" 
-            className="w-full h-full object-cover brightness-[0.75] contrast-[1.1] scale-105"
+            src="https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=1920&auto=format&fit=crop"
+            alt="Duno Estética — Medicina Estética de Alta Performance" 
+            className="w-full h-full object-cover object-center brightness-[0.65] contrast-[1.15] scale-105"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60" />
+          {/* Gradient mais dramático: esquerda branca para texto + escurecimento geral */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
