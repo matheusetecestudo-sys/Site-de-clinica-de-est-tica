@@ -740,13 +740,15 @@ export default function App() {
               <motion.div
                 key={service.id}
                 variants={{
-                  hidden: { opacity: 0, scale: 0.95 },
-                  visible: { opacity: 1, scale: 1 }
+                  hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: 10 },
+                  visible: { opacity: 1, y: 0, scale: 1, rotateX: 0 }
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.7, type: "spring", stiffness: 100, damping: 15 }}
+                whileHover={{ y: -15, scale: 1.03, zIndex: 10 }}
                 className={`group relative rounded-[2rem] overflow-hidden shadow-lg h-[400px] cursor-pointer ${
                   i % 5 === 0 ? "lg:col-span-2" : "col-span-1"
                 }`}
+                style={{ perspective: 1000 }}
               >
                 <img 
                   src={service.image} 
@@ -783,10 +785,19 @@ export default function App() {
       </section>
 
       {/* Ambience Gallery Section */}
-      <section className="section-padding bg-white overflow-hidden">
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+        }}
+        className="section-padding bg-white overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <div>
+            <motion.div variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } }}>
               <span className="section-subtitle">Oásis de Bem-estar</span>
               <h2 className="section-title">Um Ambiente Planejado para sua Experiência</h2>
               <p className="text-lg text-clinic-text/60 max-w-lg leading-relaxed mb-8">
@@ -803,40 +814,62 @@ export default function App() {
                 <span className="text-sm font-sans font-medium text-clinic-text/80">Aprovada por pacientes de elite</span>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } }}
+              className="grid grid-cols-2 gap-4"
+            >
               <div className="space-y-4">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
+                <motion.div whileHover={{ scale: 1.05 }} className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
                   <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
                   <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Ambiente Duno 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
+                </motion.div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+                <motion.div whileHover={{ scale: 1.05 }} className="aspect-square rounded-2xl overflow-hidden shadow-lg group">
                   <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop" alt="Tecnologia de Ponta" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group">
                   <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop" alt="Clínica Inteligente" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Results / Before & After Slider Placeholder */}
-      <section id="resultados" className="section-padding bg-white">
+      <motion.section 
+        id="resultados" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="section-padding bg-white"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="text-center mb-16">
             <span className="section-subtitle">Transformações Reais</span>
             <h2 className="section-title">Resultados Duno</h2>
             <p className="text-clinic-text/60 max-w-2xl mx-auto">Respeitando a ética médica, apresentamos resultados que priorizam a naturalidade e a saúde da pele.</p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {RESULTS.map((result, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl shadow-lg premium-card-hover">
+              <motion.div 
+                key={i} 
+                variants={{
+                  hidden: { opacity: 0, scale: 0.9, y: 50 },
+                  visible: { opacity: 1, scale: 1, y: 0 }
+                }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+                className="group relative overflow-hidden rounded-2xl shadow-lg premium-card-hover"
+              >
                 <div className="grid grid-cols-2 gap-1">
                   <div className="relative">
                     <img src={result.before} alt="Antes" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -847,7 +880,7 @@ export default function App() {
                     <span className="absolute bottom-4 right-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Depois</span>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                   <a href={whatsappUrl} className="bg-white text-primary px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl flex items-center gap-2">
                     <WhatsAppIcon size={14} /> Quero este resultado
                   </a>
