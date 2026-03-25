@@ -831,7 +831,7 @@ export default function App() {
                 </div>
                 <span className="text-sm font-sans font-medium text-clinic-text/80">Aprovada por pacientes de elite</span>
               </div>
-            </div>
+            </motion.div>
             <motion.div 
               variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } }}
               className="grid grid-cols-2 gap-4"
@@ -898,11 +898,11 @@ export default function App() {
                     <span className="absolute bottom-4 right-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-md">Depois</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
       <section id="depoimentos" className="section-padding bg-white overflow-hidden">
