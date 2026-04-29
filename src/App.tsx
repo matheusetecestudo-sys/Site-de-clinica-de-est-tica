@@ -17,8 +17,26 @@ import {
   Instagram,
   Facebook,
   Plus,
-  Minus
+  Minus,
+  Target,
+  Activity,
+  Smile,
+  Stars,
+  Zap
 } from 'lucide-react';
+
+// === CONFIGURAÇÕES DO CLIENTE ===
+const CLIENT_CONFIG = {
+  name: "Duno",
+  professional: "Dra. Beatriz Cavalcanti",
+  specialty: "Especialista em Harmonização Facial & Bioestimuladores",
+  experience: "20+ anos de experiência clínica",
+  whatsapp: "5511992876219",
+  city: "São Paulo, SP",
+  address: "Rua Joaquim Floriano, 72 - Itaim Bibi, São Paulo",
+  email: "contato@dunoestetica.com.br",
+  about: "Com mais de duas décadas dedicadas à arte da estética médica, a Duno Estética trabalha unindo ciência avançada a um olhar artístico apurado para realçar a beleza única de cada paciente.",
+};
 
 const WhatsAppIcon = ({ size = 20, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -100,6 +118,88 @@ const FAQS = [
   { q: "Qual a diferença entre preenchimento e Botox?", a: "O Botox relaxa a musculatura para evitar rugas de expressão. O preenchimento devolve volume e contorno usando ácido hialurônico." },
   { q: "Como funciona a primeira consulta?", a: "É um momento de escuta ativa. Avaliamos sua pele, estrutura óssea e expectativas, e desenhamos um plano de tratamento exclusivo para você." }
 ];
+
+const RESULTS = [
+  {
+    before: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop",
+    after: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    title: "Harmonização de Alta Precisão"
+  },
+  {
+    before: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop",
+    after: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    title: "Protocolo Regenera Nano"
+  }
+];
+
+const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Mariana Silva",
+    text: "A tecnologia da Duno é revolucionária. Fiz a harmonização e o resultado de lifting imediato foi surpreendente.",
+    role: "Paciente Premium",
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    name: "Ricardo Oliveira",
+    text: "Equipamentos de ponta e uma equipe que realmente entende de ciência estética. O melhor do Itaim Bibi.",
+    role: "Paciente Elite",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    id: 3,
+    name: "Carla Mendes",
+    text: "O protocolo mudou minha percepção sobre skincare profissional. Pele iluminada e regenerada com muita naturalidade.",
+    role: "Paciente Duno",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+  }
+];
+
+const CookieBanner = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      const timer = setTimeout(() => setIsVisible(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const accept = () => {
+    localStorage.setItem('cookie-consent', 'true');
+    setIsVisible(false);
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          className="fixed bottom-6 left-6 right-6 md:left-auto md:right-12 md:max-w-md z-[100] bg-white p-6 rounded-sm shadow-2xl border border-divider"
+        >
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3 text-primary">
+              <ShieldCheck size={24} />
+              <span className="font-serif text-lg font-bold">Privacidade & Cookies</span>
+            </div>
+            <p className="text-xs text-text-support leading-relaxed font-body">
+              Utilizamos cookies para melhorar sua experiência e oferecer conteúdos personalizados de acordo com a nossa Política de Privacidade. Ao continuar, você concorda com estas condições.
+            </p>
+            <div className="flex gap-4">
+              <button onClick={accept} className="w-full bg-primary text-white text-[10px] uppercase tracking-widest font-bold py-3 hover:bg-black transition-all">
+                Aceitar e Continuar
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
