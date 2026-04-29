@@ -213,39 +213,42 @@ export default function App() {
       </AnimatePresence>
 
       {/* [SEÇÃO 01 — HERO] */}
-      <section className="relative min-h-[100dvh] flex flex-col md:flex-row bg-black">
+      <section className="relative min-h-[100dvh] flex flex-col bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/banner01 (3).png" alt="Clínica" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
+          <img src="/images/banner01 (3).png" alt="Clínica" className="w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative z-10 w-full flex flex-col md:flex-row h-full min-h-[100dvh] px-[clamp(24px,5vw,7vw)]">
-          <div className="w-full md:w-[55%] flex flex-col justify-center pt-[22vh] pb-20 md:pb-0">
-            <span className="font-sans uppercase text-gold text-[10px] tracking-[0.22em] mb-4">CLÍNICA DE ESTÉTICA AVANÇADA — SÃO PAULO</span>
-            <h1 className="font-display font-bold text-white text-[clamp(44px,6vw,80px)] leading-[1.0] mb-2">
-              Beleza que
-            </h1>
-            <h1 className="font-display italic text-rose text-[clamp(44px,6vw,80px)] leading-[1.0]">
-              Impõe Respeito
-            </h1>
-            <div className="line-decorative my-[28px]"></div>
-            <p className="font-sans text-white/70 text-[18px] leading-[1.65] max-w-[440px]">
-              Procedimentos de alta performance com resultado natural. Por Dra. Beatriz Cavalcanti.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto">
-              <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center">AGENDAR CONSULTA</a>
-              <a href="#tratamentos" className="btn-secondary border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-center">VER TRATAMENTOS</a>
-            </div>
-            
-            <div className="mt-14 flex items-center gap-3">
-              <StarIcon className="text-gold" />
-              <span className="font-sans text-[12px] uppercase text-gold tracking-[0.14em]">4.9 · +500 pacientes atendidas</span>
-            </div>
-          </div>
-          
-          <div className="w-full md:w-[45%] h-[50vh] md:h-screen flex items-end justify-center relative">
-             <img src="/images/doutora.png" alt="Dra. Beatriz Cavalcanti" className="h-[90%] md:h-[85%] w-auto object-contain object-bottom grayscale brightness-[1.1] contrast-[1.1]" style={{ filter: "drop-shadow(0 0 40px rgba(0,0,0,0.5))" }} />
-             <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(15,15,15,0.8)] pointer-events-none" />
+        <div className="relative z-10 w-full flex-1 flex flex-col justify-center px-[clamp(24px,5vw,7vw)] pt-[100px]">
+          <div className="max-w-[700px]">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <span className="font-sans uppercase text-gold text-[10px] tracking-[0.22em] mb-6 block">CLÍNICA DE ESTÉTICA AVANÇADA — SÃO PAULO</span>
+              <h1 className="font-display font-bold text-white text-[clamp(48px,7vw,90px)] leading-[1.0] mb-2">
+                Beleza que <br />
+                <span className="font-display italic text-rose">Impõe Respeito</span>
+              </h1>
+              <div className="line-decorative my-[32px] w-[60px] h-[2px]"></div>
+              <p className="font-sans text-white/80 text-[18px] md:text-[20px] leading-[1.65] max-w-[500px]">
+                Procedimentos de alta performance com resultado natural. Por Dra. Beatriz Cavalcanti.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 mt-12 w-full sm:w-auto">
+                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center px-[40px]">AGENDAR CONSULTA</a>
+                <a href="#tratamentos" className="btn-secondary border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-center px-[40px]">VER TRATAMENTOS</a>
+              </div>
+              
+              <div className="mt-16 flex items-center gap-4">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => <StarIcon key={i} className="text-gold" size={16} />)}
+                </div>
+                <span className="font-sans text-[11px] md:text-[12px] uppercase text-gold tracking-[0.14em]">4.9 · +500 pacientes atendidas</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
