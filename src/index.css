@@ -50,11 +50,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-rose text-white font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[15px] px-[48px] transition-all duration-250 ease-in-out hover:bg-[#8E2E43] inline-flex items-center justify-center;
+    @apply bg-rose text-white font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[15px] px-[48px] transition-all duration-[250ms] ease-in-out hover:bg-[#8E2E43] inline-flex items-center justify-center gap-2;
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-black text-black font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[14px] px-[46px] transition-all duration-250 ease-in-out hover:bg-black hover:text-white inline-flex items-center justify-center;
+    @apply bg-transparent border border-rose text-rose font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[14px] px-[46px] transition-all duration-[250ms] ease-in-out hover:bg-rose hover:text-white inline-flex items-center justify-center gap-2;
   }
   
   .section-padding {

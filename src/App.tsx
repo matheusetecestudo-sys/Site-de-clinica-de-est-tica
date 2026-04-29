@@ -366,7 +366,8 @@ export default function App() {
           <div className="text-center mb-[80px]">
             <span className="text-label text-gold mb-4">POR QUE NOS ESCOLHER</span>
             <h2 className="font-display text-[44px] md:text-[52px] text-white leading-[1.1]">
-              Por Que Escolher <br />a DUNO?
+              Por Que Escolher <br />
+              a DUNO?
             </h2>
           </div>
           
@@ -444,7 +445,7 @@ export default function App() {
         <div className="w-full mx-auto">
           <div className="text-center mb-[80px]">
             <span className="text-label text-gold mb-4">EXPERIÊNCIAS DUNO</span>
-            <h2 className="font-display text-[44px] md:text-[52px] text-black leading-[1.1]">O Que Dizem Nossas Pacientes</h2>
+            <h2 className="font-display text-[44px] md:text-[52px] text-black leading-[1.1]">O Que Dizem <br />Nossas Pacientes</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -475,7 +476,7 @@ export default function App() {
         <div className="w-full max-w-[760px]">
           <div className="text-center mb-[64px]">
             <span className="text-label text-gold mb-4">DÚVIDAS FREQUENTES</span>
-            <h2 className="font-display text-[48px] text-black leading-[1.1]">Esclareça Suas Perguntas</h2>
+            <h2 className="font-display text-[44px] md:text-[52px] text-black leading-[1.1]">Esclareça Suas <br />Perguntas</h2>
           </div>
 
           <div className="flex flex-col">
@@ -520,11 +521,11 @@ export default function App() {
           <h2 className="font-display font-bold text-[clamp(44px,6vw,80px)] text-white leading-[1.0] mb-7">Pronta para<br/>Começar?</h2>
           <div className="line-decorative mb-7"></div>
           <p className="font-sans text-[18px] text-white/60 mb-[48px] max-w-[400px]">Agende agora sua consulta de avaliação.</p>
-          <div className="flex flex-col sm:flex-row gap-[20px] w-full sm:w-auto">
-            <a href={whatsappUrl} className="btn-primary bg-[#1A7A40] hover:bg-[#125c30] gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-[20px] w-full sm:w-auto justify-center">
+            <a href={whatsappUrl} className="btn-primary w-full sm:w-auto">
               <WhatsAppIcon size={18} /> AGENDAR PELO WHATSAPP
             </a>
-            <a href="#tratamentos" className="btn-secondary border-white text-white hover:bg-white hover:text-black w-full sm:w-auto">
+            <a href="#tratamentos" className="btn-secondary w-full sm:w-auto">
               VER TRATAMENTOS
             </a>
           </div>
@@ -545,7 +546,7 @@ export default function App() {
         </div>
         <div className="p-[80px] flex flex-col justify-center order-1 md:order-2">
           <span className="text-label text-gold mb-4">ONDE NOS ENCONTRAR</span>
-          <h2 className="font-display text-[40px] text-black mb-6">DUNO — Itaim Bibi</h2>
+          <h2 className="font-display text-[44px] md:text-[52px] text-black leading-[1.1] mb-6">DUNO — Itaim Bibi</h2>
           <div className="line-decorative mb-10"></div>
           
           <div className="flex flex-col gap-[20px]">
