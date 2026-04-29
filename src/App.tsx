@@ -409,30 +409,32 @@ export default function App() {
       </section>
 
       {/* [SEÇÃO 07 — RESULTADOS] */}
-      <section id="resultados" className="section-padding bg-cream">
-        <div className="w-full mx-auto">
+      <section id="resultados" className="section-padding bg-white">
+        <div className="w-full max-w-[1200px] mx-auto">
           <div className="text-center mb-[80px]">
             <span className="text-label text-gold mb-4">TRANSFORMAÇÕES REAIS</span>
             <h2 className="font-display text-[44px] md:text-[52px] text-black leading-[1.1]">Resultados que Falam<br/>por Si</h2>
+            <div className="line-decorative mx-auto mt-8"></div>
           </div>
 
-          <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {RESULTS.map((res, i) => (
-              <motion.div {...fadeInUp} key={i} className="min-w-[85vw] md:min-w-[600px] snap-center shrink-0 flex flex-col gap-6">
-                <div className="w-full h-auto max-h-[500px] overflow-hidden">
-                  <img src={res.image} alt="Antes e Depois" className="w-full h-full object-contain" />
+              <motion.div {...fadeInUp} transition={{ delay: i * 0.2 }} key={i} className="flex flex-col group">
+                <div className="w-full bg-surface shadow-[0_2px_24px_rgba(0,0,0,0.06)] overflow-hidden mb-6 relative">
+                  <img src={res.image} alt="Antes e Depois" className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]" />
+                  <div className="absolute inset-0 border border-black/5 pointer-events-none"></div>
                 </div>
-                <div>
-                  <h4 className="font-sans text-[12px] uppercase tracking-[0.16em] text-rose mb-1">{res.treatment}</h4>
-                  <p className="font-sans text-[13px] text-warm-gray">{res.time}</p>
+                <div className="flex flex-col items-center text-center">
+                  <h4 className="font-sans text-[12px] uppercase tracking-[0.2em] text-black mb-2">{res.treatment}</h4>
+                  <p className="font-display italic text-[15px] text-warm-gray">{res.time}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="flex flex-col items-center mt-12 gap-8">
-            <p className="font-sans text-[11px] text-warm-gray">Resultados individuais podem variar.</p>
-            <a href={whatsappUrl} className="btn-secondary">VER MAIS RESULTADOS</a>
+          <div className="flex flex-col items-center mt-[80px] gap-8">
+            <p className="font-sans text-[11px] text-warm-gray tracking-[0.1em] uppercase">Resultados individuais podem variar.</p>
+            <a href={whatsappUrl} className="btn-secondary px-[40px]">AGENDAR AVALIAÇÃO</a>
           </div>
         </div>
       </section>
