@@ -1,130 +1,23 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
+  --font-serif: "Cormorant Garamond", ui-serif, serif;
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Montserrat", serif;
+  --font-body: "Lato", "DM Sans", ui-sans-serif, system-ui, sans-serif;
   
-  /* Custom colors mapped to CSS variables for easy white-labeling */
-  --color-primary: var(--primary-color);
-  --color-secondary: var(--secondary-color);
-  --color-accent: var(--accent-color);
-  --color-clinic-bg: var(--bg-light);
-  --color-clinic-text: var(--text-dark);
-  --color-clinic-border: rgba(0, 0, 0, 0.1);
+  --color-bg-primary: #FAFAF8;
+  --color-bg-secondary: #111111;
+  --color-primary: #D4447A;
+  --color-secondary: #C8A97E;
+  --color-text-main: #1A1A1A;
+  --color-text-support: #6B6B6B;
+  --color-divider: #E8E4DF;
   --color-whatsapp: #25D366;
-
-  --shadow-premium-inner: inset 0 0 40px rgba(212, 175, 119, 0.08);
 }
 
 :root {
-  /* === PERSONALIZAÇÃO RÁPIDA DO CLIENTE === */
-  --primary-color: #DB2777;     /* Rosa Premium */
-  --secondary-color: #F472B6;   /* Rosa Médio */
-  --accent-color: #1F2937;      /* Cinza Premium */
-  --bg-light: #FDF2F8;          /* Rosa Claríssimo / Off-white Rosado */
-  --text-dark: #1F2937;         /* Texto Escuro */
-  
-  /* Configurações de Negócio */
   --whatsapp-number: "5511992876219";
-  --whatsapp-message: "Olá! Gostaria de agendar uma avaliação.";
-}
-
-/* Scrollbar Customizada */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-light);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
-}
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply bg-clinic-bg text-clinic-text font-sans antialiased;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-black tracking-[-0.06em] uppercase leading-[0.95];
-  }
-}
-
-@layer components {
-  .btn-primary {
-    @apply bg-primary text-white font-sans tracking-widest uppercase transition-all duration-300 hover:bg-secondary hover:shadow-lg active:scale-95 disabled:opacity-50 min-h-[56px] flex items-center justify-center px-8;
-  }
-  
-  .section-padding {
-    padding-top: clamp(4rem, 10vh, 6rem);
-    padding-bottom: clamp(4rem, 10vh, 6rem);
-    padding-left: clamp(1.5rem, 5vw, 6rem);
-    padding-right: clamp(1.5rem, 5vw, 6rem);
-  }
-
-  .glass-card {
-    @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-sm;
-  }
-
-  .section-title {
-    @apply text-3xl md:text-5xl lg:text-6xl font-serif mb-6 tracking-tight leading-[1.1] text-balance;
-  }
-
-  .section-subtitle {
-    @apply text-xs md:text-sm uppercase tracking-[0.3em] text-primary mb-4 block font-sans font-bold;
-  }
-
-  /* FAQ Enhanced */
-  details.faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details.faq-item {
-    @apply mb-4 border border-primary/10 rounded-2xl bg-white overflow-hidden transition-all duration-300;
-  }
-
-  details.faq-item[open] {
-    @apply border-primary/30 shadow-lg ring-1 ring-primary/5;
-  }
-
-  details.faq-item summary {
-    @apply flex justify-between items-center p-6 cursor-pointer list-none font-serif text-lg text-clinic-text hover:text-primary transition-colors;
-  }
-
-  details.faq-item .faq-content {
-    @apply px-6 pb-6 text-clinic-text/70 text-sm leading-relaxed border-t border-primary/5 pt-4;
-  }
-
-  .premium-card-hover {
-    @apply transition-all duration-500 ease-out relative;
-  }
-
-  .premium-card-hover::after {
-    content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-500 rounded-2xl pointer-events-none;
-    box-shadow: inset 0 0 20px rgba(219, 39, 119, 0.08); /* Rosa Primary */
-  }
-
-  .premium-card-hover:hover::after {
-    @apply opacity-100;
-  }
-
-  .premium-card-hover:hover {
-    @apply shadow-2xl;
-    box-shadow: 0 20px 40px rgba(219, 39, 119, 0.1), var(--shadow-premium-inner);
-  }
+  --whatsapp-message: "Olá! Gostaria de agendar uma consulta de avaliação na DUNO.";
 }
 
 /* Scrollbar Customizada */
@@ -133,32 +26,96 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 10px;
+  background: var(--color-primary);
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-main font-body antialiased;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light text-balance leading-tight;
+  }
 }
 
-/* Animação de Pulso para o WhatsApp */
+@layer components {
+  /* Botões */
+  .btn-primary {
+    @apply bg-primary text-white font-sans font-bold tracking-[0.1em] uppercase rounded-[2px] transition-all duration-200 hover:brightness-90 flex items-center justify-center px-10 py-4;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-primary text-primary font-sans font-bold tracking-[0.1em] uppercase rounded-[2px] transition-all duration-200 hover:bg-primary/5 flex items-center justify-center px-10 py-4;
+  }
+  
+  /* Seções e espaçamentos */
+  .section-padding {
+    @apply py-[80px] px-[24px] xl:px-[80px];
+  }
+
+  .section-label {
+    @apply font-sans font-bold uppercase tracking-[0.15em] text-primary text-xs block mb-4;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-[52px] font-serif font-light text-text-main mb-6;
+  }
+
+  /* Divisores */
+  .divider {
+    @apply h-[1px] bg-divider w-full my-12;
+  }
+
+  .divider-primary {
+    @apply h-[1px] bg-primary w-10 block;
+  }
+
+  /* FAQ */
+  details.faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details.faq-item {
+    @apply mb-4 border-b border-divider bg-transparent transition-all duration-300;
+  }
+
+  details.faq-item summary {
+    @apply flex justify-between items-center py-6 cursor-pointer list-none font-serif text-2xl text-text-main transition-colors;
+  }
+
+  details.faq-item .faq-content {
+    @apply pb-6 text-text-support font-body text-base leading-relaxed;
+  }
+
+  /* Slider / Hide Scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* WhatsApp Pulse */
 @keyframes pulse-whatsapp {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
   70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .animate-pulse-whatsapp {
   animation: pulse-whatsapp 2s infinite;
-}
-
-/* Responsividade Mobile refinement */
-@media (max-width: 640px) {
-  .section-title {
-    @apply text-4xl;
-  }
 }
