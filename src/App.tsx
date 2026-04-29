@@ -60,55 +60,55 @@ const SERVICES = [
   {
     title: "Toxina Botulínica (Botox)",
     description: "Suaviza rugas e linhas de expressão, proporcionando um rosto mais jovem e descansado.",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Toxina Botulínica (Botox).png",
     featured: true
   },
   {
     title: "Harmonização Facial",
     description: "Equilibra os traços do rosto, realçando a beleza natural com mais simetria.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Harmonização Facial.png",
     featured: true
   },
   {
     title: "Preenchimento Labial",
     description: "Define e aumenta o volume dos lábios com naturalidade e harmonia.",
-    image: "https://images.unsplash.com/photo-1511116231362-e64fcb95dc6c?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Preenchimento Labial.jpg",
     featured: true
   },
   {
     title: "Bioestimulador de Colágeno",
     description: "Estimula a produção de colágeno, melhorando firmeza e sustentação da pele.",
-    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Bioestimulador de Colágeno.png",
     featured: false
   },
   {
     title: "Rejuvenescimento Facial",
     description: "Melhora textura, firmeza e aparência geral da pele, reduzindo sinais do tempo.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Rejuvenescimento Facial.png",
     featured: false
   },
   {
     title: "Skinbooster (Hidratação Profunda)",
     description: "Hidratação profunda que deixa a pele mais viçosa, luminosa e saudável.",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop",
+    image: "/images/hidratação profunda.webp",
     featured: false
   },
   {
     title: "Limpeza de Pele Profunda",
     description: "Remove impurezas e cravos, deixando a pele limpa, renovada e equilibrada.",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Limpeza de Pele Profunda.jpg",
     featured: false
   },
   {
     title: "Tratamento para Acne",
     description: "Reduz inflamações e marcas, promovendo uma pele mais uniforme e saudável.",
-    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&auto=format&fit=crop",
+    image: "/images/tratamento para acne.webp",
     featured: false
   },
   {
     title: "Depilação a Laser",
     description: "Eliminação progressiva dos pelos com mais conforto e praticidade.",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Depilação a leizer.webp",
     featured: false
   }
 ];
@@ -470,7 +470,7 @@ export default function App() {
       <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-pink-100 via-rose-50 to-slate-200">
           <img 
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=90&auto=format&fit=crop"
+            src="/images/banner01 (3).png"
             alt="Duno Estética — Ambiente Premium de Medicina Estética" 
             className="w-full h-full object-cover object-center brightness-[0.60] contrast-[1.1] scale-105"
           />
