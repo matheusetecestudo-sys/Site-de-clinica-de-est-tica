@@ -151,8 +151,16 @@ export default function App() {
       {/* Navbar Fixa */}
       <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-350 ${isScrolled ? 'bg-[#0F0F0F]/95 backdrop-blur-[12px] border-b border-gold/20 py-4' : 'bg-transparent py-6'}`}>
         <div className="w-full px-[clamp(24px,5vw,7vw)] mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <span className="font-display text-[18px] tracking-[0.3em] uppercase text-white">DUNO</span>
+          <div className="flex items-center gap-3">
+            {/* Emblema */}
+            <div className="w-8 h-8 border border-gold/80 flex items-center justify-center shrink-0">
+              <span className="font-display text-[14px] text-gold leading-none">D</span>
+            </div>
+            {/* Wordmark */}
+            <div className="flex flex-col leading-none">
+              <span className="font-display text-[16px] tracking-[0.28em] uppercase text-white leading-[1.1]">DUNO</span>
+              <span className="font-sans text-[8px] tracking-[0.22em] uppercase text-rose leading-[1.4]">ESTÉTICA</span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
@@ -194,7 +202,17 @@ export default function App() {
             <button className="absolute top-6 right-6 text-white" onClick={() => setIsMobileMenuOpen(false)}>
               <X size={32} />
             </button>
-            <div className="flex flex-col gap-8 text-center">
+            <div className="flex flex-col gap-8 text-center items-center">
+              {/* Logo no menu mobile */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 border border-gold/80 flex items-center justify-center">
+                  <span className="font-display text-[14px] text-gold leading-none">D</span>
+                </div>
+                <div className="flex flex-col leading-none">
+                  <span className="font-display text-[16px] tracking-[0.28em] uppercase text-white leading-[1.1]">DUNO</span>
+                  <span className="font-sans text-[8px] tracking-[0.22em] uppercase text-rose leading-[1.4]">ESTÉTICA</span>
+                </div>
+              </div>
               {['Tratamentos', 'A Clínica', 'Resultados', 'Contato'].map((item) => (
                 <a 
                   key={item}
@@ -575,7 +593,15 @@ export default function App() {
         <div className="w-full mx-auto">
           <div className="grid md:grid-cols-12 gap-12 mb-[40px]">
             <div className="md:col-span-6 flex flex-col">
-              <span className="font-display text-[20px] text-white tracking-[0.3em] uppercase mb-2">DUNO</span>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 border border-gold/50 flex items-center justify-center shrink-0">
+                  <span className="font-display text-[14px] text-gold leading-none">D</span>
+                </div>
+                <div className="flex flex-col leading-none">
+                  <span className="font-display text-[16px] tracking-[0.28em] uppercase text-white leading-[1.1]">DUNO</span>
+                  <span className="font-sans text-[8px] tracking-[0.22em] uppercase text-rose leading-[1.4]">ESTÉTICA</span>
+                </div>
+              </div>
               <p className="font-sans text-[12px] text-warm-gray tracking-[0.12em] uppercase">Clínica de Estética Avançada — São Paulo</p>
             </div>
             
