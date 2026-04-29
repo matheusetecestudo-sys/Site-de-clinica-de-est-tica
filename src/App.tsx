@@ -247,6 +247,10 @@ const MobileStickyCTA = ({ whatsappUrl }: { whatsappUrl: string }) => {
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const { scrollYProgress } = useScroll();
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -380,48 +384,61 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
-      <section id="início" className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Editorial Concept 10/10 */}
+      <section id="início" className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/banner01 (3).png"
-            alt="Duno Estética — Ambiente Premium de Medicina Estética" 
-            className="w-full h-full object-cover object-center scale-100 brightness-100"
+            alt="Duno Estética" 
+            className="w-full h-full object-cover object-center scale-105 brightness-[0.8] contrast-[1.1]"
           />
-          {/* Overlay mínimo apenas para não perder contraste se necessário */}
-          <div className="absolute inset-0 bg-black/5" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/90" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="flex flex-col items-center"
           >
-            <span className="section-subtitle">Excelência em Estética Médica</span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] text-clinic-text">
-              Realçando sua <br />
-              <span className="relative inline-block italic text-primary overflow-hidden group">
-                Beleza Natural 
-                <motion.div 
-                   animate={{ left: ['-100%', '200%'] }}
-                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                   className="absolute top-0 w-20 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-30deg] pointer-events-none"
-                />
-              </span>
-              <br className="hidden md:block" /> com Ciência.
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-primary font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-6 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20"
+            >
+              Excelência em Estética Avançada
+            </motion.span>
+            
+            <h1 className="text-6xl md:text-8xl lg:text-[130px] font-black mb-8 leading-[0.8] tracking-[-0.06em] text-white uppercase drop-shadow-2xl">
+              BELEZA QUE <br />
+              <span className="text-primary italic">IMPÕE</span> RESPEITO
             </h1>
-            <p className="text-lg text-clinic-text/70 mb-10 font-sans leading-relaxed max-w-lg">
-              Protocolos exclusivos desenvolvidos pela {CLIENT_CONFIG.professional}, unindo 20 anos de experiência e as tecnologias mais avançadas do mundo.
+            
+            <p className="text-lg md:text-xl text-white/80 mb-12 font-medium max-w-2xl leading-relaxed">
+              Protocolos de alta performance para quem não aceita nada menos que a perfeição absoluta. Redescubra sua melhor versão com a Dra. Beatriz Cavalcanti.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 mt-12 items-center sm:items-stretch">
-              <a href={whatsappUrl} className="btn-primary flex-1 min-w-[280px] rounded-full gap-3 shadow-2xl h-16 text-sm">
-                <WhatsAppIcon size={20} /> Agendar Avaliação <ArrowRight size={18} />
+
+            <div className="flex flex-col sm:flex-row gap-6 items-center">
+              <a href={whatsappUrl} className="btn-primary min-w-[300px] rounded-full gap-4 shadow-[0_20px_50px_rgba(219,39,119,0.4)] h-18 text-sm group uppercase font-black tracking-widest">
+                <WhatsAppIcon size={24} className="group-hover:rotate-12 transition-transform" /> 
+                Agendar Consulta de Elite
+                <ArrowRight size={20} />
               </a>
             </div>
           </motion.div>
         </div>
+        
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
+        >
+          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
+            <div className="w-1 h-2 bg-primary rounded-full" />
+          </div>
+        </motion.div>
       </section>
 
       {/* Stats Section */}
