@@ -390,26 +390,23 @@ export default function App() {
         </div>
       </section>
 
-      {/* [SEÇÃO 06 — AMBIENTE] */}
-      <section className="section-padding bg-surface">
-        <div className="w-full mx-auto grid md:grid-cols-2 gap-[80px] items-center">
-          <motion.div {...fadeInUp} className="flex flex-col items-start">
-            <span className="text-label text-gold mb-4">O ESPAÇO</span>
-            <h2 className="font-display text-[44px] md:text-[48px] text-black leading-[1.1] mb-6">Um Ambiente Criado<br/>Para Você</h2>
-            <div className="line-decorative mb-6"></div>
-            <p className="font-sans text-black text-[17px] leading-[1.8] max-w-[440px] mb-10">
-              Do momento em que você entra, cada detalhe foi pensado para proporcionar conforto, privacidade e acolhimento. Um espaço à altura da sua experiência.
-            </p>
-            <a href={whatsappUrl} className="btn-secondary">AGENDAR VISITA</a>
-          </motion.div>
+      {/* [SEÇÃO 06 — FILOSOFIA (Substituindo "O Espaço")] */}
+      <section className="bg-surface py-[160px] px-[clamp(24px,5vw,7vw)] text-center flex flex-col items-center">
+        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center">
+          <span className="text-label text-gold mb-8">NOSSA FILOSOFIA</span>
           
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex gap-[8px] h-[500px] md:h-[600px]">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600" className="w-[60%] h-full object-cover" alt="Ambiente" />
-            <div className="w-[40%] flex flex-col gap-[8px]">
-              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=400" className="w-full h-1/2 object-cover" alt="Detalhe" />
-              <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=400" className="w-full h-1/2 object-cover" alt="Recepção" />
-            </div>
-          </motion.div>
+          <h2 className="font-display text-[clamp(32px,4vw,48px)] text-black leading-[1.3] mb-10 italic">
+            "Acreditamos que a verdadeira elegância não está na transformação radical, mas no cuidado meticuloso de revelar a melhor versão que já existe em você."
+          </h2>
+          
+          <div className="line-decorative mb-10"></div>
+          
+          <p className="font-sans text-[16px] text-warm-gray leading-[1.8] max-w-[500px] mb-12">
+            Na DUNO, o luxo está nos detalhes. Adotamos protocolos minimalistas e ciência de alta performance para garantir que cada resultado seja sentido como autêntico, devolvendo não apenas contornos, mas confiança absoluta.
+          </p>
+
+          <span className="font-display text-[24px] text-black tracking-[0.05em]">Beatriz Cavalcanti</span>
+          <span className="font-sans text-[10px] uppercase text-gold tracking-[0.2em] mt-2">Diretora Clínica</span>
         </div>
       </section>
 
