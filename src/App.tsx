@@ -629,7 +629,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Ambience Gallery Section */}
+      {/* Ambience Gallery Section - Premium */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -638,14 +638,14 @@ export default function App() {
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
         }}
-        className="section-padding bg-white overflow-hidden"
+        className="section-padding bg-black text-white overflow-hidden"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <motion.div variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } }}>
-              <span className="section-subtitle">Oásis de Bem-estar</span>
-              <h2 className="section-title">Um Ambiente Planejado para sua Experiência</h2>
-              <p className="text-lg text-clinic-text/60 max-w-lg leading-relaxed mb-8">
+              <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Oásis de Bem-estar</span>
+              <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase leading-[0.9]">Um Ambiente Planejado para sua Experiência</h2>
+              <p className="text-lg text-white/60 max-w-lg leading-relaxed mb-8 font-medium">
                 Nossa clínica no Itaim Bibi combina o que há de mais moderno em design de interiores com tecnologias de ponta, criando um espaço de total conforto, privacidade e exclusividade.
               </p>
               <div className="flex items-center gap-6">
@@ -656,7 +656,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <span className="text-sm font-sans font-medium text-clinic-text/80">Aprovada por pacientes de elite</span>
+                <span className="text-sm font-sans font-bold text-white/80 uppercase tracking-widest text-[10px]">Aprovada por pacientes de elite</span>
               </div>
             </motion.div>
             <motion.div 
@@ -684,7 +684,7 @@ export default function App() {
         </div>
       </motion.section>
 
-      {/* Results / Before & After Slider Placeholder */}
+      {/* Results / Before & After Slider Placeholder - Premium */}
       <motion.section 
         id="resultados" 
         initial="hidden"
@@ -698,9 +698,9 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto">
           <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="text-center mb-16">
-            <span className="section-subtitle">Transformações Reais</span>
-            <h2 className="section-title">Resultados Duno</h2>
-            <p className="text-clinic-text/60 max-w-2xl mx-auto">Respeitando a ética médica, apresentamos resultados que priorizam a naturalidade e a saúde da pele.</p>
+            <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Transformações Reais</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase text-clinic-text">Resultados Duno</h2>
+            <p className="text-clinic-text/60 max-w-2xl mx-auto font-medium">Respeitando a ética médica, apresentamos resultados que priorizam a naturalidade e a saúde da pele.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -731,12 +731,12 @@ export default function App() {
         </div>
       </motion.section>
 
-      {/* Testimonials Section */}
-      <section id="depoimentos" className="section-padding bg-white overflow-hidden">
+      {/* Testimonials Section - Premium */}
+      <section id="depoimentos" className="section-padding bg-clinic-bg overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="section-subtitle">Experiências Aura</span>
-            <h2 className="section-title">O que dizem nossos pacientes</h2>
+            <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Experiências Aura</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase text-clinic-text">O que dizem nossos pacientes</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -766,7 +766,7 @@ export default function App() {
                     referrerPolicy="no-referrer"
                   />
                   <div>
-                    <p className="font-serif text-clinic-text font-bold text-lg">{testimonial.name}</p>
+                    <p className="font-black uppercase tracking-tighter text-clinic-text text-lg">{testimonial.name}</p>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">{testimonial.role}</p>
                   </div>
                 </div>
@@ -776,12 +776,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* Enhanced Location Section with Map */}
-      <section id="localização" className="section-padding bg-clinic-bg">
+      {/* Enhanced Location Section with Map - Premium */}
+      <section id="localização" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="section-subtitle">Onde Estamos</span>
-            <h2 className="section-title">Duno Itaim Bibi</h2>
+            <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Onde Estamos</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase text-clinic-text">Duno Itaim Bibi</h2>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-12 items-stretch">
@@ -823,12 +823,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="section-padding bg-white">
+      {/* FAQ Section - Premium */}
+      <section id="faq" className="section-padding bg-black text-white">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-subtitle">Dúvidas Frequentes</span>
-            <h2 className="section-title">Esclareça suas Perguntas</h2>
+            <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Dúvidas Frequentes</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase text-white">Esclareça suas Perguntas</h2>
           </div>
 
           <div className="space-y-4">
@@ -858,15 +858,15 @@ export default function App() {
 
 
 
-      {/* Footer */}
-      <footer className="bg-accent text-white pt-20 pb-10">
+      {/* Footer - Premium Noir */}
+      <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 lg:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary border border-primary/20">
-                <span className="font-serif text-2xl font-bold">D</span>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary overflow-hidden">
+                <img src="/images/logo.png" alt="DUNO Logo" className="w-full h-full object-contain p-2" />
               </div>
-              <span className="font-serif text-3xl tracking-tighter uppercase">{CLIENT_CONFIG.name}</span>
+              <span className="font-black text-3xl tracking-tighter uppercase">{CLIENT_CONFIG.name}</span>
             </div>
             <p className="text-white/60 max-w-md mb-8 leading-relaxed">
               Elevando o padrão da estética médica com ética, naturalidade e tecnologia. Mais de duas décadas transformando vidas através da beleza consciente na Duno Estética.
@@ -878,8 +878,8 @@ export default function App() {
           </div>
 
           <div>
-            <h4 className="font-serif text-xl mb-8">Links Rápidos</h4>
-            <ul className="space-y-4 text-white/60 text-sm">
+            <h4 className="font-black uppercase tracking-widest text-lg mb-8 text-white/90">Links Rápidos</h4>
+            <ul className="space-y-4 text-white/60 text-sm font-medium">
               <li><a href="#início" className="hover:text-primary transition-colors">Início</a></li>
               <li><a href="#sobre" className="hover:text-primary transition-colors">Sobre</a></li>
               <li><a href="#serviços" className="hover:text-primary transition-colors">Serviços</a></li>
@@ -889,8 +889,8 @@ export default function App() {
           </div>
 
           <div>
-            <h4 className="font-serif text-xl mb-8">Contato</h4>
-            <ul className="space-y-6 text-white/60 text-sm">
+            <h4 className="font-black uppercase tracking-widest text-lg mb-8 text-white/90">Contato</h4>
+            <ul className="space-y-6 text-white/60 text-sm font-medium">
               <li className="flex gap-4">
                 <MapPin size={20} className="text-primary shrink-0" />
                 <span>{CLIENT_CONFIG.address}<br />{CLIENT_CONFIG.city}</span>
