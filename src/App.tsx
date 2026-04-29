@@ -441,29 +441,29 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white relative z-10 -mt-10 mx-6 md:mx-12 rounded-3xl shadow-2xl border border-primary/5">
+      {/* Stats Section - Premium Redesign */}
+      <section className="py-20 bg-black relative z-10 mx-6 md:mx-12 rounded-3xl shadow-2xl border border-white/10 mt-12">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           <div className="flex flex-col gap-2">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">22+</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Anos de Experiência</span>
+            <span className="text-4xl md:text-5xl font-black text-primary drop-shadow-lg">22+</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-white/40">Anos de Experiência</span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">15k+</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Atendimentos</span>
+            <span className="text-4xl md:text-5xl font-black text-primary drop-shadow-lg">15k+</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-white/40">Atendimentos</span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">100%</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Segurança Médica</span>
+            <span className="text-4xl md:text-5xl font-black text-primary drop-shadow-lg">100%</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-white/40">Segurança Médica</span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-primary">Elite</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-clinic-text/40">Padrão Internacional</span>
+            <span className="text-4xl md:text-5xl font-black text-primary drop-shadow-lg">Elite</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold text-white/40">Padrão Internacional</span>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - Premium Redesign */}
       <section id="sobre" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -472,7 +472,7 @@ export default function App() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
               <img 
                 src="/images/doutora.png" 
                 alt={CLIENT_CONFIG.professional} 
@@ -480,17 +480,17 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-8 -right-8 glass-card p-8 rounded-xl hidden md:block max-w-xs premium-card-hover">
+            <div className="absolute -bottom-8 -right-8 bg-black text-white p-8 rounded-xl hidden md:block max-w-xs shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary">
                   <Award size={24} />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest font-bold text-primary">Experiência</p>
-                  <p className="font-serif text-xl">20+ Anos</p>
+                  <p className="font-black text-2xl">20+ Anos</p>
                 </div>
               </div>
-              <p className="text-sm text-clinic-text/60 italic">"A estética é a harmonia entre o que somos e o que projetamos."</p>
+              <p className="text-sm text-white/60 italic font-light">"A estética é a harmonia entre o que somos e o que projetamos."</p>
             </div>
           </motion.div>
 
@@ -499,61 +499,61 @@ export default function App() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="section-subtitle">A Profissional</span>
-            <h2 className="section-title">{CLIENT_CONFIG.professional}</h2>
-            <p className="text-primary font-sans font-bold mb-6 tracking-widest uppercase text-sm">{CLIENT_CONFIG.specialty}</p>
-            <div className="space-y-6 text-clinic-text/70 leading-relaxed mb-10">
+            <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">A Profissional</span>
+            <h2 className="text-4xl md:text-6xl font-black text-clinic-text mb-2 tracking-tighter uppercase">{CLIENT_CONFIG.professional}</h2>
+            <p className="text-primary/80 font-sans font-bold mb-8 tracking-widest uppercase text-xs">{CLIENT_CONFIG.specialty}</p>
+            <div className="space-y-6 text-clinic-text/70 leading-relaxed mb-10 font-medium">
               <p>{CLIENT_CONFIG.about}</p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mt-8">
                 {[
                   "Membro Titular das principais sociedades de estética",
                   "Speaker internacional em tecnologias de bioestimulação",
                   "Mais de 15.000 procedimentos realizados com sucesso",
                   "Pioneira em técnicas de naturalização facial"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
+                  <li key={i} className="flex items-center gap-4 bg-clinic-bg p-4 rounded-xl border border-primary/5 hover:border-primary/20 transition-colors">
                     <CheckCircle2 size={20} className="text-primary shrink-0" />
-                    <span className="text-sm font-sans">{item}</span>
+                    <span className="text-sm font-sans font-bold">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <a href={whatsappUrl} className="btn-primary px-10 py-5 rounded-full inline-flex items-center gap-3">
+            <a href={whatsappUrl} className="btn-primary px-10 py-5 rounded-full inline-flex items-center gap-3 font-black uppercase tracking-widest text-xs shadow-lg hover:shadow-2xl">
               Falar com Especialista <WhatsAppIcon size={18} />
             </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Trust Badges Section */}
-      <section className="py-16 bg-white border-y border-primary/5">
+      {/* Trust Badges Section - Premium */}
+      <section className="py-16 bg-white border-y border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
             <div className="flex items-center gap-4 group">
               <ShieldCheck size={32} className="text-primary group-hover:scale-110 transition-transform" />
               <div className="flex flex-col">
-                <span className="font-serif text-lg font-bold">Certificação</span>
+                <span className="font-black text-lg uppercase tracking-tighter">Certificação</span>
                 <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Especialista Ativa</span>
               </div>
             </div>
             <div className="flex items-center gap-4 group">
               <Award size={32} className="text-primary group-hover:scale-110 transition-transform" />
               <div className="flex flex-col">
-                <span className="font-serif text-lg font-bold">Excelência</span>
+                <span className="font-black text-lg uppercase tracking-tighter">Excelência</span>
                 <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Prêmio Quality 2024</span>
               </div>
             </div>
             <div className="flex items-center gap-4 group">
               <Stars size={32} className="text-primary group-hover:scale-110 transition-transform" />
               <div className="flex flex-col">
-                <span className="font-serif text-lg font-bold">Membro Premium</span>
+                <span className="font-black text-lg uppercase tracking-tighter">Membro Premium</span>
                 <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Sociedade de Estética</span>
               </div>
             </div>
             <div className="flex items-center gap-4 group">
               <Sparkles size={32} className="text-primary group-hover:scale-110 transition-transform" />
               <div className="flex flex-col">
-                <span className="font-serif text-lg font-bold">Tecnologia</span>
+                <span className="font-black text-lg uppercase tracking-tighter">Tecnologia</span>
                 <span className="text-[10px] uppercase tracking-widest text-primary font-bold">Equipamentos de Ponta</span>
               </div>
             </div>
