@@ -1,23 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", ui-serif, serif;
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Lato", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, serif;
+  --font-sans: "Didact Gothic", ui-sans-serif, system-ui, sans-serif;
   
-  --color-bg-primary: #FAFAF8;
-  --color-bg-secondary: #111111;
-  --color-primary: #D4447A;
-  --color-secondary: #C8A97E;
-  --color-text-main: #1A1A1A;
-  --color-text-support: #6B6B6B;
-  --color-divider: #E8E4DF;
-  --color-whatsapp: #25D366;
+  --color-cream: #F7F3EE;
+  --color-black: #0F0F0F;
+  --color-rose: #B5425A;
+  --color-gold: #B8976A;
+  --color-warm-gray: #9A8F85;
+  --color-white: #FDFCFB;
+  --color-surface: #EFEBE5;
 }
 
 :root {
   --whatsapp-number: "5511992876219";
-  --whatsapp-message: "Olá! Gostaria de agendar uma consulta de avaliação na DUNO.";
+  --whatsapp-message: "Olá! Gostaria de agendar uma consulta na DUNO.";
 }
 
 /* Scrollbar Customizada */
@@ -26,77 +24,61 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
+  background: var(--color-cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
+  background: var(--color-gold);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-cream);
   }
   
   body {
-    @apply bg-bg-primary text-text-main font-body antialiased;
-    line-height: 1.7;
-    font-size: 16px;
+    @apply bg-cream text-black font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-light text-balance leading-tight;
+    @apply font-display text-black font-normal tracking-[-0.02em];
   }
 }
 
 @layer components {
-  /* Botões */
   .btn-primary {
-    @apply bg-primary text-white font-sans font-bold tracking-[0.1em] uppercase rounded-[2px] transition-all duration-200 hover:brightness-90 flex items-center justify-center px-10 py-4;
+    @apply bg-rose text-white font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[15px] px-[48px] transition-all duration-250 ease-in-out hover:bg-[#8E2E43] inline-flex items-center justify-center;
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-primary text-primary font-sans font-bold tracking-[0.1em] uppercase rounded-[2px] transition-all duration-200 hover:bg-primary/5 flex items-center justify-center px-10 py-4;
+    @apply bg-transparent border border-black text-black font-sans font-bold text-[12px] uppercase tracking-[0.2em] rounded-none py-[14px] px-[46px] transition-all duration-250 ease-in-out hover:bg-black hover:text-white inline-flex items-center justify-center;
   }
   
-  /* Seções e espaçamentos */
   .section-padding {
-    @apply py-[80px] px-[24px] xl:px-[80px];
+    padding-left: clamp(40px, 7vw, 10vw);
+    padding-right: clamp(40px, 7vw, 10vw);
+    padding-top: 140px;
+    padding-bottom: 140px;
   }
 
-  .section-label {
-    @apply font-sans font-bold uppercase tracking-[0.15em] text-primary text-xs block mb-4;
+  @media (max-width: 767px) {
+    .section-padding {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 
-  .section-title {
-    @apply text-5xl md:text-[52px] font-serif font-light text-text-main mb-6;
+  .text-label {
+    @apply font-sans font-normal uppercase tracking-[0.18em] text-[11px] leading-none;
   }
 
-  /* Divisores */
-  .divider {
-    @apply h-[1px] bg-divider w-full my-12;
-  }
-
-  .divider-primary {
-    @apply h-[1px] bg-primary w-10 block;
-  }
-
-  /* FAQ */
-  details.faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details.faq-item {
-    @apply mb-4 border-b border-divider bg-transparent transition-all duration-300;
-  }
-
-  details.faq-item summary {
-    @apply flex justify-between items-center py-6 cursor-pointer list-none font-serif text-2xl text-text-main transition-colors;
-  }
-
-  details.faq-item .faq-content {
-    @apply pb-6 text-text-support font-body text-base leading-relaxed;
+  .line-decorative {
+    @apply h-[1px] w-[48px] bg-gold block;
   }
 
   /* Slider / Hide Scrollbar */
@@ -109,11 +91,11 @@
   }
 }
 
-/* WhatsApp Pulse */
+/* Animação WhatsApp */
 @keyframes pulse-whatsapp {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { transform: scale(1); box-shadow: 0 4px 20px rgba(26,122,64,0.35); }
+  50% { transform: scale(1.08); box-shadow: 0 4px 25px rgba(26,122,64,0.5); }
+  100% { transform: scale(1); box-shadow: 0 4px 20px rgba(26,122,64,0.35); }
 }
 
 .animate-pulse-whatsapp {
