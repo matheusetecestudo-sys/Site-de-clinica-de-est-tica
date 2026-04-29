@@ -467,15 +467,15 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-pink-100 via-rose-50 to-slate-200">
+      <section id="início" className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
             src="/images/banner01 (3).png"
             alt="Duno Estética — Ambiente Premium de Medicina Estética" 
-            className="w-full h-full object-cover object-center brightness-[0.60] contrast-[1.1] scale-105"
+            className="w-full h-full object-cover object-center scale-100 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+          {/* Overlay mínimo apenas para não perder contraste se necessário */}
+          <div className="absolute inset-0 bg-black/5" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
