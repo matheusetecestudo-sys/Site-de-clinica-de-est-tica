@@ -149,72 +149,126 @@ export default function App() {
     <div className="min-h-screen bg-cream selection:bg-rose/20 selection:text-rose overflow-x-hidden">
       
       {/* Navbar Fixa */}
-      <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-350 ${isScrolled ? 'bg-[#0F0F0F]/95 backdrop-blur-[12px] border-b border-gold/20 py-4' : 'bg-transparent py-6'}`}>
-        <div className="w-full px-[clamp(24px,5vw,7vw)] mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <a href="#" className="flex flex-col leading-[1]">
-              <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[18px] tracking-[0.25em] uppercase text-rose">DUNO</span>
-              <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[8px] tracking-[0.3em] uppercase text-rose/80">ESTÉTICA</span>
-            </a>
-          </div>
+      <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-[350ms] ${isScrolled ? 'bg-[#0F0F0F]/97 backdrop-blur-[14px] border-b border-gold/20 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent py-5'}`}>
+        <div className="w-full px-[clamp(20px,5vw,7vw)] mx-auto flex justify-between items-center">
+          {/* Logo */}
+          <a href="#" className="flex flex-col leading-[1.1] z-10">
+            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[17px] tracking-[0.25em] uppercase text-rose">DUNO</span>
+            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[7px] tracking-[0.3em] uppercase text-rose/75">ESTÉTICA</span>
+          </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
-            {['Tratamentos', 'A Clínica', 'Resultados', 'Contato'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                className={`text-[11px] font-sans uppercase tracking-[0.16em] ${isScrolled ? 'text-white' : 'text-white'} hover:text-rose relative group`}
+          <div className="hidden lg:flex items-center gap-8">
+            {[
+              { label: 'Tratamentos', href: '#tratamentos' },
+              { label: 'A Clínica', href: '#a-clinica' },
+              { label: 'Resultados', href: '#resultados' },
+              { label: 'Contato', href: '#contato' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-[11px] font-sans uppercase tracking-[0.16em] text-white/90 hover:text-rose relative group transition-colors duration-200"
               >
-                {item}
+                {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-rose transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
 
-          <div className="hidden md:block">
-            <a href={whatsappUrl} className="btn-primary py-[10px] px-[24px] text-[10px]">
+          <div className="hidden lg:flex items-center gap-4">
+            <a href={`tel:+5511992876219`} className="font-sans text-[11px] uppercase tracking-[0.12em] text-white/70 hover:text-rose transition-colors">(11) 99287-6219</a>
+            <a href={whatsappUrl} className="btn-primary py-[9px] px-[20px] text-[10px]">
               AGENDAR CONSULTA
             </a>
           </div>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(true)}>
-            <Menu size={28} />
+          <button
+            className="lg:hidden flex flex-col gap-[5px] p-2 z-10"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Abrir menu"
+          >
+            <span className={`block w-[24px] h-[1.5px] transition-all duration-300 ${isScrolled ? 'bg-white' : 'bg-white'}`}></span>
+            <span className={`block w-[18px] h-[1.5px] transition-all duration-300 ${isScrolled ? 'bg-white' : 'bg-white'}`}></span>
+            <span className={`block w-[24px] h-[1.5px] transition-all duration-300 ${isScrolled ? 'bg-white' : 'bg-white'}`}></span>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu — Slide from Right */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] bg-black flex flex-col justify-center items-center px-6"
-          >
-            <button className="absolute top-6 right-6 text-white" onClick={() => setIsMobileMenuOpen(false)}>
-              <X size={32} />
-            </button>
-            <div className="flex flex-col gap-8 text-center items-center">
-              {/* Logo no menu mobile */}
-              <div className="flex flex-col items-center mb-6">
-                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[24px] tracking-[0.25em] uppercase text-rose">DUNO</span>
-                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[9px] tracking-[0.3em] uppercase text-rose/80">ESTÉTICA</span>
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 z-[108] bg-black/60 backdrop-blur-sm"
+            />
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 bottom-0 z-[109] w-[80vw] max-w-[360px] bg-[#0F0F0F] flex flex-col px-8 py-10 shadow-[-4px_0_40px_rgba(0,0,0,0.4)]"
+            >
+              {/* Close */}
+              <button
+                className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X size={24} />
+              </button>
+
+              {/* Logo no drawer */}
+              <div className="mb-10">
+                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[22px] tracking-[0.25em] uppercase text-rose block leading-[1.1]">DUNO</span>
+                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[8px] tracking-[0.3em] uppercase text-rose/70">ESTÉTICA</span>
               </div>
-              {['Tratamentos', 'A Clínica', 'Resultados', 'Contato'].map((item) => (
-                <a 
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                  onClick={() => setIsMobileMenuOpen(false)} 
-                  className="font-display text-[32px] text-white"
-                >
-                  {item}
+
+              {/* Links */}
+              <nav className="flex flex-col gap-2 flex-1">
+                {[
+                  { label: 'Tratamentos', href: '#tratamentos' },
+                  { label: 'A Clínica', href: '#a-clinica' },
+                  { label: 'Resultados', href: '#resultados' },
+                  { label: 'Contato', href: '#contato' },
+                ].map((item, i) => (
+                  <motion.a
+                    key={item.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.07 + 0.1 }}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-display text-[28px] text-white/80 hover:text-rose transition-colors py-3 border-b border-white/5"
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
+              </nav>
+
+              {/* CTA mobile */}
+              <div className="flex flex-col gap-3 mt-8">
+                <a href={whatsappUrl} onClick={() => setIsMobileMenuOpen(false)} className="btn-primary w-full text-center">
+                  <WhatsAppIcon size={16} /> AGENDAR AGORA
                 </a>
-              ))}
-            </div>
-          </motion.div>
+                <a href={`tel:+5511992876219`} className="font-sans text-center text-[12px] text-white/50 tracking-[0.1em] uppercase hover:text-rose transition-colors">
+                  (11) 99287-6219
+                </a>
+              </div>
+
+              {/* Redes sociais */}
+              <div className="flex gap-5 mt-6">
+                <a href="#" className="text-white/40 hover:text-rose transition-colors"><Instagram size={18} /></a>
+                <a href="#" className="text-white/40 hover:text-rose transition-colors"><Facebook size={18} /></a>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
@@ -579,42 +633,94 @@ export default function App() {
       </section>
 
       {/* [FOOTER] */}
-      <footer className="bg-[#0A0A0A] pt-[64px] pb-[32px] px-[clamp(24px,5vw,7vw)]">
-        <div className="w-full mx-auto">
-          <div className="grid md:grid-cols-12 gap-12 mb-[40px]">
-            <div className="md:col-span-6 flex flex-col">
-              <div className="flex flex-col leading-[1] mb-3">
-                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[18px] tracking-[0.25em] uppercase text-rose">DUNO</span>
+      <footer className="bg-[#0A0A0A] pt-[80px] pb-[40px] px-[clamp(20px,5vw,7vw)]">
+        <div className="w-full max-w-[1200px] mx-auto">
+
+          {/* Top grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-[56px]">
+
+            {/* Col 1 — Marca */}
+            <div className="md:col-span-5 flex flex-col gap-4">
+              <div className="flex flex-col leading-[1.1]">
+                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[20px] tracking-[0.25em] uppercase text-rose">DUNO</span>
                 <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[8px] tracking-[0.3em] uppercase text-rose/70">ESTÉTICA</span>
               </div>
-              <p className="font-sans text-[12px] text-warm-gray tracking-[0.12em] uppercase">Clínica de Estética Avançada — São Paulo</p>
+              <p className="font-sans text-[13px] text-warm-gray leading-[1.7] max-w-[300px]">
+                Clínica de estética avançada no coração de São Paulo. Protocolos personalizados para realçar a sua beleza natural.
+              </p>
+              {/* Redes sociais */}
+              <div className="flex gap-4 mt-2">
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-9 h-9 border border-white/10 flex items-center justify-center text-warm-gray hover:text-rose hover:border-rose transition-all duration-200">
+                  <Instagram size={16} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-9 h-9 border border-white/10 flex items-center justify-center text-warm-gray hover:text-rose hover:border-rose transition-all duration-200">
+                  <Facebook size={16} />
+                </a>
+                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-9 h-9 border border-white/10 flex items-center justify-center text-warm-gray hover:text-rose hover:border-rose transition-all duration-200">
+                  <WhatsAppIcon size={16} />
+                </a>
+              </div>
             </div>
-            
+
+            {/* Col 2 — Links */}
             <div className="md:col-span-3 flex flex-col">
-              <h4 className="font-sans text-[9px] uppercase text-gold tracking-[0.2em] mb-4">Navegação</h4>
-              <ul className="flex flex-col gap-2">
-                {['Tratamentos', 'A Clínica', 'Resultados', 'Contato'].map(item => (
-                  <li key={item}><a href={`#${item.toLowerCase().replace(' ', '-')}`} className="font-sans text-[13px] text-warm-gray hover:text-rose transition-colors">{item}</a></li>
+              <h4 className="font-sans text-[9px] uppercase text-gold tracking-[0.22em] mb-5">Navegação</h4>
+              <ul className="flex flex-col gap-3">
+                {[
+                  { label: 'Tratamentos', href: '#tratamentos' },
+                  { label: 'A Clínica', href: '#a-clinica' },
+                  { label: 'Resultados', href: '#resultados' },
+                  { label: 'Contato', href: '#contato' },
+                ].map(item => (
+                  <li key={item.label}>
+                    <a href={item.href} className="font-sans text-[13px] text-warm-gray hover:text-rose transition-colors flex items-center gap-2 group">
+                      <span className="w-3 h-[1px] bg-warm-gray/40 group-hover:bg-rose group-hover:w-5 transition-all duration-300"></span>
+                      {item.label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
 
-            <div className="md:col-span-3 flex flex-col">
-              <h4 className="font-sans text-[9px] uppercase text-gold tracking-[0.2em] mb-4">Contato</h4>
-              <ul className="flex flex-col gap-2">
-                <li className="font-sans text-[13px] text-warm-gray">(11) 99287-6219</li>
-                <li className="font-sans text-[13px] text-warm-gray">contato@duno.com.br</li>
-                <li className="font-sans text-[13px] text-warm-gray mt-2">Itaim Bibi, São Paulo</li>
+            {/* Col 3 — Contato */}
+            <div className="md:col-span-4 flex flex-col">
+              <h4 className="font-sans text-[9px] uppercase text-gold tracking-[0.22em] mb-5">Contato</h4>
+              <ul className="flex flex-col gap-4">
+                <li className="flex items-start gap-3">
+                  <MapPin size={14} strokeWidth={1.5} className="text-rose mt-[2px] shrink-0" />
+                  <span className="font-sans text-[13px] text-warm-gray leading-[1.5]">Rua Joaquim Floriano, 72<br />Itaim Bibi, São Paulo</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone size={14} strokeWidth={1.5} className="text-rose shrink-0" />
+                  <a href="tel:+5511992876219" className="font-sans text-[13px] text-warm-gray hover:text-rose transition-colors">(11) 99287-6219</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail size={14} strokeWidth={1.5} className="text-rose shrink-0" />
+                  <a href="mailto:contato@dunoestetica.com.br" className="font-sans text-[13px] text-warm-gray hover:text-rose transition-colors">contato@dunoestetica.com.br</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Clock size={14} strokeWidth={1.5} className="text-rose shrink-0" />
+                  <span className="font-sans text-[13px] text-warm-gray">Seg–Sex 9h–19h · Sáb 9h–13h</span>
+                </li>
               </ul>
+
+              {/* CTA WhatsApp */}
+              <a href={whatsappUrl} className="btn-primary mt-6 self-start text-[10px] py-[10px] px-[20px]">
+                <WhatsAppIcon size={14} /> FALAR AGORA
+              </a>
             </div>
+
           </div>
 
-          <div className="h-[1px] w-full bg-gold/20 mb-[20px]"></div>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <span className="font-sans text-[11px] text-warm-gray">© 2025 DUNO. Todos os direitos reservados.</span>
-            <span className="font-sans text-[11px] text-warm-gray">Desenvolvido por Matheus</span>
+          {/* Divider */}
+          <div className="h-[1px] w-full bg-gold/15 mb-[24px]"></div>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+            <span className="font-sans text-[11px] text-warm-gray/60">© 2025 DUNO Estética. Todos os direitos reservados.</span>
+            <span className="font-sans text-[11px] text-warm-gray/60">Desenvolvido por <span className="text-rose">Matheus</span></span>
           </div>
+
         </div>
       </footer>
 
