@@ -58,144 +58,58 @@ const CLIENT_CONFIG = {
 };
 const SERVICES = [
   {
-    id: 1,
-    title: "Toxina Botulínica Nano-Precision",
-    description: "Protocolo de precisão molecular para suavizar linhas preservando a naturalidade facial.",
-    badge: "Nanotech",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
+    title: "Toxina Botulínica (Botox)",
+    description: "Suaviza rugas e linhas de expressão, proporcionando um rosto mais jovem e descansado.",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    featured: true
   },
   {
-    id: 2,
-    title: "Preenchimento Facial Molecular",
-    description: "Restauração de volume e contorno com polímeros de alta biocompatibilidade e pureza.",
-    badge: "Molecular",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
+    title: "Harmonização Facial",
+    description: "Equilibra os traços do rosto, realçando a beleza natural com mais simetria.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop",
+    featured: true
   },
   {
-    id: 3,
-    title: "Bioestimuladores Scult Nano",
-    description: "Tratamento de flacidez profunda com tecnologia que reprograma a síntese de colágeno.",
-    badge: "Firmeza",
-    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop"
+    title: "Preenchimento Labial",
+    description: "Define e aumenta o volume dos lábios com naturalidade e harmonia.",
+    image: "https://images.unsplash.com/photo-1511116231362-e64fcb95dc6c?q=80&w=800&auto=format&fit=crop",
+    featured: true
   },
   {
-    id: 4,
-    title: "Harmonização de Glúteos Tech",
-    description: "Projeção e melhora do contorno corporal através de preenchedores de alta coesão.",
-    badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop"
+    title: "Bioestimulador de Colágeno",
+    description: "Estimula a produção de colágeno, melhorando firmeza e sustentação da pele.",
+    image: "https://images.unsplash.com/photo-1570172619380-2126400a70c5?q=80&w=800&auto=format&fit=crop",
+    featured: false
   },
   {
-    id: 5,
-    title: "Ultraformer III Dual-Plane",
-    description: "Ultrassom micro e macrofocado para lifting facial e corporal em múltiplas camadas.",
-    badge: "Tecnologia",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop"
+    title: "Rejuvenescimento Facial",
+    description: "Melhora textura, firmeza e aparência geral da pele, reduzindo sinais do tempo.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop",
+    featured: false
   },
   {
-    id: 6,
-    title: "Lavieen Nano-Thulium",
-    description: "Laser de thulium fracionado para renovação da superfície cutânea com brilho instantâneo.",
-    badge: "BB Laser",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1053bb44?q=80&w=800&auto=format&fit=crop"
+    title: "Skinbooster (Hidratação Profunda)",
+    description: "Hidratação profunda que deixa a pele mais viçosa, luminosa e saudável.",
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop",
+    featured: false
   },
   {
-    id: 7,
-    title: "Rinomodelação Nano-Struct",
-    description: "Refinamento do perfil nasal com preenchedores de alta estabilidade e precisão técnica.",
-    badge: "Perfil",
-    image: "https://images.unsplash.com/photo-1511116231362-e64fcb95dc6c?q=80&w=800&auto=format&fit=crop"
+    title: "Limpeza de Pele Profunda",
+    description: "Remove impurezas e cravos, deixando a pele limpa, renovada e equilibrada.",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
+    featured: false
   },
   {
-    id: 8,
-    title: "Fios Nano-Lifting",
-    description: "Bioestimulação imediata com fios absorvíveis de última geração para sustentação tecidual.",
-    badge: "Master",
-    image: "https://images.unsplash.com/photo-1616391114022-7f7229090224?q=80&w=800&auto=format&fit=crop"
+    title: "Tratamento para Acne",
+    description: "Reduz inflamações e marcas, promovendo uma pele mais uniforme e saudável.",
+    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&auto=format&fit=crop",
+    featured: false
   },
   {
-    id: 9,
-    title: "Hydra-Nano Booster",
-    description: "Injeção de ativos hidrofílicos em escala nanométrica para restauração do equilíbrio hídrico.",
-    badge: "Glow",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 10,
-    title: "Lipo de Papada Enzimática",
-    description: "Dissolução seletiva de tecido adiposo submentoniano com ativos lipolíticos de alta pureza.",
-    badge: "Contorno",
-    image: "https://images.unsplash.com/photo-1583417651239-93049b4c065f?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 11,
-    title: "Indução de Colágeno Fotônica",
-    description: "Microagulhamento de alta precisão associado a terapia de luz para regeneração acelerada.",
-    badge: "Renovação",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 12,
-    title: "Protocolo Melasma Bio-Control",
-    description: "Gerenciamento avançado de hiperpigmentação com bloqueadores enzimáticos nanométricos.",
-    badge: "Clareamento",
-    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 13,
-    title: "Revitalização de Olheiras Tech",
-    description: "Correção de sulcos e pigmentação orbital com ativos regeneradores de alta permeação.",
-    badge: "Olhar",
-    image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 14,
-    title: "Peeling Nano-Encapsulado",
-    description: "Renovação celular controlada com ativos nano-encapsulados para máxima segurança.",
-    badge: "Pele Nova",
-    image: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 15,
-    title: "Limpeza de Pele Inteligente",
-    description: "Extração técnica aliada à tecnologia sônica para desinflamação e assepsia profunda.",
-    badge: "Saúde",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 16,
-    title: "Duno Glow Nano-Boost",
-    description: "Combinação exclusiva de nano-ativos para luminosidade e hidratação molecular imediata.",
-    badge: "Exclusivo",
-    image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 17,
-    title: "Body Tech Sculpture",
-    description: "Protocolo de contorno corporal que une drenagem técnica e ativos liporredutores celulares.",
-    badge: "Bem-estar",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 18,
-    title: "Criolipólise Tech-Shape",
-    description: "Tecnologia de resfriamento inteligente para eliminação estratégica de gordura focalizada.",
-    badge: "Corpo",
-    image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 19,
-    title: "Remodelamento Nano-Body",
-    description: "Tratamento para flacidez com tecnologia que reconstrói as redes de colágeno e elastina.",
-    badge: "Firmeza",
-    image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 20,
-    title: "Microdermoabrasão Nano",
-    description: "Esfoliação física de alta precisão para renovação imediata da textura e brilho bio-celular.",
-    badge: "Renovação",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
+    title: "Depilação a Laser",
+    description: "Eliminação progressiva dos pelos com mais conforto e praticidade.",
+    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop",
+    featured: false
   }
 ];
 
@@ -716,89 +630,71 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services Section with Rewards */}
-      <section id="serviços" className="section-padding bg-clinic-bg">
+      {/* Services Section */}
+      <section id="serviços" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20 flex flex-col items-center"
+            className="text-center mb-16"
           >
-            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold bg-primary/5 mb-6 shadow-sm backdrop-blur-sm">
-              <Sparkles size={14} className="text-primary" /> Tratamentos Exclusivos <Sparkles size={14} className="text-primary" />
-            </span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-[1.1] text-clinic-text max-w-3xl text-balance">
-              Nossos <span className="italic text-primary relative inline-block">
-                Protocolos
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                </svg>
-              </span>
+            <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter text-clinic-text">
+              Nossos tratamentos <span className="text-primary">mais procurados</span>
             </h2>
-            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mt-10" />
-            <p className="mt-8 text-clinic-text/60 max-w-2xl text-sm leading-relaxed font-sans font-medium">
-              A união perfeita entre ciência, tecnologia nanotecnológica e arte em estética avançada, proporcionando resultados incomparáveis e naturais.
+            <p className="text-clinic-text/60 max-w-2xl mx-auto text-sm md:text-base font-medium">
+              Tecnologia e estética avançada para realçar sua beleza com segurança e naturalidade
             </p>
           </motion.div>
 
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.1 } }
-            }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {SERVICES.map((service, i) => (
               <motion.div
-                key={service.id}
-                variants={{
-                  hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: 10 },
-                  visible: { opacity: 1, y: 0, scale: 1, rotateX: 0 }
-                }}
-                transition={{ duration: 0.7, type: "spring", stiffness: 100, damping: 15 }}
-                whileHover={{ y: -15, scale: 1.03, zIndex: 10 }}
-                className={`group relative rounded-[2rem] overflow-hidden shadow-lg h-[400px] cursor-pointer ${
-                  i % 5 === 0 ? "lg:col-span-2" : "col-span-1"
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className={`group relative bg-white rounded-[16px] p-0 overflow-hidden transition-all duration-300 border border-primary/5 shadow-sm hover:shadow-2xl ${
+                  service.featured ? 'ring-2 ring-primary/10 shadow-md' : ''
                 }`}
-                style={{ perspective: 1000 }}
               >
-                <img 
-                  loading="lazy"
-                  decoding="async"
-                  src={service.image} 
-                  alt={service.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                
-                {/* Overlay Neutro Escuro (Garante Máximo Contraste com Branco) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-black/20 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                  <span className="self-start bg-primary text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg mb-5">
-                    {service.badge}
-                  </span>
+                {/* Imagem do Serviço */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {service.featured && (
+                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                      Destaque
+                    </div>
+                  )}
+                </div>
+
+                {/* Conteúdo do Card */}
+                <div className="p-6 md:p-8">
+                  <h3 className={`text-xl md:text-2xl font-black mb-3 leading-tight ${service.featured ? 'text-primary' : 'text-clinic-text'}`}>
+                    {service.title}
+                  </h3>
+                  <p className="text-clinic-text/60 text-sm font-medium mb-8 leading-relaxed line-clamp-2">
+                    {service.description}
+                  </p>
                   
-                  <div>
-                    <h3 className="text-3xl md:text-4xl font-serif text-white mb-3 drop-shadow-xl leading-tight">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-sm text-white/95 mb-6 leading-relaxed font-sans font-light max-w-sm drop-shadow-md">
-                      {service.description}
-                    </p>
-                    <a href={whatsappUrl} className="inline-flex items-center gap-2 text-[10px] text-white hover:text-primary transition-colors uppercase font-bold tracking-[0.2em] border-b border-primary/30 pb-1">
-                      Agendar Consulta <ArrowRight size={14} />
-                    </a>
-                  </div>
+                  <a 
+                    href={whatsappUrl} 
+                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors ${
+                      service.featured ? 'text-primary border-b-2 border-primary pb-1' : 'text-clinic-text/40 hover:text-primary'
+                    }`}
+                  >
+                    Agendar avaliação <ArrowRight size={14} />
+                  </a>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
