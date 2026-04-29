@@ -82,16 +82,14 @@ const FAQS = [
 
 const RESULTS = [
   {
-    before: "https://images.unsplash.com/photo-1512290902247-47f808b9938c?q=80&w=800&auto=format&fit=crop",
-    after: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    image: "/images/antes e depois01.png",
     treatment: "HARMONIZAÇÃO FACIAL",
-    time: "Resultado em 30 dias"
+    time: "Resultado Imediato"
   },
   {
-    before: "https://images.unsplash.com/photo-1614851101186-aa68d6f3080c?q=80&w=800&auto=format&fit=crop",
-    after: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
-    treatment: "BIOESTIMULADOR + PREENCHIMENTO",
-    time: "Resultado em 45 dias"
+    image: "/images/antes e depois02.png",
+    treatment: "REJUVENESCIMENTO INTEGRAL",
+    time: "Resultado Pós-Tratamento"
   }
 ];
 
@@ -421,9 +419,8 @@ export default function App() {
           <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
             {RESULTS.map((res, i) => (
               <motion.div {...fadeInUp} key={i} className="min-w-[85vw] md:min-w-[600px] snap-center shrink-0 flex flex-col gap-6">
-                <div className="grid grid-cols-2 gap-1 h-[400px]">
-                  <img src={res.before} alt="Antes" className="w-full h-full object-cover" />
-                  <img src={res.after} alt="Depois" className="w-full h-full object-cover" />
+                <div className="w-full h-auto max-h-[500px] overflow-hidden">
+                  <img src={res.image} alt="Antes e Depois" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h4 className="font-sans text-[12px] uppercase tracking-[0.16em] text-rose mb-1">{res.treatment}</h4>
