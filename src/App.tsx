@@ -152,9 +152,9 @@ export default function App() {
       <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-[350ms] ${isScrolled ? 'bg-[#0F0F0F]/97 backdrop-blur-[14px] border-b border-gold/20 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)]' : 'bg-transparent py-5'}`}>
         <div className="w-full px-[clamp(20px,5vw,7vw)] mx-auto flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="flex flex-col leading-[1.1] z-10">
-            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[17px] tracking-[0.25em] uppercase text-rose">DUNO</span>
-            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[7px] tracking-[0.3em] uppercase text-rose/75">ESTÉTICA</span>
+          <a href="#" className="flex flex-col leading-[1.2] z-10">
+            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[18px] tracking-[0.28em] uppercase text-rose">DUNO</span>
+            <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-semibold text-[9px] tracking-[0.35em] uppercase text-rose">ESTÉTICA</span>
           </a>
 
           {/* Desktop Nav */}
