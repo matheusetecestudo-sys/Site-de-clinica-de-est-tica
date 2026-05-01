@@ -405,39 +405,39 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-[0.8/1] md:aspect-[0.75/1] rounded-[20px] md:rounded-[40px] overflow-hidden group shadow-lg border border-rose/20"
+                className="relative aspect-[0.8/1] md:aspect-[0.75/1] rounded-[24px] md:rounded-[40px] overflow-hidden group shadow-xl border border-rose/20"
               >
                 {/* Imagem de Fundo */}
                 <img src={srv.image} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
                 {/* Overlay Escuro Gradual */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
                 
-                {/* Conteúdo Otimizado */}
-                <div className="absolute inset-0 p-4 md:p-10 flex flex-col justify-end">
+                {/* Conteúdo Centralizado e Alinhado */}
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col items-center text-center justify-end">
                   {/* Título Serifado */}
-                  <h3 className="font-display text-[15px] md:text-[32px] text-white font-bold uppercase leading-tight mb-2 md:mb-5 tracking-tight">
+                  <h3 className="font-display text-[18px] md:text-[24px] text-white font-bold uppercase leading-tight mb-2 md:mb-4 tracking-tight">
                     {srv.title}
                   </h3>
                   
                   {/* Descrição */}
-                  <p className="font-sans text-[10px] md:text-[16px] text-white/85 line-clamp-2 md:line-clamp-3 mb-4 md:mb-10 leading-tight md:leading-relaxed max-w-full">
+                  <p className="font-sans text-[11px] md:text-[13px] text-white/85 line-clamp-3 mb-5 md:mb-8 leading-relaxed max-w-full">
                     {srv.description}
                   </p>
                   
-                  {/* Botão Pill Rosa — Mais Compacto no Mobile */}
+                  {/* Botão Pill Rosa Centralizado */}
                   <a 
                     href={whatsappUrl} 
-                    className="bg-rose text-white rounded-full py-2.5 md:py-5 px-4 md:px-10 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-md"
+                    className="bg-rose text-white rounded-full py-3.5 md:py-4 px-6 md:px-8 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-lg w-full max-w-[220px]"
                   >
-                    <WhatsAppIcon size={12} className="text-white md:w-4 md:h-4" />
-                    <span className="font-sans font-bold text-[9px] md:text-[13px] uppercase tracking-[0.15em]">AGENDAR CONSULTA</span>
+                    <WhatsAppIcon size={14} className="text-white shrink-0" />
+                    <span className="font-sans font-bold text-[9px] md:text-[11px] uppercase tracking-widest whitespace-nowrap">AGENDAR CONSULTA</span>
                   </a>
                 </div>
               </motion.div>
