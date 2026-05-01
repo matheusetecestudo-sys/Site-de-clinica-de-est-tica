@@ -173,8 +173,8 @@ export default function App() {
 
           <div className="hidden lg:flex items-center gap-4">
             <a href={`tel:+5511992876219`} className="font-sans text-[11px] uppercase tracking-[0.12em] text-white/70 hover:text-rose transition-colors">(11) 99287-6219</a>
-            <a href={whatsappUrl} className="btn-primary !py-[12px] !px-[28px] !text-[10px]">
-              AGENDAR CONSULTA
+            <a href={whatsappUrl} className="btn-primary !py-[12px] !px-[28px] !text-[10px] gap-2">
+              <WhatsAppIcon size={14} /> AGENDAR CONSULTA
             </a>
           </div>
 
@@ -304,8 +304,8 @@ export default function App() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center">
-                  GARANTIR MINHA CONSULTA
+                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center gap-3">
+                  <WhatsAppIcon size={18} /> GARANTIR MINHA CONSULTA
                 </a>
                 <a href="#tratamentos" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-black w-full sm:w-auto text-center">
                   DESCUBRA O MÉTODO
@@ -379,7 +379,9 @@ export default function App() {
               ))}
             </ul>
             
-            <a href={whatsappUrl} className="btn-secondary mb-12">QUERO MINHA AVALIAÇÃO COM A DRA.</a>
+            <a href={whatsappUrl} className="btn-secondary mb-12 gap-3">
+              <WhatsAppIcon size={18} /> QUERO MINHA AVALIAÇÃO COM A DRA.
+            </a>
             
             <div className="flex flex-wrap gap-3">
               {["Certificação", "Excelência", "Equipamentos Premium", "Tecnologia"].map((badge, i) => (
@@ -436,7 +438,7 @@ export default function App() {
                     className="bg-rose text-white rounded-full py-2.5 md:py-5 px-4 md:px-10 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-md"
                   >
                     <WhatsAppIcon size={12} className="text-white md:w-4 md:h-4" />
-                    <span className="font-sans font-bold text-[9px] md:text-[13px] uppercase tracking-[0.15em]">WHATSAPP</span>
+                    <span className="font-sans font-bold text-[9px] md:text-[13px] uppercase tracking-[0.15em]">AGENDAR CONSULTA</span>
                   </a>
                 </div>
               </motion.div>
@@ -520,7 +522,9 @@ export default function App() {
 
           <div className="flex flex-col items-center mt-[80px] gap-8">
             <p className="font-sans text-[11px] text-warm-gray tracking-[0.1em] uppercase">Resultados individuais podem variar.</p>
-            <a href={whatsappUrl} className="btn-secondary px-[40px]">AGENDAR AVALIAÇÃO</a>
+            <a href={whatsappUrl} className="btn-secondary px-[40px] gap-3">
+              <WhatsAppIcon size={18} /> AGENDAR AVALIAÇÃO
+            </a>
           </div>
         </div>
       </section>
