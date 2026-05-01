@@ -409,32 +409,37 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-[2px] bg-white">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-[0.75/1] md:aspect-[0.85/1] group overflow-hidden"
+                className="flex flex-col bg-[#FDFCFB] border border-gold/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] group"
               >
-                <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-                
-                <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-rose/90 backdrop-blur-sm px-[8px] py-[3px] md:px-[12px] md:py-[4px]">
-                  <span className="font-sans text-[7px] md:text-[9px] uppercase text-white tracking-[0.14em] font-bold">{srv.category}</span>
+                {/* Imagem do Serviço */}
+                <div className="relative aspect-[1.1/1] overflow-hidden">
+                  <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute top-2 right-2 bg-rose/90 backdrop-blur-sm px-2 py-1">
+                    <span className="font-sans text-[7px] md:text-[9px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
+                  </div>
                 </div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-[14px] md:p-[24px] flex flex-col justify-end h-full">
-                  <h3 className="font-display text-[17px] md:text-[26px] text-white mb-1.5 md:mb-3 leading-tight">{srv.title}</h3>
-                  <p className="font-sans text-[10px] md:text-[14px] text-white/85 line-clamp-2 md:line-clamp-3 mb-3 md:mb-5 leading-relaxed">
+                {/* Conteúdo Estático e Visível */}
+                <div className="p-3 md:p-6 flex flex-col flex-1 bg-white">
+                  <h3 className="font-display text-[15px] md:text-[24px] text-black mb-2 md:mb-3 leading-tight font-bold uppercase tracking-tight">{srv.title}</h3>
+                  <div className="w-8 h-[1px] bg-gold/30 mb-3 md:mb-4"></div>
+                  <p className="font-sans text-[11px] md:text-[15px] text-warm-gray mb-4 md:mb-6 line-clamp-3 md:line-clamp-none leading-relaxed">
                     {srv.description}
                   </p>
+                  
+                  {/* Botão de WhatsApp Rosa */}
                   <a 
                     href={whatsappUrl} 
-                    className="bg-rose text-white text-[9px] md:text-[11px] font-sans font-bold uppercase tracking-[0.15em] py-2.5 md:py-3.5 px-4 flex items-center justify-center gap-2 w-full hover:bg-[#8E2E43] transition-all duration-300 shadow-lg"
+                    className="mt-auto bg-rose text-white text-[10px] md:text-[12px] font-sans font-bold uppercase tracking-[0.15em] py-3 md:py-4 px-4 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     <WhatsAppIcon size={14} /> 
-                    <span className="whitespace-nowrap">AGENDAR AGORA</span>
+                    <span>WHATSAPP</span>
                   </a>
                 </div>
               </motion.div>
