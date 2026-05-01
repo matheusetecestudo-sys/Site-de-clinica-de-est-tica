@@ -409,39 +409,39 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-[0.75/1] md:aspect-[0.75/1] rounded-[24px] md:rounded-[40px] overflow-hidden group shadow-xl border border-rose/20"
+                className="relative aspect-[0.8/1] md:aspect-[0.75/1] rounded-[20px] md:rounded-[40px] overflow-hidden group shadow-lg border border-rose/20"
               >
                 {/* Imagem de Fundo */}
                 <img src={srv.image} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
                 {/* Overlay Escuro Gradual */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
                 
-                {/* Conteúdo */}
-                <div className="absolute inset-0 p-5 md:p-10 flex flex-col justify-end">
+                {/* Conteúdo Otimizado */}
+                <div className="absolute inset-0 p-4 md:p-10 flex flex-col justify-end">
                   {/* Título Serifado */}
-                  <h3 className="font-display text-[20px] md:text-[32px] text-white font-bold uppercase leading-[1.1] mb-3 md:mb-5 tracking-tight">
+                  <h3 className="font-display text-[15px] md:text-[32px] text-white font-bold uppercase leading-tight mb-2 md:mb-5 tracking-tight">
                     {srv.title}
                   </h3>
                   
                   {/* Descrição */}
-                  <p className="font-sans text-[11px] md:text-[16px] text-white/80 line-clamp-3 mb-6 md:mb-10 leading-relaxed max-w-[90%]">
+                  <p className="font-sans text-[10px] md:text-[16px] text-white/85 line-clamp-2 md:line-clamp-3 mb-4 md:mb-10 leading-tight md:leading-relaxed max-w-full">
                     {srv.description}
                   </p>
                   
-                  {/* Botão Pill Rosa — Mais Estético e Compacto */}
+                  {/* Botão Pill Rosa — Mais Compacto no Mobile */}
                   <a 
                     href={whatsappUrl} 
-                    className="bg-rose text-white rounded-full py-4 md:py-5 px-8 md:px-10 flex items-center justify-center gap-3 hover:bg-[#8E2E43] transition-all duration-300 shadow-lg hover:shadow-rose/20"
+                    className="bg-rose text-white rounded-full py-2.5 md:py-5 px-4 md:px-10 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-md"
                   >
-                    <WhatsAppIcon size={18} className="text-white" />
-                    <span className="font-sans font-bold text-[11px] md:text-[13px] uppercase tracking-[0.2em]">AGENDAR AGORA</span>
+                    <WhatsAppIcon size={12} className="text-white md:w-4 md:h-4" />
+                    <span className="font-sans font-bold text-[9px] md:text-[13px] uppercase tracking-[0.15em]">WHATSAPP</span>
                   </a>
                 </div>
               </motion.div>
