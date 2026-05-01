@@ -276,12 +276,12 @@ export default function App() {
       <section className="relative min-h-[100dvh] flex flex-col bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="/images/banner01 (3).png" alt="Clínica" className="w-full h-full object-cover object-top scale-[1.03]" />
-          {/* Degradê principal: esquerda escura para transparente */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/10" />
-          {/* Degradê inferior: base escura para transparente */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-          {/* Degradê superior: topo escuro suave */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          {/* Degradê principal: esquerda escura para transparente — Suavizado */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+          {/* Degradê inferior: base escura para transparente — Suavizado */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          {/* Degradê superior: topo escuro suave — Suavizado */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
           {/* Brilho rosa sutil no canto esquerdo */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_60%,rgba(219,39,119,0.12)_0%,transparent_55%)]" />
         </div>
@@ -409,13 +409,13 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-[0.7/1] md:aspect-[0.75/1] rounded-[32px] md:rounded-[48px] overflow-hidden group shadow-2xl"
+                className="relative aspect-[0.75/1] md:aspect-[0.75/1] rounded-[24px] md:rounded-[40px] overflow-hidden group shadow-xl border border-rose/20"
               >
                 {/* Imagem de Fundo */}
                 <img src={srv.image} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -435,18 +435,13 @@ export default function App() {
                     {srv.description}
                   </p>
                   
-                  {/* Botão Pill Rosa */}
+                  {/* Botão Pill Rosa — Mais Estético e Compacto */}
                   <a 
                     href={whatsappUrl} 
-                    className="bg-rose text-white rounded-full py-3.5 md:py-6 px-6 md:px-10 flex items-center justify-center gap-3 md:gap-4 hover:bg-[#8E2E43] transition-all duration-300 shadow-xl group/btn"
+                    className="bg-rose text-white rounded-full py-4 md:py-5 px-8 md:px-10 flex items-center justify-center gap-3 hover:bg-[#8E2E43] transition-all duration-300 shadow-lg hover:shadow-rose/20"
                   >
-                    <div className="bg-white/20 p-2 rounded-full">
-                      <WhatsAppIcon size={18} className="md:w-[24px] md:h-[24px]" />
-                    </div>
-                    <div className="flex flex-col items-start leading-none">
-                      <span className="font-sans font-bold text-[10px] md:text-[14px] uppercase tracking-widest">AGENDAR</span>
-                      <span className="font-sans font-bold text-[10px] md:text-[14px] uppercase tracking-widest">AGORA</span>
-                    </div>
+                    <WhatsAppIcon size={18} className="text-white" />
+                    <span className="font-sans font-bold text-[11px] md:text-[13px] uppercase tracking-[0.2em]">AGENDAR AGORA</span>
                   </a>
                 </div>
               </motion.div>
