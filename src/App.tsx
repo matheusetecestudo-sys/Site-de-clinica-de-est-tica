@@ -16,62 +16,63 @@ const StarIcon = ({ size = 14, className = "", ...props }: any) => (
 
 const SERVICES = [
   {
-    title: "Botox Facial",
-    description: "Elimina marcas de expressão e rugas, devolvendo um aspecto descansado e jovem.",
+    title: "Botox de Elite",
+    description: "Apague as marcas de estresse e tempo sem perder sua expressão. O segredo das faces mais elegantes e descansadas.",
     image: "/images/Toxina Botulínica (Botox).png",
     category: "FACIAL"
   },
   {
-    title: "Harmonização Facial",
-    description: "Equilibra os traços do rosto e realça sua beleza natural com precisão.",
+    title: "Harmonização de Luxo",
+    description: "O equilíbrio perfeito entre arte e ciência. Realçamos seus traços para criar um perfil magnético e sofisticado.",
     image: "/images/Harmonização Facial.png",
     category: "FACIAL"
   },
   {
-    title: "Preenchimento Labial",
-    description: "Lábios com mais volume, contorno definido e hidratação imediata.",
+    title: "Lábios e Contorno",
+    description: "Volume estratégico e contorno definido. O toque de sofisticação e sedução que seu sorriso sempre mereceu.",
     image: "/images/Preenchimento Labial.jpg",
     category: "FACIAL"
   },
   {
     title: "Bioestimulador",
-    description: "Tratamento avançado contra a flacidez, estimulando o colágeno da própria pele.",
+    description: "Sua poupança de colágeno. Firmeza absoluta e sustentação profunda que melhora a cada dia que passa.",
     image: "/images/Bioestimulador de Colágeno.png",
     category: "FACIAL E CORPORAL"
   },
   {
-    title: "Lifting sem Cortes",
-    description: "Recupera a sustentação do rosto e suaviza marcas do tempo sem cirurgia.",
+    title: "Lifting de Alta Performance",
+    description: "Desafie a gravidade sem cirurgias. Sustentação imediata e regeneração total dos contornos do seu rosto.",
     image: "/images/Rejuvenescimento Facial.png",
     category: "FACIAL"
   },
   {
-    title: "Hidratação Profunda",
-    description: "Injeção de vitaminas que devolve o brilho e o viço imediato da pele (Skinbooster).",
+    title: "Brilho e Hidratação",
+    description: "O segredo da pele 'glass skin'. Hidratação profunda que devolve o viço e a luminosidade que vem de dentro.",
     image: "/images/hidratação profunda.webp",
     category: "FACIAL"
   },
   {
-    title: "Acne e Cicatrizes",
-    description: "Protocolos para acabar com espinhas e reduzir marcas de acne de forma definitiva.",
+    title: "Acne e Textura",
+    description: "Recupere a pureza da sua pele. Protocolos definitivos para eliminar inflamações e marcas indesejadas.",
     image: "/images/tratamento para acne.webp",
     category: "TRATAMENTO"
   },
   {
-    title: "Depilação a Laser",
-    description: "Pele lisa e livre de pelos permanentemente com a tecnologia mais confortável.",
+    title: "Liberdade com Laser",
+    description: "Pele permanentemente impecável. A tecnologia mais confortável do mundo para você nunca mais se preocupar com pelos.",
     image: "/images/Depilação a leizer.webp",
     category: "CORPORAL"
   }
 ];
 
 const FAQS = [
-  { q: "Os procedimentos de harmonização facial são dolorosos?", a: "Utilizamos as mais avançadas técnicas de anestesia local e tópica. O conforto da paciente é prioridade e a maioria relata apenas um incômodo passageiro." },
-  { q: "Quanto tempo duram os resultados do Botox?", a: "A toxina botulínica tem uma durabilidade média de 4 a 6 meses, variando de acordo com a força muscular e metabolismo de cada paciente." },
-  { q: "Preciso de consulta antes de iniciar um tratamento?", a: "Sim. A avaliação inicial é essencial para entendermos sua anatomia, desejos e traçarmos o melhor protocolo, garantindo segurança e naturalidade." },
-  { q: "A DUNO atende planos de saúde ou parcelamento?", a: "Nossos procedimentos são particulares, mas oferecemos condições flexíveis de parcelamento em cartão de crédito para viabilizar seu tratamento." },
-  { q: "Qual a diferença entre preenchimento e Botox?", a: "O Botox relaxa a musculatura para evitar rugas de expressão. O preenchimento devolve volume e contorno usando ácido hialurônico." },
-  { q: "Como funciona a primeira consulta?", a: "É um momento de escuta ativa. Avaliamos sua pele, estrutura óssea e expectativas, e desenhamos um plano de tratamento exclusivo para você." }
+  { q: "Os resultados ficam naturais ou artificiais?", a: "Nossa filosofia é a naturalização. Utilizamos o Método DUNO para realçar sua beleza sem que ninguém perceba que você fez um procedimento — apenas que você está na sua melhor fase." },
+  { q: "Qual a durabilidade dos tratamentos injetáveis?", a: "Depende do protocolo. O Botox dura em média 4 a 6 meses, enquanto bioestimuladores e preenchedores podem durar de 12 a 24 meses, dependendo do organismo." },
+  { q: "Os procedimentos são muito dolorosos?", a: "Sua experiência de luxo inclui conforto total. Utilizamos as melhores técnicas de anestesia local e tópica para garantir uma sessão tranquila e praticamente indolor." },
+  { q: "A primeira consulta é demorada?", a: "Sim. A avaliação na DUNO é um ritual de escuta e análise técnica profunda. Não fazemos apenas aplicações, desenhamos seu plano de rejuvenescimento exclusivo." },
+  { q: "Existe algum 'tempo de recuperação'?", a: "A maioria dos nossos protocolos permite que você retorne à sua rotina imediatamente. Em alguns casos, pode haver um leve edema que desaparece em poucos dias." },
+  { q: "Como faço para garantir um horário?", a: "Devido à nossa agenda exclusiva e atendimento personalizado, recomendamos o agendamento via WhatsApp com pelo menos uma semana de antecedência." }
+];esenhamos um plano de tratamento exclusivo para você." }
 ];
 
 const RESULTS = [
@@ -291,23 +292,23 @@ export default function App() {
                 CLÍNICA DE ESTÉTICA AVANÇADA — SÃO PAULO
               </span>
 
-              <h1 className="font-display font-bold text-white text-[clamp(52px,7.5vw,96px)] leading-[0.97] mb-4">
-                Resultados que<br />
-                <span className="font-display italic text-rose">Silenciam a Sala.</span>
+              <h1 className="font-display font-bold text-white text-[clamp(48px,7.5vw,90px)] leading-[0.95] mb-6">
+                Domine a sua<br />
+                Própria <span className="font-display italic text-rose">Elegância.</span>
               </h1>
 
               <div className="line-decorative my-[32px] w-[64px] h-[2px]"></div>
 
-              <p className="font-sans text-white/75 text-[17px] md:text-[19px] leading-[1.7] max-w-[480px] mb-12">
-                Procedimentos de alta performance que transformam a forma como o mundo te enxerga. Naturalidade cirúrgica. Protocolo exclusivo. Resultado irreversível.
+              <p className="font-sans text-white/85 text-[17px] md:text-[20px] leading-[1.6] max-w-[520px] mb-12">
+                Onde a precisão clínica encontra a estética de elite. Protocolos exclusivos desenhados para quem não aceita nada menos que a perfeição em resultados naturais.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
                 <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center">
-                  AGENDAR CONSULTA
+                  GARANTIR MINHA CONSULTA
                 </a>
                 <a href="#tratamentos" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-black w-full sm:w-auto text-center">
-                  VER TRATAMENTOS
+                  DESCUBRA O MÉTODO
                 </a>
               </div>
               
@@ -330,19 +331,19 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-gold/30">
             <motion.div {...fadeInUp} className="flex flex-col md:pl-8 first:pl-0">
               <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none"><Counter end={22} suffix="+" /></span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Anos de Experiência</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Anos Transformando Vidas</span>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="flex flex-col md:pl-8">
               <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none">15k+</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Procedimentos Realizados</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Resultados de Excelência</span>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex flex-col md:pl-8">
               <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none">100%</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Satisfação das Pacientes</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Fidelidade das Pacientes</span>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="flex flex-col md:pl-8">
               <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none">Elite</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Certificação Internacional</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Padrão Ouro Internacional</span>
             </motion.div>
           </div>
         </div>
@@ -361,24 +362,24 @@ export default function App() {
             <div className="line-decorative mb-8"></div>
             
             <p className="font-sans text-black text-[17px] leading-[1.8] max-w-[500px] mb-8">
-              Com mais de duas décadas na medicina estética, a Dra. Beatriz desenvolveu um método que une precisão técnica e naturalidade. Cada protocolo é personalizado — porque nenhum rosto é igual.
+              Esqueça os padrões genéricos. Dra. Beatriz não apenas aplica produtos; ela esculpe resultados. Com foco absoluto na naturalização facial, seu método devolve os contornos e o viço que o tempo tentou levar.
             </p>
             
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                "Método exclusivo de naturalização facial",
-                "Membro titular de sociedades internacionais",
-                "Foco absoluto na saúde e integridade da pele",
-                "Atendimento intimista e personalizado"
+                "Método Exclusivo de Rejuvenescimento Natural",
+                "Referência em Bioestimuladores de Elite",
+                "Especialista em Harmonização de Luxo",
+                "Experiência Internacional Consolidada"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="text-rose text-[12px] font-bold">—</span>
-                  <span className="font-sans text-[15px] text-black">{item}</span>
+                  <span className="font-sans text-[15px] text-black font-medium">{item}</span>
                 </li>
               ))}
             </ul>
             
-            <a href={whatsappUrl} className="btn-secondary mb-12">AGENDAR COM A DRA. BEATRIZ</a>
+            <a href={whatsappUrl} className="btn-secondary mb-12">QUERO MINHA AVALIAÇÃO COM A DRA.</a>
             
             <div className="flex flex-wrap gap-3">
               {["Certificação", "Excelência", "Equipamentos Premium", "Tecnologia"].map((badge, i) => (
@@ -600,17 +601,14 @@ export default function App() {
 
       {/* [SEÇÃO 10 — CTA FINAL] */}
       <section className="bg-black py-[160px] px-[clamp(24px,5vw,7vw)] text-center">
-        <div className="w-full max-w-[600px] mx-auto flex flex-col items-center">
-          <span className="text-label text-gold mb-6">COMECE SUA TRANSFORMAÇÃO</span>
-          <h2 className="font-display font-bold text-[clamp(44px,6vw,80px)] text-white leading-[1.0] mb-7">Pronta para<br/>Começar?</h2>
+        <div className="w-full max-w-[700px] mx-auto flex flex-col items-center">
+          <span className="text-label text-gold mb-6">SUA TRANSFORMAÇÃO COMEÇA AQUI</span>
+          <h2 className="font-display font-bold text-[clamp(40px,6vw,72px)] text-white leading-[1.05] mb-7">Pronta para viver sua<br/>melhor fase?</h2>
           <div className="line-decorative mb-7"></div>
-          <p className="font-sans text-[18px] text-white/60 mb-[48px] max-w-[400px]">Agende agora sua consulta de avaliação.</p>
+          <p className="font-sans text-[18px] text-white/60 mb-[48px] max-w-[480px]">Não deixe sua autoestima para depois. O momento de investir em você é agora.</p>
           <div className="flex flex-col sm:flex-row gap-[20px] w-full sm:w-auto justify-center">
-            <a href={whatsappUrl} className="btn-primary w-full sm:w-auto">
-              <WhatsAppIcon size={18} /> AGENDAR PELO WHATSAPP
-            </a>
-            <a href="#tratamentos" className="btn-secondary w-full sm:w-auto">
-              VER TRATAMENTOS
+            <a href={whatsappUrl} className="btn-primary w-full sm:w-auto !px-[56px]">
+              <WhatsAppIcon size={18} /> GARANTIR MEU HORÁRIO
             </a>
           </div>
         </div>
