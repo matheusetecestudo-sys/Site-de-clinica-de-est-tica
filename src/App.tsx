@@ -178,7 +178,7 @@ export default function App() {
 
           <div className="hidden lg:flex items-center gap-4">
             <a href={`tel:+5511992876219`} className="font-sans text-[11px] uppercase tracking-[0.12em] text-white/70 hover:text-rose transition-colors">(11) 99287-6219</a>
-            <a href={whatsappUrl} className="btn-primary py-[9px] px-[20px] text-[10px]">
+            <a href={whatsappUrl} className="btn-primary !py-[12px] !px-[28px] !text-[10px]">
               AGENDAR CONSULTA
             </a>
           </div>
@@ -309,10 +309,10 @@ export default function App() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center px-[44px] py-[16px]">
+                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center">
                   AGENDAR CONSULTA
                 </a>
-                <a href="#tratamentos" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-black w-full sm:w-auto text-center px-[44px] py-[16px]">
+                <a href="#tratamentos" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-black w-full sm:w-auto text-center">
                   VER TRATAMENTOS
                 </a>
               </div>
@@ -409,37 +409,44 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="flex flex-col bg-[#FDFCFB] border border-gold/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] group"
+                className="relative aspect-[0.7/1] md:aspect-[0.75/1] rounded-[32px] md:rounded-[48px] overflow-hidden group shadow-2xl"
               >
-                {/* Imagem do Serviço */}
-                <div className="relative aspect-[1.1/1] overflow-hidden">
-                  <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-2 right-2 bg-rose/90 backdrop-blur-sm px-2 py-1">
-                    <span className="font-sans text-[7px] md:text-[9px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
-                  </div>
-                </div>
+                {/* Imagem de Fundo */}
+                <img src={srv.image} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
-                {/* Conteúdo Estático e Visível */}
-                <div className="p-3 md:p-6 flex flex-col flex-1 bg-white">
-                  <h3 className="font-display text-[15px] md:text-[24px] text-black mb-2 md:mb-3 leading-tight font-bold uppercase tracking-tight">{srv.title}</h3>
-                  <div className="w-8 h-[1px] bg-gold/30 mb-3 md:mb-4"></div>
-                  <p className="font-sans text-[11px] md:text-[15px] text-warm-gray mb-4 md:mb-6 line-clamp-3 md:line-clamp-none leading-relaxed">
+                {/* Overlay Escuro Gradual */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
+                
+                {/* Conteúdo */}
+                <div className="absolute inset-0 p-5 md:p-10 flex flex-col justify-end">
+                  {/* Título Serifado */}
+                  <h3 className="font-display text-[20px] md:text-[32px] text-white font-bold uppercase leading-[1.1] mb-3 md:mb-5 tracking-tight">
+                    {srv.title}
+                  </h3>
+                  
+                  {/* Descrição */}
+                  <p className="font-sans text-[11px] md:text-[16px] text-white/80 line-clamp-3 mb-6 md:mb-10 leading-relaxed max-w-[90%]">
                     {srv.description}
                   </p>
                   
-                  {/* Botão de WhatsApp Rosa */}
+                  {/* Botão Pill Rosa */}
                   <a 
                     href={whatsappUrl} 
-                    className="mt-auto bg-rose text-white text-[10px] md:text-[12px] font-sans font-bold uppercase tracking-[0.15em] py-3 md:py-4 px-4 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="bg-rose text-white rounded-full py-3.5 md:py-6 px-6 md:px-10 flex items-center justify-center gap-3 md:gap-4 hover:bg-[#8E2E43] transition-all duration-300 shadow-xl group/btn"
                   >
-                    <WhatsAppIcon size={14} /> 
-                    <span>WHATSAPP</span>
+                    <div className="bg-white/20 p-2 rounded-full">
+                      <WhatsAppIcon size={18} className="md:w-[24px] md:h-[24px]" />
+                    </div>
+                    <div className="flex flex-col items-start leading-none">
+                      <span className="font-sans font-bold text-[10px] md:text-[14px] uppercase tracking-widest">AGENDAR</span>
+                      <span className="font-sans font-bold text-[10px] md:text-[14px] uppercase tracking-widest">AGORA</span>
+                    </div>
                   </a>
                 </div>
               </motion.div>
