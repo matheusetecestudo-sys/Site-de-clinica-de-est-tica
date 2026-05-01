@@ -329,7 +329,7 @@ export default function App() {
         <div className="w-full mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-gold/30">
             <motion.div {...fadeInUp} className="flex flex-col md:pl-8 first:pl-0">
-              <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none"><Counter end={22} suffix="+" /></span>
+              <span className="font-display font-bold text-[48px] md:text-[72px] text-white leading-none"><Counter end={10} suffix="+" /></span>
               <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold mt-2">Anos Transformando Vidas</span>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="flex flex-col md:pl-8">
@@ -352,37 +352,37 @@ export default function App() {
       <section id="a-clinica" className="section-padding bg-cream">
         <div className="w-full mx-auto grid md:grid-cols-12 gap-[80px] items-center">
           <motion.div {...fadeInUp} className="md:col-span-5 relative h-full">
-            <div className="absolute left-0 top-12 bottom-12 w-[2px] bg-gold -translate-x-[24px]"></div>
-            <img src="/images/doutora.png" alt="Dra. Beatriz Cavalcanti" className="w-full aspect-[3/4] object-cover object-top grayscale" />
+            <div className="absolute left-0 top-12 bottom-12 w-[2px] bg-gold -translate-x-[24px] hidden md:block"></div>
+            <img src="/images/doutora.png" alt="Dra. Beatriz Cavalcanti" className="w-full aspect-[3/4] object-cover object-top" />
           </motion.div>
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="md:col-span-7 flex flex-col items-start">
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="md:col-span-7 flex flex-col items-center text-center md:items-start md:text-left">
             <span className="text-label text-gold mb-4">A PROFISSIONAL</span>
             <h2 className="font-display text-[44px] md:text-[52px] text-black mb-6 leading-[1.1]">Dra. Beatriz Cavalcanti</h2>
-            <div className="line-decorative mb-8"></div>
+            <div className="line-decorative mb-8 mx-auto md:mx-0"></div>
             
             <p className="font-sans text-black text-[17px] leading-[1.8] max-w-[500px] mb-8">
               Esqueça os padrões genéricos. Dra. Beatriz não apenas aplica produtos; ela esculpe resultados. Com foco absoluto na naturalização facial, seu método devolve os contornos e o viço que o tempo tentou levar.
             </p>
             
-            <ul className="flex flex-col gap-3 mb-10">
+            <ul className="flex flex-col gap-3 mb-10 items-start">
               {[
                 "Método Exclusivo de Rejuvenescimento Natural",
                 "Referência em Bioestimuladores de Elite",
                 "Especialista em Harmonização de Luxo",
                 "Experiência Internacional Consolidada"
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3">
+                <li key={i} className="flex items-center gap-3 text-left">
                   <span className="text-rose text-[12px] font-bold">—</span>
                   <span className="font-sans text-[15px] text-black font-medium">{item}</span>
                 </li>
               ))}
             </ul>
             
-            <a href={whatsappUrl} className="btn-secondary mb-12 gap-3">
+            <a href={whatsappUrl} className="btn-secondary mb-12 gap-3 !px-8 md:!px-10">
               <WhatsAppIcon size={18} /> QUERO MINHA AVALIAÇÃO COM A DRA.
             </a>
             
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               {["Certificação", "Excelência", "Equipamentos Premium", "Tecnologia"].map((badge, i) => (
                 <div key={i} className="border border-gold px-[20px] py-[10px]">
                   <span className="font-sans text-[9px] uppercase text-gold tracking-[0.18em]">{badge}</span>
