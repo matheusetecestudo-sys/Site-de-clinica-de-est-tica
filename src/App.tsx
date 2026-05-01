@@ -275,38 +275,55 @@ export default function App() {
       {/* [SEÇÃO 01 — HERO] */}
       <section className="relative min-h-[100dvh] flex flex-col bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/banner01 (3).png" alt="Clínica" className="w-full h-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
-          <div className="absolute inset-0 bg-black/30" />
+          <img src="/images/banner01 (3).png" alt="Clínica" className="w-full h-full object-cover object-top scale-[1.03]" />
+          {/* Degradê principal: esquerda escura para transparente */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/10" />
+          {/* Degradê inferior: base escura para transparente */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          {/* Degradê superior: topo escuro suave */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          {/* Brilho rosa sutil no canto esquerdo */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_60%,rgba(219,39,119,0.12)_0%,transparent_55%)]" />
         </div>
 
         <div className="relative z-10 w-full flex-1 flex flex-col justify-center px-[clamp(24px,5vw,7vw)] pt-[100px]">
-          <div className="max-w-[700px]">
+          <div className="max-w-[720px]">
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="font-sans uppercase text-gold text-[10px] tracking-[0.22em] mb-6 block">CLÍNICA DE ESTÉTICA AVANÇADA — SÃO PAULO</span>
-              <h1 className="font-display font-bold text-white text-[clamp(48px,7vw,90px)] leading-[1.0] mb-2">
-                Beleza que <br />
-                <span className="font-display italic text-rose">Impõe Respeito</span>
+              <span className="font-sans uppercase text-gold text-[10px] tracking-[0.28em] mb-8 block">
+                CLÍNICA DE ESTÉTICA AVANÇADA — SÃO PAULO
+              </span>
+
+              <h1 className="font-display font-bold text-white text-[clamp(52px,7.5vw,96px)] leading-[0.97] mb-4">
+                Resultados que<br />
+                <span className="font-display italic text-rose">Silenciam a Sala.</span>
               </h1>
-              <div className="line-decorative my-[32px] w-[60px] h-[2px]"></div>
-              <p className="font-sans text-white/80 text-[18px] md:text-[20px] leading-[1.65] max-w-[500px]">
-                Procedimentos de alta performance com resultado natural. Por Dra. Beatriz Cavalcanti.
+
+              <div className="line-decorative my-[32px] w-[64px] h-[2px]"></div>
+
+              <p className="font-sans text-white/75 text-[17px] md:text-[19px] leading-[1.7] max-w-[480px] mb-12">
+                Procedimentos de alta performance que transformam a forma como o mundo te enxerga. Naturalidade cirúrgica. Protocolo exclusivo. Resultado irreversível.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 mt-12 w-full sm:w-auto">
-                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center px-[40px]">AGENDAR CONSULTA</a>
-                <a href="#tratamentos" className="btn-secondary border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-center px-[40px]">VER TRATAMENTOS</a>
+              <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center px-[44px] py-[16px]">
+                  AGENDAR CONSULTA
+                </a>
+                <a href="#tratamentos" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-black w-full sm:w-auto text-center px-[44px] py-[16px]">
+                  VER TRATAMENTOS
+                </a>
               </div>
               
-              <div className="mt-16 flex items-center gap-4">
+              <div className="mt-14 flex items-center gap-4">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} className="text-gold" size={16} />)}
                 </div>
-                <span className="font-sans text-[11px] md:text-[12px] uppercase text-gold tracking-[0.14em]">4.9 · +500 pacientes atendidas</span>
+                <span className="font-sans text-[11px] md:text-[12px] uppercase text-gold tracking-[0.16em]">
+                  4.9 · +500 pacientes atendidas
+                </span>
               </div>
             </motion.div>
           </div>
@@ -392,28 +409,32 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[2px] bg-white">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-[2px] bg-white">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-square group overflow-hidden cursor-pointer"
+                className="relative aspect-[0.75/1] md:aspect-[0.85/1] group overflow-hidden"
               >
-                <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.015]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-colors duration-[400ms] group-hover:from-black/85 group-hover:via-black/50" />
+                <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
                 
-                <div className="absolute top-4 right-4 bg-rose px-[12px] py-[4px]">
-                  <span className="font-sans text-[8px] uppercase text-white tracking-[0.14em]">{srv.category}</span>
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-rose/90 backdrop-blur-sm px-[8px] py-[3px] md:px-[12px] md:py-[4px]">
+                  <span className="font-sans text-[7px] md:text-[9px] uppercase text-white tracking-[0.14em] font-bold">{srv.category}</span>
                 </div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-[20px] flex flex-col">
-                  <h3 className="font-display text-[22px] text-white mb-2">{srv.title}</h3>
-                  <p className="font-sans text-[13px] text-white/70 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300 overflow-hidden line-clamp-2 mb-3">
+                <div className="absolute bottom-0 left-0 right-0 p-[14px] md:p-[24px] flex flex-col justify-end h-full">
+                  <h3 className="font-display text-[17px] md:text-[26px] text-white mb-1.5 md:mb-3 leading-tight">{srv.title}</h3>
+                  <p className="font-sans text-[10px] md:text-[14px] text-white/85 line-clamp-2 md:line-clamp-3 mb-3 md:mb-5 leading-relaxed">
                     {srv.description}
                   </p>
-                  <a href={whatsappUrl} className="font-sans text-[10px] uppercase text-rose tracking-[0.16em] opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-auto flex items-center gap-1">
-                    SAIBA MAIS &rarr;
+                  <a 
+                    href={whatsappUrl} 
+                    className="bg-rose text-white text-[9px] md:text-[11px] font-sans font-bold uppercase tracking-[0.15em] py-2.5 md:py-3.5 px-4 flex items-center justify-center gap-2 w-full hover:bg-[#8E2E43] transition-all duration-300 shadow-lg"
+                  >
+                    <WhatsAppIcon size={14} /> 
+                    <span className="whitespace-nowrap">AGENDAR AGORA</span>
                   </a>
                 </div>
               </motion.div>
