@@ -16,56 +16,50 @@ const StarIcon = ({ size = 14, className = "", ...props }: any) => (
 
 const SERVICES = [
   {
-    title: "Toxina Botulínica",
-    description: "Elimina marcas de expressão e restaura a jovialidade natural do rosto.",
+    title: "Botox Facial",
+    description: "Elimina marcas de expressão e rugas, devolvendo um aspecto descansado e jovem.",
     image: "/images/Toxina Botulínica (Botox).png",
     category: "FACIAL"
   },
   {
     title: "Harmonização Facial",
-    description: "Equilibra os traços e realça pontos fortes para um perfil simétrico e elegante.",
+    description: "Equilibra os traços do rosto e realça sua beleza natural com precisão.",
     image: "/images/Harmonização Facial.png",
     category: "FACIAL"
   },
   {
     title: "Preenchimento Labial",
-    description: "Lábios desenhados com naturalidade, devolvendo volume e contorno exato.",
+    description: "Lábios com mais volume, contorno definido e hidratação imediata.",
     image: "/images/Preenchimento Labial.jpg",
     category: "FACIAL"
   },
   {
-    title: "Bioestimulador de Colágeno",
-    description: "Trata a flacidez na raiz, estimulando sustentação e firmeza progressiva.",
+    title: "Bioestimulador",
+    description: "Tratamento avançado contra a flacidez, estimulando o colágeno da própria pele.",
     image: "/images/Bioestimulador de Colágeno.png",
     category: "FACIAL E CORPORAL"
   },
   {
-    title: "Rejuvenescimento Facial",
-    description: "Protocolo completo para devolver viço, textura lisa e tom uniforme à pele.",
+    title: "Lifting sem Cortes",
+    description: "Recupera a sustentação do rosto e suaviza marcas do tempo sem cirurgia.",
     image: "/images/Rejuvenescimento Facial.png",
     category: "FACIAL"
   },
   {
-    title: "Skinbooster",
-    description: "Hidratação injetável profunda para uma pele iluminada e radiante de dentro para fora.",
+    title: "Hidratação Profunda",
+    description: "Injeção de vitaminas que devolve o brilho e o viço imediato da pele (Skinbooster).",
     image: "/images/hidratação profunda.webp",
     category: "FACIAL"
   },
   {
-    title: "Limpeza de Pele Profunda",
-    description: "Purificação intensa com tecnologias faciais para renovação celular e desobstrução.",
-    image: "/images/Limpeza de Pele Profunda.jpg",
-    category: "ESTÉTICA"
-  },
-  {
-    title: "Tratamento para Acne",
-    description: "Controle definitivo de inflamações e redução de marcas para uma pele lisa e saudável.",
+    title: "Acne e Cicatrizes",
+    description: "Protocolos para acabar com espinhas e reduzir marcas de acne de forma definitiva.",
     image: "/images/tratamento para acne.webp",
     category: "TRATAMENTO"
   },
   {
     title: "Depilação a Laser",
-    description: "Pele permanentemente livre de pelos com tecnologia confortável e indolor.",
+    description: "Pele lisa e livre de pelos permanentemente com a tecnologia mais confortável.",
     image: "/images/Depilação a leizer.webp",
     category: "CORPORAL"
   }
@@ -409,7 +403,7 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
