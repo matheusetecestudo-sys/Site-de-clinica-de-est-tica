@@ -72,7 +72,6 @@ const FAQS = [
   { q: "A primeira consulta é demorada?", a: "Sim. A avaliação na DUNO é um ritual de escuta e análise técnica profunda. Não fazemos apenas aplicações, desenhamos seu plano de rejuvenescimento exclusivo." },
   { q: "Existe algum 'tempo de recuperação'?", a: "A maioria dos nossos protocolos permite que você retorne à sua rotina imediatamente. Em alguns casos, pode haver um leve edema que desaparece em poucos dias." },
   { q: "Como faço para garantir um horário?", a: "Devido à nossa agenda exclusiva e atendimento personalizado, recomendamos o agendamento via WhatsApp com pelo menos uma semana de antecedência." }
-];esenhamos um plano de tratamento exclusivo para você." }
 ];
 
 const RESULTS = [
