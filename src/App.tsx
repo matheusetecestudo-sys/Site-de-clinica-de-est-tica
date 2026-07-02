@@ -411,35 +411,35 @@ export default function App() {
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="flex flex-col bg-white rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full group"
+                className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
               >
-                {/* Imagem do Serviço */}
-                <div className="relative aspect-[1.2/1] w-full overflow-hidden">
+                {/* Imagem — proporção quadrada com margem interna */}
+                <div className="relative w-[calc(100%-12px)] mx-auto mt-1.5 aspect-square overflow-hidden rounded-[10px]">
                   <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-3 right-3 bg-rose/90 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                    <span className="font-sans text-[8px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
+                  <div className="absolute top-2 right-2 bg-rose/90 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                    <span className="font-sans text-[7px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
                   </div>
                 </div>
                 
-                {/* Conteúdo Centralizado */}
-                <div className="p-6 flex flex-col items-center text-center flex-grow bg-white">
-                  {/* Título */}
-                  <h3 className="font-display text-[18px] md:text-[20px] text-black font-bold uppercase tracking-tight mb-2">
+                {/* Conteúdo */}
+                <div className="px-4 pb-4 pt-3 flex flex-col items-center text-center flex-grow">
+                  {/* Título — tamanho menor */}
+                  <h3 className="font-sans text-[14px] md:text-[15px] text-black font-bold mb-1.5 leading-tight">
                     {srv.title}
                   </h3>
                   
-                  {/* Descrição */}
-                  <p className="font-sans text-[12px] md:text-[13px] text-warm-gray leading-relaxed mb-6 max-w-[260px] line-clamp-3">
+                  {/* Descrição compacta */}
+                  <p className="font-sans text-[11px] md:text-[12px] text-warm-gray leading-relaxed mb-4 line-clamp-2">
                     {srv.description}
                   </p>
                   
-                  {/* Botão Pill Rosa Centralizado com Seta */}
+                  {/* Botão — pill, cabe em 1 linha */}
                   <a 
                     href={whatsappUrl} 
-                    className="btn-primary mt-auto py-2.5 px-6 text-[10px] md:text-[11px] flex items-center justify-center gap-2 rounded-full transition-all duration-300 shadow-md w-full max-w-[200px]"
+                    className="mt-auto bg-rose text-white rounded-full py-2 px-5 text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 hover:bg-[#8E2E43] transition-colors whitespace-nowrap"
                   >
                     <span>AGENDAR CONSULTA</span>
-                    <ArrowRight size={14} className="shrink-0" />
+                    <ArrowRight size={11} className="shrink-0" />
                   </a>
                 </div>
               </motion.div>
