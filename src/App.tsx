@@ -405,7 +405,7 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
@@ -413,8 +413,8 @@ export default function App() {
                 key={i} 
                 className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
               >
-                {/* Imagem — proporção quadrada com margem interna */}
-                <div className="relative w-[calc(100%-12px)] mx-auto mt-1.5 aspect-square overflow-hidden rounded-[10px]">
+                {/* Imagem — sem margens, preenche topo do card */}
+                <div className="relative w-full aspect-square overflow-hidden">
                   <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute top-2 right-2 bg-rose/90 backdrop-blur-sm px-2 py-0.5 rounded-full">
                     <span className="font-sans text-[7px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
@@ -422,24 +422,24 @@ export default function App() {
                 </div>
                 
                 {/* Conteúdo */}
-                <div className="px-4 pb-4 pt-3 flex flex-col items-center text-center flex-grow">
-                  {/* Título — tamanho menor */}
-                  <h3 className="font-sans text-[14px] md:text-[15px] text-black font-bold mb-1.5 leading-tight">
+                <div className="px-3 pb-3 pt-2.5 flex flex-col items-center text-center flex-grow">
+                  {/* Título */}
+                  <h3 className="font-sans text-[12px] md:text-[15px] text-black font-bold mb-1 leading-tight">
                     {srv.title}
                   </h3>
                   
-                  {/* Descrição compacta */}
-                  <p className="font-sans text-[11px] md:text-[12px] text-warm-gray leading-relaxed mb-4 line-clamp-2">
+                  {/* Descrição */}
+                  <p className="font-sans text-[10px] md:text-[12px] text-warm-gray leading-relaxed mb-3 line-clamp-2">
                     {srv.description}
                   </p>
                   
-                  {/* Botão — pill, cabe em 1 linha */}
+                  {/* Botão */}
                   <a 
                     href={whatsappUrl} 
-                    className="mt-auto bg-rose text-white rounded-full py-2 px-5 text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 hover:bg-[#8E2E43] transition-colors whitespace-nowrap"
+                    className="mt-auto bg-rose text-white rounded-full py-1.5 px-3 md:py-2 md:px-5 text-[8px] md:text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-1 hover:bg-[#8E2E43] transition-colors whitespace-nowrap"
                   >
                     <span>AGENDAR CONSULTA</span>
-                    <ArrowRight size={11} className="shrink-0" />
+                    <ArrowRight size={10} className="shrink-0" />
                   </a>
                 </div>
               </motion.div>
