@@ -17,49 +17,49 @@ const StarIcon = ({ size = 14, className = "", ...props }: any) => (
 const SERVICES = [
   {
     title: "Botox de Elite",
-    description: "Apague as marcas de estresse e tempo sem perder sua expressão. O segredo das faces mais elegantes e descansadas.",
+    description: "Elimina marcas sem perder expressão natural.",
     image: "/images/Toxina Botulínica (Botox).png",
     category: "FACIAL"
   },
   {
-    title: "Harmonização de Luxo",
-    description: "O equilíbrio perfeito entre arte e ciência. Realçamos seus traços para criar um perfil magnético e sofisticado.",
+    title: "Harmonização Facial",
+    description: "Realce de traços com naturalidade e precisão.",
     image: "/images/Harmonização Facial.png",
     category: "FACIAL"
   },
   {
-    title: "Lábios e Contorno",
-    description: "Volume estratégico e contorno definido. O toque de sofisticação e sedução que seu sorriso sempre mereceu.",
+    title: "Preenchimento Labial",
+    description: "Volume e contorno perfeitos para o seu sorriso.",
     image: "/images/Preenchimento Labial.jpg",
     category: "FACIAL"
   },
   {
     title: "Bioestimulador",
-    description: "Sua poupança de colágeno. Firmeza absoluta e sustentação profunda que melhora a cada dia que passa.",
+    description: "Firmeza e colágeno de forma duradoura.",
     image: "/images/Bioestimulador de Colágeno.png",
     category: "FACIAL E CORPORAL"
   },
   {
-    title: "Lifting de Alta Performance",
-    description: "Desafie a gravidade sem cirurgias. Sustentação imediata e regeneração total dos contornos do seu rosto.",
+    title: "Lifting Sem Cirurgia",
+    description: "Sustentação imediata e rejuvenescimento total.",
     image: "/images/Rejuvenescimento Facial.png",
     category: "FACIAL"
   },
   {
-    title: "Brilho e Hidratação",
-    description: "O segredo da pele 'glass skin'. Hidratação profunda que devolve o viço e a luminosidade que vem de dentro.",
+    title: "Hidratação Profunda",
+    description: "Pele luminosa e viçosa com glás skin effect.",
     image: "/images/hidratação profunda.webp",
     category: "FACIAL"
   },
   {
-    title: "Acne e Textura",
-    description: "Recupere a pureza da sua pele. Protocolos definitivos para eliminar inflamações e marcas indesejadas.",
+    title: "Tratamento de Acne",
+    description: "Elimina inflamações e marcas com precisão.",
     image: "/images/tratamento para acne.webp",
     category: "TRATAMENTO"
   },
   {
-    title: "Liberdade com Laser",
-    description: "Pele permanentemente impecável. A tecnologia mais confortável do mundo para você nunca mais se preocupar com pelos.",
+    title: "Depilação a Laser",
+    description: "Pele lisa e definitiva com tecnologia de ponta.",
     image: "/images/Depilação a leizer.webp",
     category: "CORPORAL"
   }
@@ -405,16 +405,16 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
+                className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group max-w-[360px] mx-auto w-full"
               >
-                {/* Imagem — sem margens, preenche topo do card */}
-                <div className="relative w-full aspect-square overflow-hidden">
+                {/* Imagem — altura reduzida para dar espaço ao conteúdo */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute top-2 right-2 bg-rose/90 backdrop-blur-sm px-2 py-0.5 rounded-full">
                     <span className="font-sans text-[7px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
@@ -422,21 +422,21 @@ export default function App() {
                 </div>
                 
                 {/* Conteúdo */}
-                <div className="px-3 pb-3 pt-2.5 flex flex-col items-center text-center flex-grow">
+                <div className="px-4 pb-4 pt-3 flex flex-col items-center text-center flex-grow">
                   {/* Título */}
-                  <h3 className="font-sans text-[12px] md:text-[15px] text-black font-bold mb-1 leading-tight">
+                  <h3 className="font-sans text-[13px] md:text-[15px] text-black font-bold mb-1 leading-tight">
                     {srv.title}
                   </h3>
                   
-                  {/* Descrição */}
-                  <p className="font-sans text-[10px] md:text-[12px] text-warm-gray leading-relaxed mb-3 line-clamp-2">
+                  {/* Descrição — curta, cabe sem corte */}
+                  <p className="font-sans text-[11px] md:text-[12px] text-warm-gray leading-snug mb-3">
                     {srv.description}
                   </p>
                   
                   {/* Botão */}
                   <a 
                     href={whatsappUrl} 
-                    className="mt-auto bg-rose text-white rounded-full py-1.5 px-3 md:py-2 md:px-5 text-[8px] md:text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-1 hover:bg-[#8E2E43] transition-colors whitespace-nowrap"
+                    className="mt-auto bg-rose text-white rounded-full py-1.5 px-4 md:py-2 md:px-5 text-[8px] md:text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-1 hover:bg-[#8E2E43] transition-colors whitespace-nowrap"
                   >
                     <span>AGENDAR CONSULTA</span>
                     <ArrowRight size={10} className="shrink-0" />
