@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronRight, ChevronLeft, MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronLeft, MapPin, Phone, Mail, Clock, Instagram, Facebook, ArrowRight } from 'lucide-react';
 
 const WhatsAppIcon = ({ size = 20, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -173,7 +173,7 @@ export default function App() {
           <div className="hidden lg:flex items-center gap-4">
             <a href={`tel:+5511992876219`} className="font-sans text-[11px] uppercase tracking-[0.12em] text-white/70 hover:text-rose transition-colors">(11) 99287-6219</a>
             <a href={whatsappUrl} className="btn-primary !py-[12px] !px-[28px] !text-[10px] gap-2">
-              <WhatsAppIcon size={14} /> AGENDAR CONSULTA
+              <span>AGENDAR CONSULTA</span> <ArrowRight size={14} />
             </a>
           </div>
 
@@ -208,24 +208,24 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-[109] w-[80vw] max-w-[360px] bg-[#0F0F0F] flex flex-col px-8 py-10 shadow-[-4px_0_40px_rgba(0,0,0,0.4)]"
+              className="fixed top-0 right-0 bottom-0 z-[109] w-[70vw] max-w-[280px] bg-[#0F0F0F] flex flex-col px-6 py-8 shadow-[-4px_0_40px_rgba(0,0,0,0.4)]"
             >
               {/* Close */}
               <button
-                className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors"
+                className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <X size={24} />
+                <X size={20} />
               </button>
 
               {/* Logo no drawer */}
-              <div className="mb-10">
-                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[22px] tracking-[0.25em] uppercase text-rose block leading-[1.1]">DUNO</span>
+              <div className="mb-6">
+                <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-bold text-[18px] tracking-[0.25em] uppercase text-rose block leading-[1.1]">DUNO</span>
                 <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="font-medium text-[8px] tracking-[0.3em] uppercase text-rose/70">ESTÉTICA</span>
               </div>
 
               {/* Links */}
-              <nav className="flex flex-col gap-2 flex-1">
+              <nav className="flex flex-col gap-1.5 flex-1">
                 {[
                   { label: 'Tratamentos', href: '#tratamentos' },
                   { label: 'A Clínica', href: '#a-clinica' },
@@ -239,7 +239,7 @@ export default function App() {
                     transition={{ delay: i * 0.07 + 0.1 }}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-display text-[28px] text-white/80 hover:text-rose transition-colors py-3 border-b border-white/5"
+                    className="font-display text-[18px] text-white/80 hover:text-rose transition-colors py-2 border-b border-white/5"
                   >
                     {item.label}
                   </motion.a>
@@ -247,9 +247,9 @@ export default function App() {
               </nav>
 
               {/* CTA mobile */}
-              <div className="flex flex-col gap-3 mt-8">
-                <a href={whatsappUrl} onClick={() => setIsMobileMenuOpen(false)} className="btn-primary w-full text-center">
-                  <WhatsAppIcon size={16} /> AGENDAR AGORA
+              <div className="flex flex-col gap-3 mt-6">
+                <a href={whatsappUrl} onClick={() => setIsMobileMenuOpen(false)} className="btn-primary w-full text-center gap-2">
+                  <span>AGENDAR AGORA</span> <ArrowRight size={14} />
                 </a>
                 <a href={`tel:+5511992876219`} className="font-sans text-center text-[12px] text-white/50 tracking-[0.1em] uppercase hover:text-rose transition-colors">
                   (11) 99287-6219
@@ -303,8 +303,8 @@ export default function App() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center gap-3">
-                  <WhatsAppIcon size={18} /> GARANTIR MINHA CONSULTA
+                <a href={whatsappUrl} className="btn-primary w-full sm:w-auto text-center gap-2">
+                  <span>GARANTIR MINHA CONSULTA</span> <ArrowRight size={16} />
                 </a>
                 <a href="#tratamentos" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-black w-full sm:w-auto text-center">
                   DESCUBRA O MÉTODO
@@ -378,8 +378,8 @@ export default function App() {
               ))}
             </ul>
             
-            <a href={whatsappUrl} className="btn-secondary mb-12 gap-3 !px-8 md:!px-10">
-              <WhatsAppIcon size={18} /> QUERO MINHA AVALIAÇÃO COM A DRA.
+            <a href={whatsappUrl} className="btn-secondary mb-12 gap-2 !px-8 md:!px-10">
+              <span>QUERO MINHA AVALIAÇÃO COM A DRA.</span> <ArrowRight size={16} />
             </a>
             
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -405,39 +405,41 @@ export default function App() {
             <p className="font-sans text-[16px] text-warm-gray">Protocolos personalizados para realçar sua beleza natural</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {SERVICES.map((srv, i) => (
               <motion.div 
                 {...fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 key={i} 
-                className="relative aspect-[0.8/1] md:aspect-[0.75/1] rounded-[24px] md:rounded-[40px] overflow-hidden group shadow-xl border border-rose/20"
+                className="flex flex-col bg-white rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-rose/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full group"
               >
-                {/* Imagem de Fundo */}
-                <img src={srv.image} alt={srv.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                {/* Imagem do Serviço */}
+                <div className="relative aspect-[1.2/1] w-full overflow-hidden">
+                  <img src={srv.image} alt={srv.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute top-3 right-3 bg-rose/90 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                    <span className="font-sans text-[8px] text-white uppercase tracking-wider font-bold">{srv.category}</span>
+                  </div>
+                </div>
                 
-                {/* Overlay Escuro Gradual */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
-                
-                {/* Conteúdo Centralizado e Alinhado */}
-                <div className="absolute inset-0 p-6 md:p-8 flex flex-col items-center text-center justify-end">
-                  {/* Título Serifado */}
-                  <h3 className="font-display text-[18px] md:text-[24px] text-white font-bold uppercase leading-tight mb-2 md:mb-4 tracking-tight">
+                {/* Conteúdo Centralizado */}
+                <div className="p-6 flex flex-col items-center text-center flex-grow bg-white">
+                  {/* Título */}
+                  <h3 className="font-display text-[18px] md:text-[20px] text-black font-bold uppercase tracking-tight mb-2">
                     {srv.title}
                   </h3>
                   
                   {/* Descrição */}
-                  <p className="font-sans text-[11px] md:text-[13px] text-white/85 line-clamp-3 mb-5 md:mb-8 leading-relaxed max-w-full">
+                  <p className="font-sans text-[12px] md:text-[13px] text-warm-gray leading-relaxed mb-6 max-w-[260px] line-clamp-3">
                     {srv.description}
                   </p>
                   
-                  {/* Botão Pill Rosa Centralizado */}
+                  {/* Botão Pill Rosa Centralizado com Seta */}
                   <a 
                     href={whatsappUrl} 
-                    className="bg-rose text-white rounded-full py-3.5 md:py-4 px-6 md:px-8 flex items-center justify-center gap-2 hover:bg-[#8E2E43] transition-all duration-300 shadow-lg w-full max-w-[220px]"
+                    className="btn-primary mt-auto py-2.5 px-6 text-[10px] md:text-[11px] flex items-center justify-center gap-2 rounded-full transition-all duration-300 shadow-md w-full max-w-[200px]"
                   >
-                    <WhatsAppIcon size={14} className="text-white shrink-0" />
-                    <span className="font-sans font-bold text-[9px] md:text-[11px] uppercase tracking-widest whitespace-nowrap">AGENDAR CONSULTA</span>
+                    <span>AGENDAR CONSULTA</span>
+                    <ArrowRight size={14} className="shrink-0" />
                   </a>
                 </div>
               </motion.div>
@@ -521,8 +523,8 @@ export default function App() {
 
           <div className="flex flex-col items-center mt-[80px] gap-8">
             <p className="font-sans text-[11px] text-warm-gray tracking-[0.1em] uppercase">Resultados individuais podem variar.</p>
-            <a href={whatsappUrl} className="btn-secondary px-[40px] gap-3">
-              <WhatsAppIcon size={18} /> AGENDAR AVALIAÇÃO
+            <a href={whatsappUrl} className="btn-secondary px-[40px] gap-2">
+              <span>AGENDAR AVALIAÇÃO</span> <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -610,8 +612,8 @@ export default function App() {
           <div className="line-decorative mb-7"></div>
           <p className="font-sans text-[18px] text-white/60 mb-[48px] max-w-[480px]">Não deixe sua autoestima para depois. O momento de investir em você é agora.</p>
           <div className="flex flex-col sm:flex-row gap-[20px] w-full sm:w-auto justify-center">
-            <a href={whatsappUrl} className="btn-primary w-full sm:w-auto !px-[56px]">
-              <WhatsAppIcon size={18} /> GARANTIR MEU HORÁRIO
+            <a href={whatsappUrl} className="btn-primary w-full sm:w-auto !px-[56px] gap-2">
+              <span>GARANTIR MEU HORÁRIO</span> <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -728,8 +730,8 @@ export default function App() {
               </ul>
 
               {/* CTA WhatsApp */}
-              <a href={whatsappUrl} className="btn-primary mt-6 self-start text-[10px] py-[10px] px-[20px]">
-                <WhatsAppIcon size={14} /> FALAR AGORA
+              <a href={whatsappUrl} className="btn-primary mt-6 self-start text-[10px] py-[10px] px-[20px] gap-2">
+                <span>FALAR AGORA</span> <ArrowRight size={14} />
               </a>
             </div>
 
@@ -755,7 +757,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             href={whatsappUrl}
-            className="fixed bottom-[32px] right-[32px] z-[999] w-[56px] h-[56px] bg-[#1A7A40] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(26,122,64,0.35)] hover:scale-[1.08] transition-transform duration-200"
+            className="fixed bottom-[32px] right-[32px] z-[999] w-[56px] h-[56px] bg-[#1A7A40] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(26,122,64,0.35)] hover:scale-[1.08] transition-all duration-200 animate-pulse-whatsapp"
           >
             <WhatsAppIcon size={24} className="text-white" />
           </motion.a>
